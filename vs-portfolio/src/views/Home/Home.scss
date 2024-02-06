@@ -1,0 +1,25 @@
+section.Appart {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 50px;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  padding: 56px;
+  margin: 100px;
+}
+
+@media screen and (max-width: 376px) {
+  section.Appart {
+    grid-template-columns: 1fr;
+    justify-content: center; 
+    background-color: transparent;
+    padding: 0 20px;
+    margin: 0;
+    gap: 20px;
+    margin-bottom: 27px;
+  }
+  .Card {
+    height: 255px;
+  }
+}

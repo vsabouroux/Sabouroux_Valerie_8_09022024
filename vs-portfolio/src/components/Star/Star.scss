@@ -1,0 +1,22 @@
+.star-global {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 5px;
+
+  .star-vide {
+    fill: #E3E3E3;
+  }
+  .star,
+  .star-vide {
+    width: 36px; // taille par défaut
+    height: 36px; 
+  
+  }
+  @media screen and (max-width: 376px) {
+  .star,
+  .star-vide {
+    width: 18px; // nouvelle taille pour la version mobile
+    height: 18px; 
+  }
+}}

@@ -1,0 +1,39 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 209px;
+  background-color: black;
+  margin-top: 50px;
+  width: 100%;
+
+  p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 24px;
+  }
+  .vs-small-logo {
+    object-fit: none;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 376px) {
+  footer {
+    margin-top: 0;
+  }
+  footer p {
+    font-size: 12px;
+    width: 100px;
+    margin: auto;
+  }
+  footer img.vs-small-logo {
+    display: flex;
+    justify-content: center;
+    width: 122px;
+    height: 39px;
+    margin-bottom: 15px;
+  }
+}

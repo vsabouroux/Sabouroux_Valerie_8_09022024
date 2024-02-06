@@ -1,0 +1,47 @@
+.Banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border-radius: 25px;
+  margin: 45px 100px 50px 100px;
+
+  .overlay {
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    color: white; // Couleur du texte
+    font-weight: medium;
+    font-size: 28px;
+  }
+  .banner-image {
+    width: 100%; // largeur de 100% pour remplir le conteneur parent "Banner"
+    height: 223px;
+    object-fit: cover;
+    border-radius: 25px;
+
+    // "filter" permet d'ajouter un filtre pour assombrir l'image
+    filter: brightness(70%);
+  }
+}
+@media screen and (max-width: 376px) {
+  .Banner {
+    margin: 20px;
+  
+
+    .banner-image {
+      width: 335px;
+      height: 111px;
+      border-radius: 10px;
+      
+    }
+    .overlay,
+    h1 {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: left;
+      margin-left: -20px;
+      font-size: 24px;
+      width: 217px;
+    }
+  }
+}
