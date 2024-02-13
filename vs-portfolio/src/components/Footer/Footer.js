@@ -7,7 +7,6 @@ function Footer() {
       <div className="bandeau">
         <img src={vslogoSmall} alt="logo vs" className="vs-small-logo" />
         <p>2024 - Réalisé par Valérie Sabouroux</p>
-       
       </div>
     </footer>
   );

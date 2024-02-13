@@ -18,6 +18,16 @@ function Header() {
               A propos
             </NavLink>
           </li>
+          <li className="contact">
+            <NavLink to="/Contact" className="nav-link">
+              Contact
+            </NavLink>
+          </li>
+          <li className="seconnecter">
+            <NavLink to="/seconnecter" className="nav-link">
+              Se connecter
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

@@ -4,7 +4,6 @@ import Footer from "../../components/Footer/Footer";
 import Slideshow from "../../components/Slideshow/Slideshow";
 import CollapseItem from "../../components/Collaps/Collaps";
 import Tag from "../../components/Tag/Tag";
-import StarRating from "../../components/Star/StarRating";
 import { useParams } from "react-router-dom";
 
 import "./FicheLogement.scss";
@@ -27,7 +26,7 @@ const FicheLogement = ({ logements }) => {
   }
 
   //Si le logement est trouvé alors on affiche tout
-  const { title, host, location, description, equipments, tags } = logement;
+  const { title, location, description, equipments, tags } = logement;
 
   return (
     <div>
@@ -47,17 +46,6 @@ const FicheLogement = ({ logements }) => {
               </div>
             </div>
 
-            <div className="HostGlobal">
-              <div className="HostSemiGlobal">
-                <div className="Host">{host.name}</div>
-                <img className="HostPicture" src={host.picture} alt="hôte" />
-              </div>
-              {/* parseInt convertit la valeur de logement.rating en un entier (nombre entier) en utilisant la fonction parseInt . En effet,
-        dans le fichier Logement.json, rating est une chaîne de caractère : "4". 
-        On appelle le composant StarRating et on lui demande (on "passe" une props) d'aller récupérer le nombre d'étoiles du logement et de l'afficher
-        à cet endroit*/}
-              <StarRating rating={parseInt(logement.rating)} />
-            </div>
           </div>
           <div className="MenuAccordeon">
             <CollapseItem title="Description" content={description} />

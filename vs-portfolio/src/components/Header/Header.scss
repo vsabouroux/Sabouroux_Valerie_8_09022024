@@ -38,10 +38,16 @@
 @media screen and (max-width: 376px) {
   .vs-header {
     padding: 20px 20px 27px 20px;
+    justify-content: center;
+    padding: 20px 20px 27px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    gap: 30px;
  
 
     .vs-logo {
-      width: 145px;
+      width: 70px;
     }
     nav {
       ul {
