@@ -14,7 +14,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="Home" element={<Home logements={Logements} />} />
+        <Route path="/" element={<Home logements={Logements} />} />
         <Route path="APropos" element={<APropos />} />
         <Route
           path="FicheLogement/:id"

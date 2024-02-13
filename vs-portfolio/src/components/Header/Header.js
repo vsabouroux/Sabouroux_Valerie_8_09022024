@@ -1,15 +1,15 @@
-import vsLogo from "../../assets/vsLogo.webp";
+import vslogo from "../../assets/vs-logo.webp";
 import "./Header.scss";
 import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
     <header className="vs-header">
-      <img src={vsLogo} alt="logo vs portolio" className="vs-logo" />
+      <img src={vslogo} alt="logo vs portolio" className="vs-logo" />
       <nav id="sidebar">
         <ul>
           <li className="accueil">
-            <NavLink to="/Home" className="nav-link">
+            <NavLink to="/" className="nav-link">
               Accueil
             </NavLink>
           </li>
