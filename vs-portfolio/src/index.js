@@ -6,19 +6,19 @@ import "./index.scss";
 import NoMatch from "./views/NoMatch/NoMatch";
 import Home from "./views/Home/Home";
 import APropos from "./views/APropos/APropos";
-import FicheLogement from "./views/FicheLogement/FicheLogement";
-import Logements from "./datas/Logements";
+import FicheProjet from "./views/FicheProjet/FicheProjet";
+import Projets from "./datas/Projets";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<Home logements={Logements} />} />
+        <Route path="/" element={<Home projets={Projets} />} />
         <Route path="APropos" element={<APropos />} />
         <Route
-          path="FicheLogement/:id"
-          element={<FicheLogement logements={Logements} />}
+          path="FicheProjet/:id"
+          element={<FicheProjet projets={Projets} />}
         />
         <Route path="*" element={<NoMatch />} />
       </Routes>

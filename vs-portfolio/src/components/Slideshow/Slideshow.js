@@ -36,7 +36,7 @@ const Slideshow = ({ pictures }) => {
       <img
         key={currentSlide}
         src={pictures[currentSlide]}
-        alt={`Logement ${currentSlide + 1}`}
+        alt={`Projet ${currentSlide + 1}`}
       />
       {!hideButtons && (
         <div className="counter">

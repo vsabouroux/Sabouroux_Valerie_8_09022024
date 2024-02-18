@@ -4,7 +4,7 @@ import "./Card.scss";
 //et la boucle "map" est faite sur la page qui doit afficher TOUS les logements soit la Home
 function Card({ title, picture, id }) {
   return (
-    <Link className="card-link" to={`/FicheLogement/${id}`}>
+    <Link className="card-link" to={`/FicheProjet/${id}`}>
       <div className="Card">
         <div className="Gradient"></div> 
       

@@ -6,27 +6,27 @@ import CollapseItem from "../../components/Collaps/Collaps";
 import Tag from "../../components/Tag/Tag";
 import { useParams } from "react-router-dom";
 
-import "./FicheLogement.scss";
+import "./FicheProjet.scss";
 
-// useParams = hook utilisé pour extraire les paramètres de l'URL dans un composant fonctionnel. Ici on veut récupérer notamment les "pictures" du logement
-// et on se repèrera avec l'id du logement
+// useParams = hook utilisé pour extraire les paramètres de l'URL dans un composant fonctionnel. Ici on veut récupérer notamment les "pictures" du projet
+// et on se repèrera avec l'id du projet
 
-const FicheLogement = ({ logements }) => {
-  // Récupérer les informations du logement, grace è l'ID de URL et le data.json
+const FicheProjet = ({ projets }) => {
+  // Récupérer les informations du projet, grace è l'ID de URL et le data.json
   const { id } = useParams();
 
-  const logement = logements.find((logement) => logement.id === id);
+  const projet = projets.find((projet) => projet.id === id);
 
-  if (!logement) {
-    // Rediriger vers la page NoMatch si le logement n'est pas trouvé. En fait ce n'est pas faire un "lien" mais une redirection ! avec "Navigate"
+  if (!projet) {
+    // Rediriger vers la page NoMatch si le projet n'est pas trouvé. En fait ce n'est pas faire un "lien" mais une redirection ! avec "Navigate"
     return (
       // "Link" embarque une navigation alors que "Navigate" redirige
       <Navigate to="/NoMatch" />
     );
   }
 
-  //Si le logement est trouvé alors on affiche tout
-  const { title, location, description, equipments, tags } = logement;
+  //Si le preojet est trouvé alors on affiche tout
+  const { title, location, description, equipments, tags } = projet;
 
   return (
     <div>
@@ -34,12 +34,12 @@ const FicheLogement = ({ logements }) => {
       <main>
         <section>
           <div className="Carrousel">
-            <Slideshow pictures={logement.pictures} />
+            <Slideshow pictures={projet.pictures} />
           </div>
           <div className="Entete-HostGlobal">
             <div className="Entete">
-              <div className="GlobalLogement">
-                <h1 className="TitreLogement">{title}</h1>
+              <div className="GlobalProjet">
+                <h1 className="TitreProjet">{title}</h1>
                 <div className="Location">{location}</div>
 
                 <Tag tags={tags} />
@@ -68,4 +68,4 @@ const FicheLogement = ({ logements }) => {
   );
 };
 
-export default FicheLogement;
+export default FicheProjet;
