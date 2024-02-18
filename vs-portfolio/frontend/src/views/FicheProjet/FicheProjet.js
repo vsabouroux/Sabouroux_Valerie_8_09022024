@@ -26,7 +26,7 @@ const FicheProjet = ({ projets }) => {
   }
 
   //Si le preojet est trouvé alors on affiche tout
-  const { title, location, description, equipments, tags } = projet;
+  const { title, problematique, description, equipments, tags } = projet;
 
   return (
     <div>
@@ -40,7 +40,7 @@ const FicheProjet = ({ projets }) => {
             <div className="Entete">
               <div className="GlobalProjet">
                 <h1 className="TitreProjet">{title}</h1>
-                <div className="Location">{location}</div>
+                <div className="Problematique">{problematique}</div>
 
                 <Tag tags={tags} />
               </div>

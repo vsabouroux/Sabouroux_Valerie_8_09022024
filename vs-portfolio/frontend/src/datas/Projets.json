@@ -16,7 +16,7 @@
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-12.jpg"
 		},
 		"rating": "5",
-		"location": "Ile de France - Paris 17e",
+		"problematique": "Ile de France - Paris 17e",
 		"equipments": [
 			"Équipements de base",
 			"Micro-Ondes",
@@ -47,7 +47,7 @@
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-1.jpg"
 		},
 		"rating": "4",
-		"location": "Ile de France - Paris 10e",
+		"problematique": "Ile de France - Paris 10e",
 		"equipments": [
 			"Parking",
 			"Sèche Cheveux",
@@ -78,7 +78,7 @@
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-2.jpg"
 		},
 		"rating": "3",
-		"location": "Ile de France - Paris 20e",
+		"problematique": "Ile de France - Paris 20e",
 		"equipments": [
 			"Wi-fi",
 			"Cuisine équipée",
@@ -107,7 +107,7 @@
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-1.jpg"
 		},
 		"rating": "3",
-		"location": "Ile de France - Paris 11e",
+		"problematique": "Ile de France - Paris 11e",
 		"equipments": [
 			"Micro-Ondes",
 			"Wi-fi",
@@ -140,7 +140,7 @@
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-2.jpg"
 		},
 		"rating": "5",
-		"location": "Ile de France - Paris 10e",
+		"problematique": "Ile de France - Paris 10e",
 		"equipments": [
 			"Frigo Américain",
 			"Sèche Cheveux",
