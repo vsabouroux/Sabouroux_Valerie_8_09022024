@@ -28,7 +28,7 @@ function APropos() {
             le développement d’un comportement loyal envers ces mêmes acteurs, l’adoption en toutes circonstances d’une attitude honnête."
           />
           <CollapseItem
-            title="Adapation"
+            title="Adaptation"
             content="Et cela passe par : la qualité de l'écoute, la capacité à mobiliser en un minimum de temps les bonnes ressources au service du projet du client, la capacité à se remettre réellement en cause, à anticiper les transformations,
             la capacité à intégrer dans ses missions les innovations."
           />

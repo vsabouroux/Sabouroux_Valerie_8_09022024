@@ -26,7 +26,7 @@ const FicheProjet = ({ projets }) => {
   }
 
   //Si le preojet est trouvé alors on affiche tout
-  const { title, problematique, description, equipments, tags } = projet;
+  const { title, problematique, description, competences, tags } = projet;
 
   return (
     <div>
@@ -50,11 +50,11 @@ const FicheProjet = ({ projets }) => {
           <div className="MenuAccordeon">
             <CollapseItem title="Description" content={description} />
             <CollapseItem
-              title="Équipements"
+              title="Compétences"
               content={
                 <ul>
-                  {equipments.map((equipment, index) => (
-                    <li key={index}>{equipment}</li>
+                  {competences.map((competence, index) => (
+                    <li key={index}>{competence}</li>
                   ))}
                 </ul>
               }

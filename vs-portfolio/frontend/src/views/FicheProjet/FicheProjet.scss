@@ -33,29 +33,29 @@ section {
     }
   }
 
-  .HostSemiGlobal {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  .Host {
-    font-size: 18px;
-    color: #ff6060;
-    width: 83px;
-    padding-top: 10px;
-  }
-  .HostGlobal {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  // .HostSemiGlobal {
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: flex-end;
+  // }
+  // .Host {
+  //   font-size: 18px;
+  //   color: #ff6060;
+  //   width: 83px;
+  //   padding-top: 10px;
+  // }
+  // .HostGlobal {
+  //   display: flex;
+  //   flex-direction: column;
+  //   gap: 30px;
 
-    img {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-  }
+  //   img {
+  //     width: 64px;
+  //     height: 64px;
+  //     border-radius: 50%;
+  //     object-fit: cover;
+  //   }
+  // }
   .MenuAccordeon {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -97,10 +97,10 @@ section {
     .Entete {
       flex-direction: column;
     }
-    .HostSemiGlobal {
-      gap: 10px;
-      align-items: center;
-    }
+    // .HostSemiGlobal {
+    //   gap: 10px;
+    //   align-items: center;
+    // }
     .HostGlobal {
       display: flex;
       flex-direction: row-reverse;
@@ -108,16 +108,16 @@ section {
       align-items: center;
       gap: 20px;
 
-      .Host {
-        font-size: 12px;
-        width: 70px;
-        text-align: right;
-        line-height: 17px;
-      }
-      img {
-        width: 32px;
-        height: 32px;
-      }
+      // .Host {
+      //   font-size: 12px;
+      //   width: 70px;
+      //   text-align: right;
+      //   line-height: 17px;
+      // }
+      // img {
+      //   width: 32px;
+      //   height: 32px;
+      // }
     }
   }
   .TitrePojet {

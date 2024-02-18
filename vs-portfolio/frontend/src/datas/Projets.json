@@ -1,7 +1,7 @@
 [
 	{
 		"id": "c67ab8a7",
-		"title": "Appartement cosy",
+		"title": "Booki",
 		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
 		"pictures": [
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
@@ -10,23 +10,22 @@
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-4.jpg",
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg"
 		],
-		"description": "Votre maison loin de chez vous. Que vous veniez de l'autre bout du monde, ou juste de quelques stations de RER, vous vous sentirez chez vous dans notre appartement.",
+		"description": "A partir d'une base de code, d'une maquette figma et d'une note de synthèse, il a été demandé par le client d'intégrer la page d'accueil du site.",
 		"host": {
 			"name": "Nathalie Jean",
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-12.jpg"
 		},
 		"rating": "5",
-		"problematique": "Ile de France - Paris 17e",
-		"equipments": [
-			"Équipements de base",
-			"Micro-Ondes",
-			"Douche italienne",
-			"Frigo",
-			"WIFI"
+		"problematique": "Créer la page d'accueil d'une agence de voyage",
+		"competences": [
+			"Implémenter une interface responsive avec HTML et CSS",
+			"Versionner son projet avec Git et Github",
+			"Intégrer du contenu conformément à une maquette avec HTML et CSS",
+			"Installer un environnement de développement front-end"
 		],
 		"tags": [
-			"Batignolle",
-			"Montmartre"
+			"HTML",
+			"CSS"
 		]
 	},
 	{
@@ -48,7 +47,7 @@
 		},
 		"rating": "4",
 		"problematique": "Ile de France - Paris 10e",
-		"equipments": [
+		"compétences": [
 			"Parking",
 			"Sèche Cheveux",
 			"Machine à laver",
@@ -79,7 +78,7 @@
 		},
 		"rating": "3",
 		"problematique": "Ile de France - Paris 20e",
-		"equipments": [
+		"compétences": [
 			"Wi-fi",
 			"Cuisine équipée",
 			"Télévision",
@@ -108,7 +107,7 @@
 		},
 		"rating": "3",
 		"problematique": "Ile de France - Paris 11e",
-		"equipments": [
+		"compétences": [
 			"Micro-Ondes",
 			"Wi-fi",
 			"Chambre Séparée",
@@ -141,7 +140,7 @@
 		},
 		"rating": "5",
 		"problematique": "Ile de France - Paris 10e",
-		"equipments": [
+		"compétences": [
 			"Frigo Américain",
 			"Sèche Cheveux",
 			"Wi-fi",

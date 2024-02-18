@@ -7,27 +7,40 @@ footer {
   margin-top: 50px;
   width: 100%;
 
-  p {
+  .footerElements {
+    display: flex;
+    flex-direction: column;
+  }
+  .realisation p {
     color: rgb(255, 255, 255);
     text-align: center;
     font-size: 24px;
   }
-  .vs-small-logo {
-    object-fit: none;
-    margin: auto;
-    height: 120px;
-    display: flex;
-    justify-content: center;
+  .mentionsLegales p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
   }
 }
+.gitHub {
+  object-fit: none;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 376px) {
   footer {
     margin-top: 0;
   }
-  footer p {
+  footer .realisation p {
     font-size: 12px;
-    width: 100px;
     margin: auto;
+  }
+  footer .mentionsLegales p {
+    font-size: 10px;
   }
   footer img.vs-small-logo {
     display: none;
