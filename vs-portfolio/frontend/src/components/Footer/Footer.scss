@@ -11,6 +11,11 @@ footer {
     display: flex;
     flex-direction: column;
   }
+  .footerElements .liens {
+    display: flex;
+    justify-content: center;
+  }
+
   .realisation p {
     color: rgb(255, 255, 255);
     text-align: center;
@@ -23,13 +28,6 @@ footer {
     font-size: 16px;
   }
 }
-.gitHub {
-  object-fit: none;
-  margin: auto;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-}
 
 @media screen and (max-width: 376px) {
   footer {
@@ -41,12 +39,5 @@ footer {
   }
   footer .mentionsLegales p {
     font-size: 10px;
-  }
-  footer img.vs-small-logo {
-    display: none;
-    // justify-content: center;
-    // // width: 122px;
-    // height: 39px;
-    // margin-bottom: 15px;
   }
 }
