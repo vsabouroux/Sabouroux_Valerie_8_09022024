@@ -6,6 +6,7 @@ import "./index.scss";
 import NoMatch from "./views/NoMatch/NoMatch";
 import Home from "./views/Home/Home";
 import APropos from "./views/APropos/APropos";
+import Contact from "./views/Contact/Contact";
 import FicheProjet from "./views/FicheProjet/FicheProjet";
 import Projets from "./datas/Projets";
 
@@ -16,6 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home projets={Projets} />} />
         <Route path="APropos" element={<APropos />} />
+        <Route path="Contact" element={<Contact />} />
         <Route
           path="FicheProjet/:id"
           element={<FicheProjet projets={Projets} />}

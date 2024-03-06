@@ -1,0 +1,52 @@
+$primaryColor: #120de6;
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: $primaryColor;
+  border-radius: 10px;
+
+  label {
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  div {
+    margin-bottom: 16px;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      background-color: transparent;
+      color: #fff;
+
+      &:focus {
+        outline: none;
+        border-color: lighten($primaryColor, 20%);
+      }
+    }
+
+    div {
+      color: #ff6b6b; // Couleur des messages d'erreur
+    }
+  }
+
+  button {
+    background-color: #fff;
+    color: $primaryColor;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primaryColor, 10%);
+    }
+  }
+}
