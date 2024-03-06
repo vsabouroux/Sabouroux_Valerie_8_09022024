@@ -12,10 +12,12 @@ form {
   label {
     margin-bottom: 8px;
     color: #fff;
+    font-weight: 700;
   }
 
   div {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    margin-right: 25px;
 
     input,
     textarea {
@@ -33,13 +35,15 @@ form {
     }
 
     div {
-      color: #ff6b6b; // Couleur des messages d'erreur
+      color: #fff; // Couleur des messages d'erreur
     }
   }
 
   button {
     background-color: #fff;
     color: $primaryColor;
+    font-size: 20px;
+    font-weight: 700;
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -47,6 +51,7 @@ form {
 
     &:hover {
       background-color: darken($primaryColor, 10%);
+      color: #fff;
     }
   }
 }
