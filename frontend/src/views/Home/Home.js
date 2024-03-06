@@ -2,9 +2,7 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Banner from "../../components/Banner/Banner";
 import enteteImage from "../../assets/entete.webp";
-
 import Card from "../../components/Card/Card";
-
 import Footer from "../../components/Footer/Footer";
 import Projets from "../../datas/Projets.json";
 import "./Home.scss";
