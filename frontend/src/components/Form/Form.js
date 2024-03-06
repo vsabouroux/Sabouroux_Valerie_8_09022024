@@ -76,7 +76,7 @@ const MyForm = () => {
       <Controller
         name="request"
         control={control}
-        rules={{ required: "Description du projet" }}
+        rules={{ required: "Description du projet obligatoire" }}
         render={({ field, fieldState }) => (
           <div>
             <textarea
