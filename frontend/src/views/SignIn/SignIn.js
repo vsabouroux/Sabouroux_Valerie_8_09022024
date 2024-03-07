@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { API_ROUTES, APP_ROUTES } from "../../utils/constants";
 import { useUser } from "../../lib/customHooks";
 import { storeInLocalStorage } from "../../lib/common";
-import Header from "../../components/Header/Header";
 import styles from "./SignIn.scss";
+import Header from "../../components/Header/Header";
+
 function SignIn({ setUser }) {
   const navigate = useNavigate();
   const { user, authenticated } = useUser();

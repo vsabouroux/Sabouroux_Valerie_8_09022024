@@ -18,7 +18,7 @@
       justify-content: flex-end;
       list-style-type: none;
       font-size: 24px;
-      font-weight: normal;
+      font-weight: bold;
       padding-right: 13px;
     }
     li {
@@ -27,11 +27,11 @@
     .nav-link.active {
       text-decoration: underline;
       line-height: 34.22px;
-      color: #120DE6;
+      color: #120de6;
     }
     .nav-link {
       text-decoration: none;
-      color:#120DE6;
+      color: #120de6;
     }
   }
 }
@@ -44,7 +44,6 @@
     flex-wrap: wrap;
     justify-self: center;
     gap: 30px;
- 
 
     .vs-logo {
       width: 70px;
