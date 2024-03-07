@@ -5,9 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { API_ROUTES, APP_ROUTES } from "../../utils/constants";
 import { useUser } from "../../lib/customHooks";
 import { storeInLocalStorage } from "../../lib/common";
-// import { ReactComponent as Logo } from '../../images/Logo.svg';
+import Header from "../../components/Header/Header";
 import styles from "./SignIn.scss";
-
 function SignIn({ setUser }) {
   const navigate = useNavigate();
   const { user, authenticated } = useUser();
@@ -52,67 +51,52 @@ function SignIn({ setUser }) {
 
   const errorClass = notification.error ? styles.Error : null;
   return (
-    <div className={`${styles.SignIn} container`}>
-      {/* <Logo /> */}
-      <div className={`${styles.Notification} ${errorClass}`}>
-        {notification.message.length > 0 && <p>{notification.message}</p>}
-      </div>
-      <div className={styles.Form}>
-        <label htmlFor={email}>
-          <p>Adresse email</p>
-          <input
-            className=""
-            type="text"
-            name="email"
-            id="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-        </label>
-        <label htmlFor="password">
-          <p>Mot de passe</p>
-          <input
-            className="border-2 outline-none p-2 rounded-md"
-            type="password"
-            name="password"
-            id="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </label>
-        <div className={styles.Submit}>
-          <button
-            type="submit"
-            className="
+    <div>
+      <Header />
+      <div className={`${styles.SignIn} container`}>
+        <div className={`${styles.Notification} ${errorClass}`}>
+          {notification.message.length > 0 && <p>{notification.message}</p>}
+        </div>
+        <div className={styles.Form}>
+          <label htmlFor={email}>
+            <p>Adresse email</p>
+            <input
+              className=""
+              type="text"
+              name="email"
+              id="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+          </label>
+          <label htmlFor="password">
+            <p>Mot de passe</p>
+            <input
+              className="border-2 outline-none p-2 rounded-md"
+              type="password"
+              name="password"
+              id="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+          </label>
+          <div className={styles.Submit}>
+            <button
+              type="submit"
+              className="
             flex justify-center
             p-2 rounded-md w-1/2 self-center
             bg-gray-800  text-white hover:bg-gray-800"
-            onClick={signIn}
-          >
-            {isLoading ? <div className="" /> : null}
-            <span>Se connecter</span>
-          </button>
-          {/* <span>OU</span>
-          <button
-            type="submit"
-            className="
-            flex justify-center
-            p-2 rounded-md w-1/2 self-center
-            bg-gray-800  text-white hover:bg-gray-800"
-            onClick={signUp}
-          >
-            {
-                isLoading
-                  ? <div className="mr-2 w-5 h-5 border-l-2 rounded-full animate-spin" /> : null
-              }
-            <span>
-              {'S\'inscrire'}
-            </span>
-          </button> */}
+              onClick={signIn}
+            >
+              {isLoading ? <div className="" /> : null}
+              <span>Se connecter</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ function Header() {
             </NavLink>
           </li>
           <li className="seconnecter">
-            <NavLink to="/seconnecter" className="nav-link">
+            <NavLink to="/SignIn" className="nav-link">
               Se connecter
             </NavLink>
           </li>

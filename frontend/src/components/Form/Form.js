@@ -1,13 +1,8 @@
-import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import "./Form.scss";
 
 const MyForm = () => {
   const { handleSubmit, control } = useForm();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [request, setRequest] = useState("");
 
   const onSubmit = (data) => {
     // Gérer la soumission des données ici avec requête HTTP et axios ds tt cça ?
@@ -24,12 +19,7 @@ const MyForm = () => {
         rules={{ required: "Le prénom est obligatoire" }}
         render={({ field, fieldState }) => (
           <div>
-            <input
-              {...field}
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              placeholder="Prénom"
-            />
+            <input {...field} placeholder="Prénom" />
             {fieldState.error && <div>{fieldState.error.message}</div>}
           </div>
         )}
@@ -42,12 +32,7 @@ const MyForm = () => {
         rules={{ required: "Le nom est obligatoire" }}
         render={({ field, fieldState }) => (
           <div>
-            <input
-              {...field}
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              placeholder="Nom"
-            />
+            <input {...field} placeholder="Nom" />
             {fieldState.error && <div>{fieldState.error.message}</div>}
           </div>
         )}
@@ -60,13 +45,7 @@ const MyForm = () => {
         rules={{ required: "L'adresse mail est obligatoire" }}
         render={({ field, fieldState }) => (
           <div>
-            <input
-              {...field}
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Adresse mail"
-            />
+            <input {...field} type="email" placeholder="Adresse mail" />
             {fieldState.error && <div>{fieldState.error.message}</div>}
           </div>
         )}
@@ -81,8 +60,6 @@ const MyForm = () => {
           <div>
             <textarea
               {...field}
-              value={request}
-              onChange={(e) => setRequest(e.target.value)}
               placeholder="Décrivez-nous en quelques lignes votre projet"
             />
             {fieldState.error && <div>{fieldState.error.message}</div>}
