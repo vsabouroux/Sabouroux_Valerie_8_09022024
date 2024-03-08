@@ -7,6 +7,7 @@ import { useUser } from "../../lib/customHooks";
 import { storeInLocalStorage } from "../../lib/common";
 import styles from "./SignIn.scss";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 function SignIn({ setUser }) {
   const navigate = useNavigate();
@@ -100,6 +101,7 @@ function SignIn({ setUser }) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
