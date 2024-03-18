@@ -1,4 +1,4 @@
-$primaryColor: #120de6;
+$primaryColor: #001b9e;
 
 form {
   display: flex;
@@ -53,5 +53,10 @@ form {
       background-color: darken($primaryColor, 10%);
       color: #fff;
     }
+  }
+}
+@media screen and (max-width: 376px) {
+  form {
+    margin: 20px;
   }
 }

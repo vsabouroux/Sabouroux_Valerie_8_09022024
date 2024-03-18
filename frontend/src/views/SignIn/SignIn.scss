@@ -1,8 +1,10 @@
-.SignIn {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
+  padding-bottom: 100px;
+  padding-top: 100px;
 }
 
 .Notification {
@@ -20,7 +22,7 @@
   width: 100%;
   padding: 20px 50px;
   background-color: #f9f3ee;
-  border: solid 12px #120de6;
+  border: solid 12px #001b9e;
 }
 .Form {
   display: flex;

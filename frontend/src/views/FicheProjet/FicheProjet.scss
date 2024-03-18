@@ -1,3 +1,4 @@
+$primaryColor: #001b9e;
 section {
   max-width: 1440px;
   margin: auto;
@@ -24,12 +25,12 @@ section {
     }
     .TitreProjet {
       font-size: 36px;
-      color: #120DE6;
+      color: $primaryColor;
       margin-bottom: 5px;
     }
     .Problematique {
       font-size: 18px;
-      color:#120DE6;
+      color: $primaryColor;
     }
   }
 

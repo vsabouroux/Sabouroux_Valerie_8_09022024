@@ -1,3 +1,4 @@
+$primaryColor: #001b9e;
 .CollapseItem {
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #120DE6;
+  background-color: $primaryColor;
   height: 54px;
   border-radius: 10px;
   cursor: pointer;
@@ -24,7 +25,7 @@
 .CollapseContent {
   padding: 10px 0px 20px 20px;
   background-color: #f6f6f6;
-  color: #120DE6;
+  color: $primaryColor;
 }
 
 ul {
@@ -86,7 +87,6 @@ ul {
     }
     .CollapseContent {
       font-size: 12px;
-      
     }
     .Arrow {
       display: flex;

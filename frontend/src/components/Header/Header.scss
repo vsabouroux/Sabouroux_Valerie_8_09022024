@@ -1,3 +1,4 @@
+$primaryColor: #001b9e;
 .vs-header {
   display: flex;
   justify-content: space-between;
@@ -27,11 +28,11 @@
     .nav-link.active {
       text-decoration: underline;
       line-height: 34.22px;
-      color: #120de6;
+      color: $primaryColor;
     }
     .nav-link {
       text-decoration: none;
-      color: #120de6;
+      color: $primaryColor;
     }
   }
 }
