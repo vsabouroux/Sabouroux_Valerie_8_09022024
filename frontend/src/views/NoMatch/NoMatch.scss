@@ -1,5 +1,6 @@
+$primaryColor: #001b9e;
 .element-no-found {
-  color: #120DE6;
+  color: $primaryColor;
   text-align: center;
 }
 .NoMatch {
@@ -18,7 +19,7 @@
 }
 .back-home {
   font-size: 18px;
-  color: #120DE6;
+  color: $primaryColor;
 }
 
 @media screen and (max-width: 376px) {
