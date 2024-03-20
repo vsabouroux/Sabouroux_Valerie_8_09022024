@@ -1,7 +1,7 @@
 [
 	{
 		"id": "c67ab8a7",
-		"title": "Booki",
+		"title": "Booki - Intégration page d'accueil avec HTML et CSS",
 		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
 		"pictures": [
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
@@ -16,8 +16,8 @@
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-12.jpg"
 		},
 		"rating": "5",
-		"problematique": "Créer la page d'accueil d'une agence de voyage - août 2023",
-		"competences": [
+		"context": "Créer la page d'accueil d'une agence de voyage - août 2023",
+		"skills": [
 			"Implémenter une interface responsive avec HTML et CSS",
 			"Versionner son projet avec Git et Github",
 			"Intégrer du contenu conformément à une maquette avec HTML et CSS",
@@ -31,7 +31,7 @@
 	},
 	{
 		"id": "b9123946",
-		"title": "Sophie BLUEL - Architecte d'intérieur",
+		"title": "Sophie BLUEL - Architecte d'intérieur - Frontend Javascript",
 		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
 		"pictures": [
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
@@ -47,8 +47,8 @@
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-1.jpg"
 		},
 		"rating": "4",
-		"problematique": "Créez une page web dynamique avec JavaScript",
-		"compétences": [
+		"context": "Créez une page web dynamique avec JavaScript",
+		"skills": [
 			"Gérer les événements utilisateurs avec JavaScript",
 			"Manipuler les éléments du DOM avec JavaScript",
 			"Récupérer les données utilisateurs dans le JavaScript via des formulaires"
@@ -63,7 +63,7 @@
 	},
 	{
 		"id": "46d188c5",
-		"title": "Studio de charme - Buttes Chaumont",
+		"title": "Mon Vieux grimoire - Développement du backend",
 		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-2-1.jpg",
 		"pictures": [
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-2-1.jpg",
@@ -77,8 +77,8 @@
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-2.jpg"
 		},
 		"rating": "3",
-		"problematique": "Ile de France - Paris 20e",
-		"compétences": [
+		"context": "Ile de France - Paris 20e",
+		"skills": [
 			"Wi-fi",
 			"Cuisine équipée",
 			"Télévision",
@@ -92,7 +92,7 @@
 	},
 	{
 		"id": "7af00cd6",
-		"title": "Nid douillet au coeur du 11ème",
+		"title": "Nina Carducci - Photographe - Débogage site",
 		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-1.jpg",
 		"pictures": [
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-1.jpg",
@@ -106,8 +106,8 @@
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-1.jpg"
 		},
 		"rating": "3",
-		"problematique": "Ile de France - Paris 11e",
-		"compétences": [
+		"context": "Ile de France - Paris 11e",
+		"skills": [
 			"Micro-Ondes",
 			"Wi-fi",
 			"Chambre Séparée",
@@ -123,7 +123,7 @@
 	},
 	{
 		"id": "0979876d",
-		"title": "Appartement de Standing - 10e",
+		"title": "Application Logistique avec REACT",
 		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-1.jpg",
 		"pictures": [
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-1.jpg",
@@ -139,8 +139,8 @@
 			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-2.jpg"
 		},
 		"rating": "5",
-		"problematique": "Ile de France - Paris 10e",
-		"compétences": [
+		"context": "Ile de France - Paris 10e",
+		"skills": [
 			"Frigo Américain",
 			"Sèche Cheveux",
 			"Wi-fi",

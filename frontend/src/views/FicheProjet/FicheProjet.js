@@ -11,13 +11,13 @@ import "./FicheProjet.scss";
 // useParams = hook utilisé pour extraire les paramètres de l'URL dans un composant fonctionnel. Ici on veut récupérer notamment les "pictures" du projet
 // et on se repèrera avec l'id du projet
 
-const FicheProjet = ({ projets }) => {
+const FicheProject = ({ projects }) => {
   // Récupérer les informations du projet, grace è l'ID de URL et le data.json
   const { id } = useParams();
 
-  const projet = projets.find((projet) => projet.id === id);
+  const project = projects.find((project) => project.id === id);
 
-  if (!projet) {
+  if (!project) {
     // Rediriger vers la page NoMatch si le projet n'est pas trouvé. En fait ce n'est pas faire un "lien" mais une redirection ! avec "Navigate"
     return (
       // "Link" embarque une navigation alors que "Navigate" redirige
@@ -26,7 +26,7 @@ const FicheProjet = ({ projets }) => {
   }
 
   //Si le preojet est trouvé alors on affiche tout
-  const { title, problematique, description, competences, tags } = projet;
+  const { title, context, description, skills, tags } = project;
 
   return (
     <div>
@@ -34,18 +34,17 @@ const FicheProjet = ({ projets }) => {
       <main>
         <section>
           <div className="Carrousel">
-            <Slideshow pictures={projet.pictures} />
+            <Slideshow pictures={project.pictures} />
           </div>
           <div className="Entete-HostGlobal">
             <div className="Entete">
               <div className="GlobalProjet">
                 <h1 className="TitreProjet">{title}</h1>
-                <div className="Problematique">{problematique}</div>
+                <div className="Problematique">{context}</div>
 
                 <Tag tags={tags} />
               </div>
             </div>
-
           </div>
           <div className="MenuAccordeon">
             <CollapseItem title="Description" content={description} />
@@ -53,8 +52,8 @@ const FicheProjet = ({ projets }) => {
               title="Compétences"
               content={
                 <ul>
-                  {competences.map((competence, index) => (
-                    <li key={index}>{competence}</li>
+                  {skills.map((skill, index) => (
+                    <li key={index}>{skill}</li>
                   ))}
                 </ul>
               }
@@ -68,4 +67,4 @@ const FicheProjet = ({ projets }) => {
   );
 };
 
-export default FicheProjet;
+export default FicheProject;

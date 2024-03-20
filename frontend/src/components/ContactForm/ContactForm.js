@@ -1,5 +1,5 @@
 import { useForm, Controller } from "react-hook-form";
-import "./Form.scss";
+import "./ContactForm.scss";
 
 const MyForm = () => {
   const { handleSubmit, control } = useForm();
