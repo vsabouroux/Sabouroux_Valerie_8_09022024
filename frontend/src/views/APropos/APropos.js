@@ -1,4 +1,4 @@
-import Header from "../../components/Header/Header";
+// import Header from "../../components/Header/Header";
 import Banner from "../../components/Banner/Banner";
 import lampeImage from "../../assets/lampe.webp";
 import Footer from "../../components/Footer/Footer";
@@ -8,7 +8,7 @@ import "./APropos.scss";
 function APropos() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <main>
         <Banner
           img={lampeImage}
@@ -16,7 +16,9 @@ function APropos() {
           alt="ampoule tenue à bout de bras"
         />
         <div className="APropos">
-          <p className="valeurs">Voici les valeurs qui guident mon action au quotidien</p>
+          <p className="valeurs">
+            Voici les valeurs qui guident mon action au quotidien
+          </p>
           <CollapseItem
             title="Innovation"
             content="Et cela passe par : l'écoute des évolutions, des transformations, des disruptions qui s'opèrent dans l'environnement, l'adaptation des ressources et des savoir-faire aux évolutions

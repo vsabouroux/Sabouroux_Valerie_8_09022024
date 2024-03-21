@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import styles from "./UpdateProjet.module.css";
-import ProjetForm from "../../components/Projets/ProjetForm/ProjetForm";
+import styles from "./UpdateProjet.scss";
+import ProjetForm from "../../components/ProjetForm/ProjetForm";
 import BackArrow from "../../components/BackArrow/BackArrow";
 import { getProjet } from "../../lib/common";
 import { APP_ROUTES } from "../../utils/constants";
@@ -20,7 +20,7 @@ function UpdateProjet() {
         navigate(APP_ROUTES.SIGN_IN);
       }
     }
-  }, [userLoading]);
+  }, [auth, connectedUser, navigate, userLoading]);
   useEffect(() => {
     async function getItem() {
       const data = await getProjet(params.id);
@@ -29,7 +29,7 @@ function UpdateProjet() {
       }
     }
     getItem();
-  }, []);
+  }, [params.id]);
 
   return (
     <div className="content-container">

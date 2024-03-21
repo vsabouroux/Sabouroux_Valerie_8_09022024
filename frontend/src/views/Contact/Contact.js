@@ -1,14 +1,14 @@
-import Header from "../../components/Header/Header";
+// import Header from "../../components/Header/Header";
 import Banner from "../../components/Banner/Banner";
 import enteteImage from "../../assets/entete.webp";
 import MyForm from "../../components/ContactForm/ContactForm";
 import Footer from "../../components/Footer/Footer";
-// import "./Contact.scss";
+import "./Contact.scss";
 
 function Contact() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <main>
         <Banner
           img={enteteImage}

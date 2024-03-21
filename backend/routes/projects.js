@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router(); // méthode Router d'express
-//"/api/projets" = route de base url de base donc on va le remplacer par /
+//"/api/projects" = route de base url de base donc on va le remplacer par /
 const auth = require("../middleware/auth");
 const multer = require("../middleware/multer-config");
-const projectssCtrl = require("../controllers/projects");
+const projectsCtrl = require("../controllers/projects.js");
 
 router.get("/:id", projectsCtrl.getOneProject);
 router.get("/", projectsCtrl.getAllProjects);

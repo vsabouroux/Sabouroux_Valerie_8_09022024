@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../components/Header/Header";
+// import Header from "../../components/Header/Header";
 import Banner from "../../components/Banner/Banner";
 import enteteImage from "../../assets/entete.webp";
 import Card from "../../components/Card/Card";
@@ -10,9 +10,12 @@ import "./Home.scss";
 function Home() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <main>
-        <Banner img={enteteImage} texte="Pour vous, des projets qui vous ressemblent" />
+        <Banner
+          img={enteteImage}
+          texte="Pour vous, des projets qui vous ressemblent"
+        />
         <section className="Projet">
           {/*Création boucle avec map pour afficher tous les logements présents dans le fichier Projets.json*/}
           {Projets.map(({ id, title, cover }) => (
@@ -21,6 +24,7 @@ function Home() {
               title={title}
               picture={cover}
               className="Cover"
+              s
               id={id}
               alt={`${Projets.title}`}
             />

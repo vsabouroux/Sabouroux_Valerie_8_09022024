@@ -54,7 +54,7 @@ function SignIn({ setUser }) {
   const errorClass = notification.error ? styles.Error : null;
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className={`${styles.SignIn} container`}>
         <div className={`${styles.Notification} ${errorClass}`}>
           {notification.message.length > 0 && <p>{notification.message}</p>}

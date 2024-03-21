@@ -23,15 +23,16 @@ section {
       flex-direction: column;
       justify-content: flex-start;
     }
-    .TitreProjet {
+    .TitreProject {
       font-size: 36px;
       color: $primaryColor;
       margin-bottom: 5px;
     }
-    .Problematique {
-      font-size: 18px;
-      color: $primaryColor;
-    }
+    // .Problematique {
+    //   font-size: 18px;
+    //   color: $primaryColor;
+    // }
+    // j'avais mis dans FicheProjet.js   {/* <div className="Problematique">{context}</div> */}
   }
 
   // .HostSemiGlobal {
