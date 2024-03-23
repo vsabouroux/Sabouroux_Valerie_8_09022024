@@ -39,17 +39,17 @@ function App() {
             element={<SignIn setUser={setUser} />}
           />
           <Route path={APP_ROUTES.HOME} element={<Home projets={Projets} />} />
-          <Route path={APP_ROUTES.PROJET} element={<FicheProjet />} />
+          {/* <Route path={APP_ROUTES.PROJET} element={<FicheProjet />} /> */}
+          <Route
+            path="FicheProjet/:id"
+            element={<FicheProjet projets={Projets} />}
+          />
           <Route path={APP_ROUTES.UPDATE_PROJET} element={<UpdateProjet />} />
           <Route path={APP_ROUTES.ADD_PROJET} element={<AddProjet />} />
           <Route path={APP_ROUTES.APROPOS} element={<APropos />} />
           <Route path={APP_ROUTES.CONTACT} element={<Contact />} />
-          <Route path={APP_ROUTES.NOMATCH} element={<NoMatch />} />
-          {/* <Route
-            path="FicheProjet/:id"
-            element={<FicheProjet projets={Projets} />}
-          /> */}
-          {/* <Route path="*" element={<NoMatch />} /> */}
+          {/* <Route path={APP_ROUTES.NOMATCH} element={<NoMatch />} /> */}
+          <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>
     </Router>

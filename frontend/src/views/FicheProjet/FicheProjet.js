@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import Header from "../../components/Header/Header";
+// import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Slideshow from "../../components/Slideshow/Slideshow";
 import CollapseItem from "../../components/Collaps/Collaps";
@@ -11,13 +11,13 @@ import "./FicheProjet.scss";
 // useParams = hook utilisé pour extraire les paramètres de l'URL dans un composant fonctionnel. Ici on veut récupérer notamment les "pictures" du projet
 // et on se repèrera avec l'id du projet
 
-const FicheProject = ({ projects }) => {
+const FicheProjet = ({ projets }) => {
   // Récupérer les informations du projet, grace è l'ID de URL et le data.json
   const { id } = useParams();
 
-  const project = projects.find((project) => project.id === id);
+  const projet = projets.find((projet) => projet.id === id);
 
-  if (!project) {
+  if (!projet) {
     // Rediriger vers la page NoMatch si le projet n'est pas trouvé. En fait ce n'est pas faire un "lien" mais une redirection ! avec "Navigate"
     return (
       // "Link" embarque une navigation alors que "Navigate" redirige
@@ -26,15 +26,15 @@ const FicheProject = ({ projects }) => {
   }
 
   //Si le preojet est trouvé alors on affiche tout
-  const { title, description, skills, tags } = project;
+  const { title, description, skills, tags } = projet;
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <main>
         <section>
           <div className="Carrousel">
-            <Slideshow pictures={project.pictures} />
+            <Slideshow pictures={projet.pictures} />
           </div>
           <div className="Entete-HostGlobal">
             <div className="Entete">
@@ -66,4 +66,4 @@ const FicheProject = ({ projects }) => {
   );
 };
 
-export default FicheProject;
+export default FicheProjet;

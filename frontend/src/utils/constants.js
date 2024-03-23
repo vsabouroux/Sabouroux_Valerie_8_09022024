@@ -7,10 +7,10 @@ export const API_ROUTES = {
 export const APP_ROUTES = {
   SIGN_IN: "/SignIn",
   HOME: "/",
-  NOMATCH: "/NoMatch",
+  // NOMATCH: "/NoMatch",
   APROPOS: "/Apropos",
   CONTACT: "/Contact",
   ADD_PROJET: "/Ajouter",
-  PROJET: "/Projet/:id",
+  // PROJET: "/Projet/:id",
   UPDATE_PROJET: "projet/modifier/:id",
 };

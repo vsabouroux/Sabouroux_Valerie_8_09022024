@@ -1,9 +1,12 @@
 import vslogo from "../../assets/vs-logo.webp";
 import "./Header.scss";
 import { NavLink } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons'
-// byPrefixAndName.fas['user']
+// import fontawesome from "@fortawesome/fontawesome-free";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+// library.add(faUser);
+
 function Header() {
   return (
     <header className="vs-header">
@@ -26,8 +29,8 @@ function Header() {
             </NavLink>
           </li>
           <li className="seconnecter">
-            <NavLink to="/SignIn" className="nav-link">
-              {/* <FontAwesomeIcon icon="fa-solid fa-user" style={{color: "#120dbe",}} /> */}
+            <NavLink to="/SignIn" className="nav-link-signin">
+              <FontAwesomeIcon icon={faUser} className="faUser" style={{color: "#120dbe",}} />
               Se connecter
             </NavLink>
           </li>

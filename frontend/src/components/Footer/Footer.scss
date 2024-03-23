@@ -11,11 +11,17 @@ footer {
     display: flex;
     flex-direction: column;
   }
-  .footerElements .liens {
+  .liens {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    gap: 30px;
+    font-size: 25px;
   }
-
+  .github-icon,
+  .linkedin-icon {
+    color: white;
+  }
   .realisation p {
     color: rgb(255, 255, 255);
     text-align: center;
@@ -39,5 +45,10 @@ footer {
   }
   footer .mentionsLegales p {
     font-size: 10px;
+  }
+  .github-icon,
+  .linkedin-icon {
+    font-size: 16px;
+    padding-top: 20px;
   }
 }

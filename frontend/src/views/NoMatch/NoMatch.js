@@ -1,4 +1,4 @@
-import Header from "../../components/Header/Header";
+// import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./NoMatch.scss";
 import { NavLink } from "react-router-dom";
@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom";
 function NoMatch() {
   return (
     <div>
-      <Header />
       <section className="element-no-found">
         <div className="NoMatch">404</div>
         <div className="page-inconnue">

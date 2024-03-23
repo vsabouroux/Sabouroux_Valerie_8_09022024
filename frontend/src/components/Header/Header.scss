@@ -34,11 +34,24 @@ $primaryColor: #001b9e;
       text-decoration: none;
       color: $primaryColor;
     }
+    .nav-link-signin.active {
+      text-decoration: underline;
+      line-height: 34.22px;
+      color: $primaryColor;
+    }
+    .nav-link-signin {
+      text-decoration: none;
+      color: $primaryColor;
+    }
+    .faUser {
+      visibility: hidden;
+    }
   }
 }
+
 @media screen and (max-width: 376px) {
   .vs-header {
-    padding: 20px 20px 27px 20px;
+    // padding: 20px 20px 27px 20px;
     justify-content: center;
     padding: 20px 20px 27px 20px;
     display: flex;
@@ -61,6 +74,21 @@ $primaryColor: #001b9e;
       }
       li {
         align-items: center; // Centre verticalement chaque lien
+      }
+      .nav-link-signin {
+        display: flex;
+        align-items: center;
+      }
+      .nav-link-signin.active {
+        text-decoration: underline;
+        line-height: 34.22px;
+        color: $primaryColor;
+      }
+      .nav-link-signin {
+        visibility: hidden;
+      }
+      .faUser {
+        visibility: visible;
       }
     }
   }
