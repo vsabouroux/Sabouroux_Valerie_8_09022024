@@ -2,7 +2,18 @@ import { useForm, Controller } from "react-hook-form";
 import "./ContactForm.scss";
 
 const MyForm = () => {
-  const { handleSubmit, control } = useForm();
+  //En définissant defaultValues dans useForm, on s'assure que chaque champ de formulaire 
+  //contrôlé a une valeur initiale définie, et on évite ainsi l'erreur de composant non contrôlé à contrôlé.
+  const { handleSubmit, control } = useForm(
+    {
+      defaultValues: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        request: "",
+      },
+    }
+  );
 
   const onSubmit = (data) => {
     // Gérer la soumission des données ici avec requête HTTP et axios ds tt cça ?

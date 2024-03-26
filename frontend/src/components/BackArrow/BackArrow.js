@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { APP_ROUTES } from "../../utils/constants";
+
 function BackArrow() {
   return (
     <Link to={APP_ROUTES.HOME} className="backArrow">
       {" "}
-      <FontAwesomeIcon icon={faArrowLeft("arrow-left")} />
+      <FontAwesomeIcon icon={faArrowLeft} />
       {" Retour"}
     </Link>
   );

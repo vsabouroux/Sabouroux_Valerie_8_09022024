@@ -26,15 +26,8 @@ function SignIn({ setUser }) {
   const signIn = async () => {
     try {
       setIsLoading(true);
-      const response = await axios({
-        method: "post",
-        url: API_ROUTES.SIGN_IN,
-        data: {
-          email,
-          password,
-        },
-      });
-      if (!response?.data?.token) {
+      const response = await axios.post(API_ROUTES.SIGN_IN, { email, password });
+      if (!response.data.token) {
         setNotification({ error: true, message: "Une erreur est survenue" });
         console.log("Something went wrong during signing in: ", response);
       } else {
@@ -50,7 +43,46 @@ function SignIn({ setUser }) {
       setIsLoading(false);
     }
   };
-
+  // const signIn = async () => {
+  //   try {
+  //     setIsLoading(true);
+  //     const response = await axios({
+  //       method: "post",
+  //       url: API_ROUTES.SIGN_IN,
+  //       data: {
+  //         email,
+  //         password,
+  //       },
+  //     });
+  //     if (!response?.data?.token) {
+  //       setNotification({ error: true, message: "Une erreur est survenue" });
+  //       console.log("Something went wrong during signing in: ", response);
+  //     } else {
+  //       storeInLocalStorage(response.data.token, response.data.userId);
+  //       setUser(response.data);
+  //       navigate("/");
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     setNotification({ error: true, message: err.message });
+  //     console.log("Some error occured during signing in: ", err);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+  const signUpOwner = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axios.post(API_ROUTES.SIGN_UP, { email, password });
+      setNotification({ error: false, message: response.data.message });
+    } catch (err) {
+      console.log(err);
+      setNotification({ error: true, message: err.message });
+      console.log("Some error occured during signing up: ", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
   const errorClass = notification.error ? styles.Error : null;
   return (
     <div>
@@ -97,6 +129,16 @@ function SignIn({ setUser }) {
             >
               {isLoading ? <div className="" /> : null}
               <span>Se connecter</span>
+            </button>
+          </div>
+          <div className={styles.Submit}>
+            <button
+              type="submit"
+              className="flex justify-center p-2 rounded-md w-1/2 self-center bg-gray-800  text-white hover:bg-gray-800"
+              onClick={signUpOwner}
+            >
+              {isLoading ? <div className="" /> : null}
+              <span>S'inscrire en tant que propriétaire</span>
             </button>
           </div>
         </div>

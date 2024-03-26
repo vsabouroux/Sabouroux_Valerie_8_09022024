@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
-// Créer l'utilisateur propriétaire (vous pouvez le faire dans un script séparé)
+// Création de l'utilisateur propriétaire 
 exports.createOwner = async (req, res, next) => {
   try {
     const existingOwner = await User.findOne({ email: req.body.email });
@@ -22,25 +22,28 @@ exports.createOwner = async (req, res, next) => {
   }
 };
 
-// Connexion de l'utilisateur
+// Connexion de l'utilisateur (propriétaire ou non de l'application)
 exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    const owner = await User.findOne({ email });
-    if (!owner) {
+    const user = await User.findOne({ email });
+    if (!user) {
       return res.status(401).json({ message: "L'adresse e-mail ou le mot de passe est incorrect." });
     }
-    const isPasswordValid = await bcrypt.compare(password, owner.password);
+    //On compare le mot de passe fourni avec le mot de passe haché dans la base de données
+    const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
       return res.status(401).json({ message: "L'adresse e-mail ou le mot de passe est incorrect." });
     }
-    // Générez un jeton d'authentification valide
-    const token = jwt.sign({ userId: owner._id, email: owner.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.status(200).json({ token });
+    // On génère un jeton d'authentification valide
+    const token = jwt.sign({ userId: user._id}, "RANDOM_TOKEN_SECRET", { expiresIn: '24h' });
+ 
+    res.status(200).json({userId: user._id, token});
   } catch (error) {
     next(error);
   }
-};
+}
+   //process.env.JWT_SECRET
 //En définitive ici dans cette app seul le propriétaire va pouvoir s'inscrire et ce une seule fois.
 // exports.signup = (req, res, next) => {
 //   bcrypt

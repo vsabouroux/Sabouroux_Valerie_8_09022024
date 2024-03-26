@@ -29,7 +29,7 @@ function ProjetForm({ projet, validate }) {
   const [filePreview] = useFilePreview(file);
 
   const onSubmit = async (data) => {
-    // When we create a new projet
+    // Qd on crée un nouveau projet
     if (!projet) {
       if (!data.file[0]) {
         // eslint-disable-next-line no-alert

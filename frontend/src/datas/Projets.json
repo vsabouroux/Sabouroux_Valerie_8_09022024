@@ -11,11 +11,6 @@
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg"
 		],
 		"description": "A partir d'une base de code, d'une maquette figma et d'une note de synthèse, il a été demandé par le client d'intégrer la page d'accueil du site.",
-		"host": {
-			"name": "Nathalie Jean",
-			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-12.jpg"
-		},
-		"rating": "5",
 		"context": "Créer la page d'accueil d'une agence de voyage - août 2023",
 		"skills": [
 			"Implémenter une interface responsive avec HTML et CSS",
@@ -42,12 +37,7 @@
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-5.jpg",
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-6.jpg"
 		],
-		"description": "A partir d'une maquette Figma, d'un découpage de tâches avec Kanban, intégration de la page de présentation des travaux de l'architecte (à partir du HTML fourni), de la page de connexion de l'administrateur du site (le client) (code à créer de zéro) et de la modale permettant d'uploader de nouveaux médias (code à créer from scratch).",
-		"host": {
-			"name": "Della Case",
-			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-1.jpg"
-		},
-		"rating": "4",
+		"description": "A partir d'une maquette Figma, d'un découpage de tâches avec Kanban, intégration de la page de présentation des travaux de l'architecte (à partir du HTML fourni), de la page de connexion de l'administrateur du site (le client) (code à créer de zéro) et de la modale permettant d'uploader de nouveaux médias.",
 		"context": "Créez une page web dynamique avec JavaScript",
 		"skills": [
 			"Gérer les événements utilisateurs avec JavaScript",
@@ -58,39 +48,11 @@
 			"Javascript",
 			"HTML",
 			"Css",
-			"Outil Postman",
+			"Postman",
 			"GitHub"
 		]
 	},
-	{
-		"id": "46d188c5",
-		"title": "Mon Vieux grimoire - Développement du backend",
-		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-2-1.jpg",
-		"pictures": [
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-2-1.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-2-2.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-2-3.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-2-4.jpg"
-		],
-		"description": "À seulement deux pas des Buttes Chaumont, venez découvrir Paris dans ce studio tout équipé. Entièrement équipé pour votre confort et élégamment décoré, il vous permettra de vivre comme un Parisien le temps de votre séjour.",
-		"host": {
-			"name": "Franck Maher",
-			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-2.jpg"
-		},
-		"rating": "3",
-		"context": "Ile de France - Paris 20e",
-		"skills": [
-			"Wi-fi",
-			"Cuisine équipée",
-			"Télévision",
-			"Sèche Cheveux"
-		],
-		"tags": [
-			"Buttes Chaumont",
-			"Laumière",
-			"Studio"
-		]
-	},
+	
 	{
 		"id": "7af00cd6",
 		"title": "Nina Carducci - Photographe - Débogage site",
@@ -102,11 +64,6 @@
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-4.jpg"
 		],
 		"description": "Venez découvrir Paris en séjournant dans ce nid douillet au coeur du 11ème. La vue sur le parc résidentiel saura vous reposer de vos longues journées de tourisme dans la capitale française. Et pour les plus fêtards d'entre vous, la rue Jean Pierre Timbaud vous permettra de découvrir la night-life parisienne à seulement 5 minutes de l'appartement.",
-		"host": {
-			"name": "Della Case",
-			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-1.jpg"
-		},
-		"rating": "3",
 		"context": "Ile de France - Paris 11e",
 		"skills": [
 			"Micro-Ondes",
@@ -135,11 +92,6 @@
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-6.jpg"
 		],
 		"description": "Ce loft entièrement rénové, et équipé de meubles de luxe saura vous séduire. Idéalement situé dans le 10ème arrondissement, vous déplacer dans Paris sera un véritable jeu d'enfant.",
-		"host": {
-			"name": "Franck Maher",
-			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-2.jpg"
-		},
-		"rating": "5",
 		"context": "Ile de France - Paris 10e",
 		"skills": [
 			"Frigo Américain",

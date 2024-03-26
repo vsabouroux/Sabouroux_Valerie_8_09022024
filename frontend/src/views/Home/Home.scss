@@ -8,11 +8,27 @@ section.Projet {
   padding: 36px;
   margin: 100px;
 }
+.button_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add_projet_button {
+  font-size: 20px;
+  height: 35px;
+  border-radius: 10px;
+  height: 40px;
+  background-color: #001b9e;
 
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
 @media screen and (max-width: 376px) {
   section.Projet {
     grid-template-columns: 1fr;
-    justify-content: center; 
+    justify-content: center;
     background-color: transparent;
     padding: 0 20px;
     margin: 0;
