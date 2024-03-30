@@ -4,12 +4,13 @@ const bodyParser = require("body-parser");
 //(par exemple, les données d'un formulaire POST) à partir du corps de la requête HTTP.
 //Sans "body-parser", Express ne serait pas capable de lire ces données par défaut
 const projectsRoutes = require("./routes/projects");
-const auth = require("./middleware/auth");
 const userRoutes = require("./routes/user");
 const path = require("path");
 
-const app = express();
 const mongoose = require("mongoose");
+
+const app = express();
+
 mongoose
   .connect(
     "mongodb+srv://sabourouxvalerie:Nn3NliuxG1NhGeTW@cluster0.ivhsztv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
@@ -22,26 +23,23 @@ mongoose
   .catch(() => console.log("Connexion à MongoDB échouée !"));
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  res.setHeader(`Access-Control-Allow-Origin`, `*`);
   res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
+    `Access-Control-Allow-Headers`,
+    `Origin, X-Requested-With, Content, Accept, Content-Type, Authorization`
   );
   res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+    `Access-Control-Allow-Methods`,
+    `GET, POST, PUT, DELETE, PATCH, OPTIONS`
   );
   next();
 });
 
 app.use(bodyParser.json());
 
-app.use("/api/projects",auth, projectsRoutes);
+app.use("/api/projects", projectsRoutes);
 app.use("/api/auth", userRoutes);
 app.use("/images", express.static(path.join(__dirname, "images")));
 
-// app.use((req, res) => {
-//   res.json(userId, token);
-// });
-// res.json({ message: "Votre requête a bien été reçue test portfolio !" });
 module.exports = app;

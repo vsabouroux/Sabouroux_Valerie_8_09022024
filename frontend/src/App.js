@@ -27,19 +27,12 @@ function App() {
       <div>
         <Header user={user} setUser={setUser} />
         <Routes>
-          {/* <Route path="/" element={<Home projets={Projets} />} /> */}
-          {/* <Route
-            path="/SignIn"
-            element={<SignIn user={user} setUser={setUser} />}
-          />
-          <Route path="/APropos" element={<APropos />} />
-          <Route path="/Contact" element={<Contact />} /> */}
+  
           <Route
             path={APP_ROUTES.SIGN_IN}
             element={<SignIn setUser={setUser} />}
           />
           <Route path={APP_ROUTES.HOME} element={<Home projets={Projets} />} />
-          {/* <Route path={APP_ROUTES.PROJET} element={<FicheProjet />} /> */}
           <Route
             path="FicheProjet/:id"
             element={<FicheProjet projets={Projets} />}
@@ -48,7 +41,6 @@ function App() {
           <Route path={APP_ROUTES.ADD_PROJET} element={<AddProjet />} />
           <Route path={APP_ROUTES.APROPOS} element={<APropos />} />
           <Route path={APP_ROUTES.CONTACT} element={<Contact />} />
-          {/* <Route path={APP_ROUTES.NOMATCH} element={<NoMatch />} /> */}
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>
