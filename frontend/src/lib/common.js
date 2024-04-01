@@ -87,7 +87,7 @@ export async function AddProjet(data) {
     tags: data.tags,
   };
   const bodyFormData = new FormData();
-  bodyFormData.append("book", JSON.stringify(projet));
+  bodyFormData.append("projet", JSON.stringify(projet));
   bodyFormData.append("image", data.file[0]);
 
   try {
