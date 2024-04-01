@@ -1,4 +1,4 @@
-import vslogo from "../../assets/vs-logo.webp";
+import vslogo2 from "../../assets/vs-logo2.png";
 import "./Header.scss";
 import { NavLink, useNavigate } from "react-router-dom";
 import * as PropTypes from 'prop-types';
@@ -8,13 +8,13 @@ import styles from './Header.scss';
 // // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { faUser } from "@fortawesome/free-solid-svg-icons";
 // library.add(faUser);
-import QRCode from "react-qr-code";
+// import QRCode from "react-qr-code";
 
 function Header({ user, setUser }) {
   // URL du CV PDF (pour le test local)
-  const cvUrl = "/Sabouroux_Valerie_CV_032024.pdf";
+  // const cvUrl = "/Sabouroux_Valerie_CV_032024.pdf";
   // Génére le lien à partir de l'URL du CV
-  const qrCodeData = window.location.origin + cvUrl;
+  // const qrCodeData = window.location.origin + cvUrl;
   // Configuration des paramètres d'image du QR code (logo)
   const navigate = useNavigate();
   const disconnect = () => {
@@ -27,8 +27,8 @@ function Header({ user, setUser }) {
     <header className="vs-header">
       <div className="qr-code-container">
           {/* Ajout du QR code  avec le lien vers le CV */}
-          <QRCode value={qrCodeData} logo={vslogo} alt="logo de VS" className="qr-code" />
-        {/* <img src={vslogo} alt="logo vs portolio" className="qr-code-logo" /> */}
+          {/* <QRCode value={qrCodeData} logo={vslogo} alt="logo de VS" className="qr-code" /> */}
+        <img src={vslogo2} alt="qr-code CV VS" className="qr-code-logo" />
       </div>
       <nav id="sidebar">
         <ul>

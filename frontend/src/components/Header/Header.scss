@@ -5,13 +5,13 @@ $primaryColor: #001b9e;
   align-items: center;
   padding: 45px 100px 45px 100px;
 
-  // .vs-logo {
+  // .vs-logo2 {
   //   display: flex;
   //   align-items: flex-start;
   //   width: 210px;
   //   height: auto;
   // }
-  .qr-code-container .qr-code {
+  .qr-code-container{
     position: relative; 
     width: 110px;
     height: 110px; 
@@ -21,8 +21,8 @@ $primaryColor: #001b9e;
     position: absolute; // Positionnez le logo de manière absolue par rapport au conteneur
     // top: 50%;
     // left: 50%;
-    transform: translate(-105%, +4%);
-    width: 100px; // Taille du logo (ajustez selon vos besoins)
+    transform: translate(-2%, -2%);
+    width: 115px; // Taille du logo 
     height: auto;
     z-index: 1;
     opacity: 0.8;
@@ -49,18 +49,18 @@ $primaryColor: #001b9e;
       text-decoration: none;
       color: $primaryColor;
     }
-    .nav-link-signin.active {
-      text-decoration: underline;
-      line-height: 34.22px;
-      color: $primaryColor;
-    }
-    .nav-link-signin {
-      text-decoration: none;
-      color: $primaryColor;
-    }
-    .faUser {
-      visibility: hidden;
-    }
+    // .nav-link-signin.active {
+    //   text-decoration: underline;
+    //   line-height: 34.22px;
+    //   color: $primaryColor;
+    // }
+    // .nav-link-signin {
+    //   text-decoration: none;
+    //   color: $primaryColor;
+    // }
+    // .faUser {
+    //   visibility: hidden;
+    // }
   }
 }
 
@@ -74,7 +74,7 @@ $primaryColor: #001b9e;
     justify-self: center;
     gap: 30px;
 
-    .vs-logo {
+    .vs-logo2 {
       width: 70px;
     }
     nav {
