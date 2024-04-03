@@ -1,5 +1,6 @@
-import axios from "axios";
-import { API_ROUTES } from "../utils/constants";
+import axios from 'axios';
+import { API_ROUTES } from '../utils/constants';
+
 
 function formatProjets(projetArray) {
   return projetArray.map((projet) => {
@@ -11,8 +12,8 @@ function formatProjets(projetArray) {
 }
 
 export function storeInLocalStorage(token, userId) {
-  localStorage.setItem("token", token);
-  localStorage.setItem("userId", userId);
+  localStorage.setItem('token', token);
+  localStorage.setItem('userId', userId);
 }
 
 export function getFromLocalStorage(item) {
@@ -22,21 +23,22 @@ export function getFromLocalStorage(item) {
 export async function getAuthenticatedUser() {
   const defaultReturnObject = { authenticated: false, user: null };
   try {
-    const token = getFromLocalStorage("token");
-    const userId = getFromLocalStorage("userId");
+    const token = getFromLocalStorage('token');
+    const userId = getFromLocalStorage('userId');
     if (!token) {
       return defaultReturnObject;
     }
     return { authenticated: true, user: { userId, token } };
   } catch (err) {
-    console.error("getAuthenticatedUser, Something Went Wrong", err);
+    console.error('getAuthenticatedUser, Something Went Wrong', err);
     return defaultReturnObject;
   }
 }
+
 export async function getProjets() {
   try {
     const response = await axios({
-      method: "GET",
+      method: 'GET',
       url: `${API_ROUTES.PROJETS}`,
     });
     // eslint-disable-next-line array-callback-return
@@ -51,7 +53,7 @@ export async function getProjets() {
 export async function getProjet(id) {
   try {
     const response = await axios({
-      method: "GET",
+      method: 'GET',
       url: `${API_ROUTES.PROJETS}/${id}`,
     });
     const projet = response.data;
@@ -63,11 +65,13 @@ export async function getProjet(id) {
     return null;
   }
 }
+
+
 export async function deleteProjet(id) {
   try {
     await axios.delete(`${API_ROUTES.PROJETS}/${id}`, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     });
     return true;
@@ -77,26 +81,27 @@ export async function deleteProjet(id) {
   }
 }
 
-export async function AddProjet(data) {
-  const userId = localStorage.getItem("userId");
+export async function addProjet(data) {
+  const userId = localStorage.getItem('userId');
   const projet = {
     userId,
     title: data.title,
-    description: data.descripton,
+    description: data.description,
     skills: data.skills,
     tags: data.tags,
   };
   const bodyFormData = new FormData();
-  bodyFormData.append("projet", JSON.stringify(projet));
-  bodyFormData.append("image", data.file[0]);
+  bodyFormData.append('projet', JSON.stringify(projet));
+  bodyFormData.append('image', data.file[0]);
 
   try {
     return await axios({
-      method: "post",
+      method: 'post',
       url: `${API_ROUTES.PROJETS}`,
       data: bodyFormData,
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        // 'Content-Type': 'multipart/form-data', 
       },
     });
   } catch (err) {
@@ -106,32 +111,32 @@ export async function AddProjet(data) {
 }
 
 export async function updateProjet(data, id) {
-  const userId = localStorage.getItem("userId");
+  const userId = localStorage.getItem('userId');
 
   let newData;
   const projet = {
     userId,
     title: data.title,
-    description: data.descripton,
-    skills: data.skills,
+    description: data.description,
+    skills: data.skils,
     tags: data.tags,
   };
   console.log(data.file[0]);
   if (data.file[0]) {
     newData = new FormData();
-    newData.append("projet", JSON.stringify(projet));
-    newData.append("image", data.file[0]);
+    newData.append('projet', JSON.stringify(projet));
+    newData.append('image', data.file[0]);
   } else {
     newData = { ...projet };
   }
 
   try {
     const newProjet = await axios({
-      method: "put",
+      method: 'put',
       url: `${API_ROUTES.PROJETS}/${id}`,
       data: newData,
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     });
     return newProjet;

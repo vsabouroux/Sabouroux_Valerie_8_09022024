@@ -13,6 +13,7 @@ import UpdateProjet from "./views/UpdateProjet/UpdateProjet";
 import { useUser } from "./lib/customHooks";
 
 import Projets from "./datas/Projets";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -44,6 +45,7 @@ function App() {
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>
+      <Footer/>
     </Router>
   );
 }

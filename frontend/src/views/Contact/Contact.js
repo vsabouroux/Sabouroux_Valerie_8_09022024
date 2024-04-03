@@ -2,7 +2,7 @@
 import Banner from "../../components/Banner/Banner";
 import enteteImage from "../../assets/entete.webp";
 import MyForm from "../../components/ContactForm/ContactForm";
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
 import "./Contact.scss";
 
 function Contact() {
@@ -18,7 +18,7 @@ function Contact() {
           <MyForm />
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

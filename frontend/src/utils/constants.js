@@ -5,7 +5,6 @@ export const API_ROUTES = {
   PROJETS: `${API_URL}/api/projects`,
 };
 
-// SIGN_IN: `${API_URL}/api/auth/login`, auth à supprimer car dans cette app pas besoin de vérifier si l'ui est le bon car un seul qui a été sécurisé lors de son inscription
 export const APP_ROUTES = {
   SIGN_UP: "/Inscription",
   SIGN_IN: "/Connexion",
@@ -14,6 +13,6 @@ export const APP_ROUTES = {
   APROPOS: "/Apropos",
   CONTACT: "/Contact",
   ADD_PROJET: "/Ajouter",
-  // PROJET: "/Projet/:id",
+  PROJET: "/Projet/:id",
   UPDATE_PROJET: "projet/modifier/:id",
 };

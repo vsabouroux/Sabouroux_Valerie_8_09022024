@@ -6,6 +6,7 @@ import { API_ROUTES, APP_ROUTES } from "../../utils/constants";
 import { useUser } from "../../lib/customHooks";
 import { storeInLocalStorage } from "../../lib/common";
 import styles from "./SignIn.scss";
+// import Footer from "../../components/Footer/Footer";
 // import Header from "../../components/Header/Header";
 
 //La fonction signIn vérifie d'abord si l'utilisateur existe déjà. 
@@ -110,7 +111,7 @@ function SignIn({ setUser }) {
             bg-gray-800  text-white hover:bg-gray-800"
             onClick={signIn}
           >
-            {isLoading ? <div className="" /> : null}
+            {isLoading ? <div className="buttons" /> : null}
             <span>
               Se connecter
             </span>
@@ -135,6 +136,7 @@ function SignIn({ setUser }) {
         </div>
 
       </div>
+      {/* <Footer /> */}
     </div>
   );
 }

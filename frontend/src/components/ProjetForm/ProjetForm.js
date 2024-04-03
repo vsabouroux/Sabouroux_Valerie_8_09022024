@@ -1,79 +1,78 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect, useMemo } from "react";
-import { useForm } from "react-hook-form";
-import * as PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
-import { useFilePreview } from "../../lib/customHooks";
-import addFileIMG from "../../assets/projet_add.jpg";
-import styles from "./ProjetForm.scss";
-import { updateProjet, AddProjet } from "../../lib/common";
+import React, { useEffect, useMemo } from 'react';
+import { useForm } from 'react-hook-form';
+import * as PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
+// import { generateStarsInputs } from '../../../lib/functions';
+import { useFilePreview } from '../../lib/customHooks';
+import addFileIMG from '../../assets/add_file.png';
+import styles from './ProjetForm.scss';
+import { updateProjet, addProjet } from '../../lib/common';
 
 function ProjetForm({ projet, validate }) {
-  const navigate = useNavigate();
-  const { register, watch, handleSubmit, reset } = useForm({
-    defaultValues: useMemo(
-      () => ({
-        title: projet?.title,
-        description: projet?.description,
-        skills: projet?.skills,
-        tags: projet?.tags,
-      }),
-      [projet]
-    ),
-  });
 
+  const navigate = useNavigate();
+  const {
+    register, watch, handleSubmit, reset,
+  } = useForm({
+    defaultValues: useMemo(() => ({
+      title: projet?.title,
+      description: projet?.description,
+      skills: projet?.skills,
+      tags: projet?.tags,
+    }), [projet]),
+  });
   useEffect(() => {
     reset(projet);
-  }, [projet, reset]);
-  const file = watch(["file"]);
+     // eslint-disable-next-line 
+  },[projet]);
+  const file = watch(['file']);
   const [filePreview] = useFilePreview(file);
-
+ 
   const onSubmit = async (data) => {
-    // Qd on crée un nouveau projet
+    //qd on crée un nouveau projet
     if (!projet) {
       if (!data.file[0]) {
         // eslint-disable-next-line no-alert
-        alert("Vous devez ajouter une image");
+        alert('Vous devez ajouter une image');
       }
-
-      const newProjet = await AddProjet(data);
+      const newProjet = await addProjet(data);
       if (!newProjet.error) {
         validate(true);
       } else {
-        // eslint-disable-next-line no-alert
         alert(newProjet.message);
       }
-    } else {
+    } 
+    else {
       const updatedProjet = await updateProjet(data, data.id);
       if (!updatedProjet.error) {
-        navigate("/");
+        navigate('/');
       } else {
         // eslint-disable-next-line no-alert
         alert(updatedProjet.message);
       }
     }
   };
-
+  // const readOnlyStars = !!book;
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
-      <input type="hidden" id="id" {...register("id")} />
+      <input type="hidden" id="id" {...register('id')} />
       <label htmlFor="title">
         <p>Titre du projet</p>
-        <input type="text" id="title" {...register("title")} />
+        <input type="text" id="title" {...register('title')} />
       </label>
       <label htmlFor="description">
         <p>Description</p>
-        <input type="text" id="description" {...register("description")} />
+        <input type="text" id="description" {...register('description')} />
       </label>
       <label htmlFor="skills">
         <p>Compétences</p>
-        <input type="text" id="competences" {...register("competences")} />
+        <input type="text" id="skills" {...register('skills')} />
       </label>
       <label htmlFor="tags">
         <p>Langages / outils</p>
-        <input type="text" id="tags" {...register("tags")} />
+        <input type="text" id="tags" {...register('tags')} />
       </label>
-
       <label htmlFor="file">
         <p>Visuel</p>
         <div className={styles.AddImage}>
@@ -88,8 +87,9 @@ function ProjetForm({ projet, validate }) {
               <p>Ajouter une image</p>
             </>
           )}
+
         </div>
-        <input {...register("file")} type="file" id="file" />
+        <input {...register('file')} type="file" id="file" />
       </label>
       <button type="submit">Publier</button>
     </form>
@@ -105,6 +105,7 @@ ProjetForm.propTypes = {
     description: PropTypes.string,
     skills: PropTypes.string,
     imageUrl: PropTypes.string,
+    // pictures: PropTypes.string,
     tags: PropTypes.string,
   }),
   validate: PropTypes.func,

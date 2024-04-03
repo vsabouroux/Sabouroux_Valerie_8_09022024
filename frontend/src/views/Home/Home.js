@@ -5,7 +5,7 @@ import { APP_ROUTES } from "../../utils/constants";
 import Banner from "../../components/Banner/Banner";
 import enteteImage from "../../assets/entete.webp";
 import Card from "../../components/Card/Card";
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
 import Projets from "../../datas/Projets.json";
 import "./Home.scss";
 
@@ -31,14 +31,12 @@ function Home() {
               title={title}
               picture={cover}
               className="Cover"
-              s
               id={id}
               alt={`${Projets.title}`}
             />
           ))}
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

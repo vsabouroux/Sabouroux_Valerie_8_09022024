@@ -2,7 +2,7 @@
 	{
 		"id": "c67ab8a7",
 		"title": "Booki - Intégration page d'accueil avec HTML et CSS",
-		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
+		"cover": "../assets/P2_Accueil.webp",
 		"pictures": [
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg",
@@ -27,7 +27,7 @@
 	},
 	{
 		"id": "b9123946",
-		"title": "Sophie BLUEL - Architecte d'intérieur - Frontend Javascript",
+		"title": "Sophie BLUEL - Architecte d'intérieur - Frontend Javascript -",
 		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
 		"pictures": [
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
@@ -55,7 +55,7 @@
 	
 	{
 		"id": "7af00cd6",
-		"title": "Nina Carducci - Photographe - Débogage site",
+		"title": "Nina Carducci - Photographe -  Débogage site",
 		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-1.jpg",
 		"pictures": [
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-1.jpg",
@@ -91,18 +91,17 @@
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-5.jpg",
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-6.jpg"
 		],
-		"description": "Ce loft entièrement rénové, et équipé de meubles de luxe saura vous séduire. Idéalement situé dans le 10ème arrondissement, vous déplacer dans Paris sera un véritable jeu d'enfant.",
+		"description": "Améliorer la sécurisation du fret par un renforcement de la traçabilité des chargements et déchargements chez les clients.",
 		"context": "Ile de France - Paris 10e",
 		"skills": [
-			"Frigo Américain",
-			"Sèche Cheveux",
-			"Wi-fi",
-			"Chambre Séparée",
-			"Parking"
+			"Rédiger les spécifications techniques et fonctionnelles de l'application",
+			"Développer l'interface avec REACT",
+			"Mettre en place une API avec Express et une base de données avec MongoDB"
 		],
 		"tags": [
-			"Goncourt",
-			"Proche commerces"
+			"React",
+			"MongoDB",
+			"Scss"
 		]
 	}
 ]

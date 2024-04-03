@@ -1,5 +1,5 @@
 // import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
 import "./NoMatch.scss";
 import { NavLink } from "react-router-dom";
 
@@ -15,7 +15,7 @@ function NoMatch() {
           Retourner sur la page d'accueil
         </NavLink>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

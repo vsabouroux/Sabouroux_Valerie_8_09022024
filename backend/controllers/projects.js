@@ -1,6 +1,7 @@
-const Project = require("../models/Project");
+const Book = require("../models/Project");
 const fs = require("fs");
 const path = require("path");
+const Project = require("../models/Project");
 
 exports.createProject = (req, res, next) => {
   const projectObjet = JSON.parse(req.body.project);
@@ -70,10 +71,9 @@ exports.modifyProject = (req, res, next) => {
       if (!project) {
         return res.status(404).json({ message: "Projet non trouvé !" });
       }
-      // if (book.userId !== req.auth.userId) {
-      //   res.status(401).json({ message: "Accès non authorisé !" });
-      // } 
-      else {
+      if (project.userId !== req.auth.userId) {
+        res.status(401).json({ message: "Accès non authorisé !" });
+      } else {
         if (req.file) {
           // Supprime l'image existante
           const imagePath = path.join(
@@ -106,16 +106,15 @@ exports.modifyProject = (req, res, next) => {
     });
 };
 
-exports.deleteProject = (req, res, next) => {
+exports.deleteProject= (req, res, next) => {
   Project.findOne({ _id: req.params.id })
     .then((project) => {
       if (!project) {
         return res.status(404).json({ message: "Projet non trouvé !" });
       }
-      // if (book.userId !== req.auth.userId) {
-      //   return res.status(401).json({ message: "Accès non autorisé !" });
-      // } 
-      else {
+      if (project.userId !== req.auth.userId) {
+        return res.status(401).json({ message: "Accès non autorisé !" });
+      } else {
         const filename = project.imageUrl.split("images/")[1];
         fs.unlink(`images/${filename}`, () => {
           Project.deleteOne({ _id: req.params.id })

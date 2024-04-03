@@ -1,7 +1,7 @@
 // import Header from "../../components/Header/Header";
 import Banner from "../../components/Banner/Banner";
 import lampeImage from "../../assets/lampe.webp";
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
 import CollapseItem from "../../components/Collaps/Collaps";
 import "./APropos.scss";
 
@@ -37,7 +37,7 @@ function APropos() {
            <p className="CV">Mon CV est accessible via le QRcode</p>
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

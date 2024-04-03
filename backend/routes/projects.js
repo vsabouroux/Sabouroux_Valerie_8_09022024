@@ -5,8 +5,9 @@ const auth = require("../middleware/auth");
 const multer = require("../middleware/multer-config");
 const projectsCtrl = require("../controllers/projects");
 
-router.get("/:id", projectsCtrl.getOneProject);
 router.get("/", projectsCtrl.getAllProjects);
+router.get("/:id", projectsCtrl.getOneProject);
+
 router.post("/", auth, multer, projectsCtrl.createProject);
 router.put("/:id", auth, multer, projectsCtrl.modifyProject);
 router.delete("/:id", auth, projectsCtrl.deleteProject);

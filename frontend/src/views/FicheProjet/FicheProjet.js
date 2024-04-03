@@ -1,10 +1,9 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 // import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
 import Slideshow from "../../components/Slideshow/Slideshow";
 import CollapseItem from "../../components/Collaps/Collaps";
 import Tag from "../../components/Tag/Tag";
-import { useParams } from "react-router-dom";
 
 import "./FicheProjet.scss";
 
@@ -30,11 +29,11 @@ const FicheProjet = ({ projets }) => {
 
   return (
     <div>
-      {/* <Header /> */}
+      {/* <Header /> il est embarqué au niveau du fichier "app.js" du frontend pour économie de lignes */}
       <main>
         <section>
           <div className="Carrousel">
-            <Slideshow pictures={projet.pictures} />
+            <Slideshow pictures={projet.pictures.map(pic => `../images/${pic}`)} />
           </div>
           <div className="Entete-HostGlobal">
             <div className="Entete">
@@ -60,8 +59,6 @@ const FicheProjet = ({ projets }) => {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 };
