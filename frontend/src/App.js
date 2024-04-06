@@ -9,18 +9,23 @@ import NoMatch from "./views/NoMatch/NoMatch";
 import APropos from "./views/APropos/APropos";
 import Contact from "./views/Contact/Contact";
 import AddProjet from "./views/AddProjet/AddProjet";
-import UpdateProjet from "./views/UpdateProjet/UpdateProjet";
-import { useUser } from "./lib/customHooks";
-
-import Projets from "./datas/Projets";
 import Footer from "./components/Footer/Footer";
+// import UpdateProjet from "./views/UpdateProjet/UpdateProjet";
+import { useUser } from "./lib/customHooks";
+import { getProjets } from "./lib/common";
+// import Projets from "./datas/Projets";
+
 
 function App() {
   const [user, setUser] = useState(null);
   const { connectedUser } = useUser();
+  const [projets, setProjets] = useState([]);
 
   useEffect(() => {
     setUser(connectedUser);
+    getProjets() // Appel à la fonction pour récupérer les projets
+      .then((formData) => setProjets(formData))
+      .catch((error) => console.error("Error fetching projets:", error));
   }, [connectedUser]);
 
   return (
@@ -33,12 +38,8 @@ function App() {
             path={APP_ROUTES.SIGN_IN}
             element={<SignIn setUser={setUser} />}
           />
-          <Route path={APP_ROUTES.HOME} element={<Home projets={Projets} />} />
-          <Route
-            path="FicheProjet/:id"
-            element={<FicheProjet projets={Projets} />}
-          />
-          <Route path={APP_ROUTES.UPDATE_PROJET} element={<UpdateProjet />} />
+          <Route path={APP_ROUTES.HOME} element={<Home projets={projets} />} />
+          <Route path="/FicheProjet/:id" element={<FicheProjet projets={projets} />} />
           <Route path={APP_ROUTES.ADD_PROJET} element={<AddProjet />} />
           <Route path={APP_ROUTES.APROPOS} element={<APropos />} />
           <Route path={APP_ROUTES.CONTACT} element={<Contact />} />

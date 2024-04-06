@@ -23,9 +23,9 @@ function UpdateProjet() {
   }, [auth, connectedUser, navigate, userLoading]);
   useEffect(() => {
     async function getItem() {
-      const data = await getProjet(params.id);
-      if (data) {
-        setProjet(data);
+      const formData = await getProjet(params.id);
+      if (formData) {
+        setProjet(formData);
       }
     }
     getItem();

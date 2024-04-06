@@ -3,22 +3,23 @@ import fleche_droite from "../../assets/fleche_droite.png";
 import fleche_gauche from "../../assets/fleche_gauche.png";
 import "./Slideshow.scss";
 //J'aurais pu installer aussi le package  React Slider Responsive ! https://www.npmjs.com/package/react-responsive-carousel mais pas autorisé ds ce projet
-const Slideshow = ({ pictures }) => {
+//remplacement de "pictures" par carouselImages
+const Slideshow = ({ carouselImages }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // l'opérateur "%" permet de faire en sorte que lorsque l'UI arrive à la dernière photo s'il clique sur la suivante il reviendra à la 1ère
   const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % pictures.length);
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % carouselImages.length);
   };
   // ici la fonction fléchée va faire une sorte de boucler cad que si la diapo est la 1ere du tableau alors l'app va renvoyer la dernière photo
   // et sinon ce sera la précédente dans le tableau
   const prevSlide = () => {
     setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? pictures.length - 1 : prevSlide - 1
+      prevSlide === 0 ? carouselImages.length - 1 : prevSlide - 1
     );
   };
   
-  const hideButtons = pictures.length === 1;
+  const hideButtons = carouselImages.length === 1;
   return (
     <div className="slideshow">
       {!hideButtons && (
@@ -35,12 +36,12 @@ const Slideshow = ({ pictures }) => {
       )}
       <img
         key={currentSlide}
-        src={pictures[currentSlide]}
+        src={carouselImages[currentSlide]}
         alt={`Projet ${currentSlide + 1}`}
       />
       {!hideButtons && (
         <div className="counter">
-          {currentSlide + 1} / {pictures.length}
+          {currentSlide + 1} / {carouselImages.length}
         </div>
       )}
     </div>

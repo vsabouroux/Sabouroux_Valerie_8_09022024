@@ -1,7 +1,7 @@
 import { Navigate, useParams } from "react-router-dom";
 // import Header from "../../components/Header/Header";
 // import Footer from "../../components/Footer/Footer";
-import Slideshow from "../../components/Slideshow/Slideshow";
+// import Slideshow from "../../components/Slideshow/Slideshow";
 import CollapseItem from "../../components/Collaps/Collaps";
 import Tag from "../../components/Tag/Tag";
 
@@ -25,16 +25,20 @@ const FicheProjet = ({ projets }) => {
   }
 
   //Si le preojet est trouvé alors on affiche tout
-  const { title, description, skills, tags } = projet;
+  const { imageUrl, title, description, skills, tags } = projet;
 
   return (
     <div>
       {/* <Header /> il est embarqué au niveau du fichier "app.js" du frontend pour économie de lignes */}
       <main>
-        <section>
-          <div className="Carrousel">
-            <Slideshow pictures={projet.pictures.map(pic => `../images/${pic}`)} />
+      <div  className="ImageProjet"> 
+          <img src={`(/images/${imageUrl}`} alt={title} />
           </div>
+        <section>
+          {/* <div className="Carrousel">
+            <Slideshow pictures={projet.carouselImages.map(pic => `../images/carousel-images${pic}`)} />
+          </div> */}
+      
           <div className="Entete-HostGlobal">
             <div className="Entete">
               <div className="GlobalProjet">
