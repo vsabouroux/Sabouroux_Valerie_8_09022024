@@ -5,12 +5,6 @@ $primaryColor: #001b9e;
   align-items: center;
   padding: 45px 100px 45px 100px;
 
-  // .vs-logo2 {
-  //   display: flex;
-  //   align-items: flex-start;
-  //   width: 210px;
-  //   height: auto;
-  // }
   .qr-code-container{
     position: relative; 
     width: 110px;
@@ -47,6 +41,11 @@ $primaryColor: #001b9e;
     }
     .nav-link {
       text-decoration: none;
+      color: $primaryColor;
+    }
+    .seconnecter.active{
+      text-decoration: underline;
+      line-height: 34.22px;
       color: $primaryColor;
     }
     // .nav-link-signin.active {

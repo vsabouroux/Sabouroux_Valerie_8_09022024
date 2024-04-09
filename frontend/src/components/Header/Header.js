@@ -2,7 +2,8 @@ import vslogo2 from "../../assets/vs-logo2.png";
 import "./Header.scss";
 import { NavLink, useNavigate } from "react-router-dom";
 import * as PropTypes from 'prop-types';
-import styles from './Header.scss';
+// import styles from './Header.scss';
+import { useState } from 'react';
 // import fontawesome from "@fortawesome/fontawesome-free";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // // import { library } from '@fortawesome/fontawesome-svg-core';
@@ -11,18 +12,18 @@ import styles from './Header.scss';
 // import QRCode from "react-qr-code";
 
 function Header({ user, setUser }) {
-  // URL du CV PDF (pour le test local)
-  // const cvUrl = "/Sabouroux_Valerie_CV_032024.pdf";
-  // Génére le lien à partir de l'URL du CV
-  // const qrCodeData = window.location.origin + cvUrl;
-  // Configuration des paramètres d'image du QR code (logo)
+
   const navigate = useNavigate();
+  const [isClicked, setIsClicked] = useState(false); // État local pour suivre si le lien a été cliqué
   const disconnect = () => {
     localStorage.clear();
     setUser(null);
     navigate('/');
   };
-
+ // Réinitialise l'état isClicked lorsque l'ui clique sur un lien autre que "Se connecter"
+ const handleLinkClick = () => {
+  setIsClicked(false);
+};
   return (
     <header className="vs-header">
       <div className="qr-code-container">
@@ -33,23 +34,24 @@ function Header({ user, setUser }) {
       <nav id="sidebar">
         <ul>
           <li className="accueil">
-            <NavLink to="/" className="nav-link">
+            <NavLink to="/" className="nav-link"onClick={handleLinkClick}>
               Accueil
             </NavLink>
           </li>
           <li>
-            <NavLink to="/APropos" className="nav-link">
+            <NavLink to="/APropos" className="nav-link" onClick={handleLinkClick}>
               A propos
             </NavLink>
           </li>
           <li className="contact">
-            <NavLink to="/Contact" className="nav-link">
+            <NavLink to="/Contact" className="nav-link"onClick={handleLinkClick}>
               Contact
             </NavLink>
           </li>
           <li className="seconnecter">
-          {!user ? <NavLink to="/Connexion" className={({ isActive }) => (isActive ? styles.activeLink : undefined)}>Se connecter</NavLink> : <span tabIndex={0} role="button" onKeyUp={disconnect} onClick={disconnect}>Se déconnecter</span> }</li>
-            {/* <NavLink to="/SignIn" className="nav-link-signin">
+          {!user ? <NavLink to="/Connexion"className={isClicked ? "nav-link active" : "nav-link"} onClick={() => setIsClicked(true)}>Se connecter</NavLink> : <span tabIndex={0} role="button" onKeyUp={disconnect} onClick={disconnect}>Se déconnecter</span> } </li>
+          
+          {/* <NavLink to="/SignIn" className="nav-link-signin">
               <FontAwesomeIcon
                 icon={faUser}
                 className="faUser"

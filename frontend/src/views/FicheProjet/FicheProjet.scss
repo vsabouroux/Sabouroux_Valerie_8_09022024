@@ -1,12 +1,17 @@
 $primaryColor: #001b9e;
+.ImageProjet{
+  display: flex;
+  height: 300px;
+  justify-content: center;
+}
 section {
   max-width: 1440px;
   margin: auto;
   padding: 0 100px;
 
-  .Carrousel {
-    width: 100%;
-  }
+  // .Carrousel {
+  //   width: 100%;
+  // }
   .Entete-HostGlobal {
     display: flex;
     grid-template-columns: 1fr 1fr;

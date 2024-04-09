@@ -13,13 +13,13 @@ import Footer from "./components/Footer/Footer";
 // import UpdateProjet from "./views/UpdateProjet/UpdateProjet";
 import { useUser } from "./lib/customHooks";
 import { getProjets } from "./lib/common";
-// import Projets from "./datas/Projets";
 
 
 function App() {
   const [user, setUser] = useState(null);
   const { connectedUser } = useUser();
   const [projets, setProjets] = useState([]);
+  const isAuthenticated = !!user;
 
   useEffect(() => {
     setUser(connectedUser);
@@ -38,7 +38,7 @@ function App() {
             path={APP_ROUTES.SIGN_IN}
             element={<SignIn setUser={setUser} />}
           />
-          <Route path={APP_ROUTES.HOME} element={<Home projets={projets} />} />
+          <Route path={APP_ROUTES.HOME} element={<Home projets={projets} isAuthenticated={isAuthenticated}/>} />
           <Route path="/FicheProjet/:id" element={<FicheProjet projets={projets} />} />
           <Route path={APP_ROUTES.ADD_PROJET} element={<AddProjet />} />
           <Route path={APP_ROUTES.APROPOS} element={<APropos />} />

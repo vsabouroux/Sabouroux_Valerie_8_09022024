@@ -7,7 +7,7 @@ import Card from "../../components/Card/Card";
 import { getProjets } from "../../lib/common"; // Ajout de import de la fonction getProjets
 import "./Home.scss";
 
-function Home() {
+function Home({isAuthenticated }) {
   const [projets, setProjets] = useState([]);
 
   useEffect(() => {
@@ -25,16 +25,18 @@ function Home() {
         />
         <div className="button_container"> 
         {/* <button className="add_projet_button"> */}
+        {isAuthenticated && ( // Utilisation de l'état d'authentification ici
           <Link to={APP_ROUTES.ADD_PROJET}className="add_projet_button">Ajouter un projet</Link>
-        {/* </button> */}
+          )}
+          {/* </button> */}
         </div>
         <section className="Projet">
-          {/*Création boucle avec map pour afficher tous les logements présents dans le fichier Projets.json*/}
+          {/*Création boucle avec map pour afficher tous les projets créés ds la BDD*/}
           {projets.map(({ id, title, imageUrl }) => (
             <Card
               key={id}
               title={title}
-              imageUrl={`/images/${imageUrl}`} 
+              imageUrl={imageUrl} 
               className="Cover"
               id={id}
               alt={title}

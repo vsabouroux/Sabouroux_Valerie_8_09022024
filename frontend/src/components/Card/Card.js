@@ -7,8 +7,7 @@ function Card({ title, imageUrl, id }) {
     <Link className="card-link" to={`/FicheProjet/${id}`}>
       <div className="Card">
         <div className="Gradient"></div> 
-      
-        <img src={`/images/${imageUrl}`} alt="projet" className="CardImage" />
+        <img src={imageUrl} alt="projet" className="CardImage" />
         <h3>{title}</h3>
        
       </div>
@@ -18,4 +17,5 @@ function Card({ title, imageUrl, id }) {
 
 export default Card;
 
-// {/* <img src={imageUrl} alt="projet" className="CardImage" /> */}
+//NDLR : la source de l'image utilise l'URL générée par MongoDB soit "imageUrl"
+// <img src={`/images/${imageUrl}`} alt="projet" className="CardImage" /> ==> donc pas correct!

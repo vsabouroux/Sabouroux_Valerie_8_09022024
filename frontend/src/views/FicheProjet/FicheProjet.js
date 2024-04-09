@@ -1,7 +1,4 @@
 import { Navigate, useParams } from "react-router-dom";
-// import Header from "../../components/Header/Header";
-// import Footer from "../../components/Footer/Footer";
-// import Slideshow from "../../components/Slideshow/Slideshow";
 import CollapseItem from "../../components/Collaps/Collaps";
 import Tag from "../../components/Tag/Tag";
 
@@ -26,13 +23,16 @@ const FicheProjet = ({ projets }) => {
 
   //Si le preojet est trouvé alors on affiche tout
   const { imageUrl, title, description, skills, tags } = projet;
+  // Diviser la chaîne de tags en un tableau de tags individuels
+  // const tagsArray = tags.split(",").map((tag) => tag.trim());
+
 
   return (
     <div>
       {/* <Header /> il est embarqué au niveau du fichier "app.js" du frontend pour économie de lignes */}
       <main>
       <div  className="ImageProjet"> 
-          <img src={`(/images/${imageUrl}`} alt={title} />
+          <img src={imageUrl} alt={title} />
           </div>
         <section>
           {/* <div className="Carrousel">
@@ -43,8 +43,8 @@ const FicheProjet = ({ projets }) => {
             <div className="Entete">
               <div className="GlobalProjet">
                 <h1 className="TitreProjet">{title}</h1>
-
                 <Tag tags={tags} />
+                
               </div>
             </div>
           </div>

@@ -32,7 +32,7 @@ function AddProjet() {
         ) : (
           <div className={styles.Created}>
             <h1>Merci !</h1>
-            <p>votre projet a bien été publié</p>
+            <p>Votre projet a bien été publié</p>
             <img src={projetAdd} alt="Projet ajouté" />
             <Link to="/" className="button">Retour à l&apos;accueil</Link>
           </div>
