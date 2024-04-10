@@ -26,7 +26,7 @@ function AddProjet() {
         {!created ? (
           <>
             <h1>Ajouter un projet</h1>
-            <p>Tous les champs sont obligatoires</p>
+            <h2>Tous les champs avec une * sont obligatoires</h2>
             <ProjetForm validate={setCreated} />
           </>
         ) : (

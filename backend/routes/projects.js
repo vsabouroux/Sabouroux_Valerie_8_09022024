@@ -15,21 +15,5 @@ router.delete("/:id", auth, projectsCtrl.deleteProject);
 
 module.exports = router;
 
-// const express = require("express");
-// const router = express.Router(); // méthode Router d'express
-// //"/api/projects" = route de base url de base donc on va le remplacer par /
-// const auth = require("../middleware/auth");
-// // const multer = require("../middleware/multer-config");
-// const { generalImageUpload, carouselImageUpload } = require("../middleware/multer-config");
-// const projectsCtrl = require("../controllers/projects");
-
-// router.get("/", projectsCtrl.getAllProjects);
-// router.get("/:id", projectsCtrl.getOneProject);
-
-// router.post("/", auth, generalImageUpload, carouselImageUpload, projectsCtrl.createProject);
-// router.put("/:id", auth, generalImageUpload, carouselImageUpload, projectsCtrl.modifyProject);
-// router.delete("/:id", auth, projectsCtrl.deleteProject);
-
-// module.exports = router;
 
 

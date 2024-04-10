@@ -18,12 +18,14 @@ function ProjetForm({ projet, validate }) {
       description: projet?.description,
       skills: projet?.skills,
       tags: projet?.tags,
+      id: projet?.id // On ajoute id comme valeur par défaut
     }), [projet]),
   });
   useEffect(() => {
     reset(projet);
     // eslint-disable-next-line
   }, [projet]);
+
   const file = watch(['file']);
   const [filePreview] = useFilePreview(file);
 
@@ -57,23 +59,27 @@ function ProjetForm({ projet, validate }) {
     <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
       <input type="hidden" id="id" {...register('id')} />
       <label htmlFor="title">
-        <p>Titre du projet</p>
-        <input type="text" id="title" {...register('title')} />
+        <p>Titre du projet *</p>
+        <input type="text" id="title" {...register('title')} placeholder="Titre du projet" />
       </label>
       <label htmlFor="description">
-        <p>Description</p>
-        <input type="text" id="author" {...register('description')} />
+        <p>Description *</p>
+        <input type="text" id="description" {...register('description')} />
       </label>
       <label htmlFor="skills">
-        <p>Compétences</p>
+        <p>Compétences *</p>
         <input type="text" id="skills" {...register('skills')} />
       </label>
       <label htmlFor="tags">
-        <p>Langages / Outils</p>
+        <p>Langages / Outils *</p>
         <input type="text" id="tags" {...register('tags')} />
       </label>
+      <label htmlFor="tags">
+        <p>Lien GitHub</p>
+        <input type="text" id="githubUrl" {...register('githubUrl')} />
+      </label>
       <label htmlFor="file">
-        <p>Visuel</p>
+        <p>Visuel *</p>
         <div className={styles.AddImage}>
           {filePreview || projet?.imageUrl ? (
             <>

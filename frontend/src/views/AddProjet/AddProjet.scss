@@ -1,4 +1,5 @@
 .Container {
+  font-family: "Libre Baskerville", serif;
   background-color: #ffffff;
   margin: auto;
   border-radius: 7px;
@@ -9,12 +10,18 @@
   align-items: center;
   padding-block: 80px;
 }
-
-.Container p {
-  font-family: "Libre Baskerville", serif;
+a.backArrow{
+  margin: 20px;
+  font-size: 20px;
+ }
+.content-container h1 {
   font-size: 16px;
 }
-
+.content-container h2 {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
 .Created {
   display: flex;
   flex-direction: column;
@@ -22,4 +29,25 @@
 }
 .Created img {
   margin-block: 30px;
+}
+.content-container{
+  display: flex;
+  justify-content: center;
+  h1{
+    font-size: 22px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 376px) {
+  .content-container{
+    display: flex;
+    flex-direction: column;
+  }
+ h2{
+  text-align: center;
+  font-size: 12px;
+ }
+//  a.backArrow{
+//   margin: 20px;
+//  }
 }

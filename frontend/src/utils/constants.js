@@ -13,7 +13,7 @@ export const APP_ROUTES = {
   APROPOS: "/Apropos",
   CONTACT: "/Contact",
   ADD_PROJET: "/Ajouter",
-  PROJET: "/FicheProjet/:id",//projets remplacé par "FicheProjet" majuscule supprimée à /Projet/:id 
+  PROJET: "/FicheProjet/:id",//projets remplacé par "FicheProjet" 
   UPDATE_PROJET: "projet/modifier/:id",
 };
 

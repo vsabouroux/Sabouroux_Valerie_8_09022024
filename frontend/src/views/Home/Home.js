@@ -17,19 +17,17 @@ function Home({isAuthenticated }) {
   }, []);
   return (
     <div className="App">
-      {/* <Header /> */}
       <main>
         <Banner
           img={enteteImage}
           texte="Pour vous, des projets qui vous ressemblent" 
         />
         <div className="button_container"> 
-        {/* <button className="add_projet_button"> */}
         {isAuthenticated && ( // Utilisation de l'état d'authentification ici
           <Link to={APP_ROUTES.ADD_PROJET}className="add_projet_button">Ajouter un projet</Link>
           )}
-          {/* </button> */}
         </div>
+    
         <section className="Projet">
           {/*Création boucle avec map pour afficher tous les projets créés ds la BDD*/}
           {projets.map(({ id, title, imageUrl }) => (

@@ -1,7 +1,7 @@
 $primaryColor: #001b9e;
 .ImageProjet{
   display: flex;
-  height: 300px;
+  height: auto;
   justify-content: center;
 }
 section {
@@ -12,57 +12,58 @@ section {
   // .Carrousel {
   //   width: 100%;
   // }
-  .Entete-HostGlobal {
+  .TitreProject {
+    font-size: 36px;
+    color: $primaryColor;
+    margin-bottom: 5px;
+  }
+  .Entete  {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .GlobalProjet {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .Entete-HostGlobal .BoutonsModifierSupprimer {
+    display: flex;
+    justify-content: flex-end;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 24px;
-
-    .Entete {
-      display: flex;
-      flex-direction: row;
-    }
-    .GlobalProjet {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-    .TitreProject {
-      font-size: 36px;
-      color: $primaryColor;
-      margin-bottom: 5px;
-    }
-    // .Problematique {
-    //   font-size: 18px;
-    //   color: $primaryColor;
-    // }
-    // j'avais mis dans FicheProjet.js   {/* <div className="Problematique">{context}</div> */}
+    gap: 10px;
+}
   }
 
-  // .HostSemiGlobal {
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: flex-end;
-  // }
-  // .Host {
-  //   font-size: 18px;
-  //   color: #ff6060;
-  //   width: 83px;
-  //   padding-top: 10px;
-  // }
-  // .HostGlobal {
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: 30px;
+  .BoutonsModifierSupprimer .edit_button {
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      font-size: 14px;
+      color: white;
+      height: auto;
+      border-radius: 10px;
+      border-style: none;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 5px;
+      background-color: #001b9e;
+    }
+  .BoutonsModifierSupprimer .delete_button{
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      font-size: 14px;
+      color: white;
+      height: auto;
+      border-radius: 10px;
+      border-style: none;
+      text-decoration: none;
+      padding: 5px;
+      background-color: #ed1111f9;
+    }
 
-  //   img {
-  //     width: 64px;
-  //     height: 64px;
-  //     border-radius: 50%;
-  //     object-fit: cover;
-  //   }
-  // }
   .MenuAccordeon {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -75,7 +76,7 @@ section {
     height: 50px;
     gap: 76px;
   }
-}
+
 
 // Responsive mobile : breakpoint à 375px
 @media screen and (max-width: 376px) {
@@ -115,36 +116,27 @@ section {
       justify-content: space-between;
       align-items: center;
       gap: 20px;
-
-      // .Host {
-      //   font-size: 12px;
-      //   width: 70px;
-      //   text-align: right;
-      //   line-height: 17px;
-      // }
-      // img {
-      //   width: 32px;
-      //   height: 32px;
-      // }
     }
   }
   .TitrePojet {
     font-size: 24px;
   }
-
-  .slideshow {
-    margin: auto;
+  .ImageProjet {
+    width: 100%;
   }
+  // .slideshow {
+  //   margin: auto;
+  // }
 
-  .prev img,
-  .next img {
-    width: 11.67px;
-    height: 19.8px;
-  }
+  // .prev img,
+  // .next img {
+  //   width: 11.67px;
+  //   height: 19.8px;
+  // }
 
-  .counter {
-    display: none;
-  }
+  // .counter {
+  //   display: none;
+  // }
 
   section .MenuAccordeon {
     display: flex;

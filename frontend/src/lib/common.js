@@ -87,6 +87,7 @@ export async function addProjet(data) {
     description: data.description,
     skills: data.skills,
     tags: data.tags,
+    githubUrl: data.githubUrl,
   };
   const bodyFormData = new FormData();
   bodyFormData.append('projet', JSON.stringify(projet));

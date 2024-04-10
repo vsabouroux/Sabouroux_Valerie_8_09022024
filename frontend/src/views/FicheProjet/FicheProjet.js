@@ -1,7 +1,11 @@
 import { Navigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { APP_ROUTES } from "../../utils/constants";
 import CollapseItem from "../../components/Collaps/Collaps";
 import Tag from "../../components/Tag/Tag";
-
+import { useUser } from "../../lib/customHooks";
+import { deleteProjet } from "../../lib/common";
 import "./FicheProjet.scss";
 
 // useParams = hook utilisé pour extraire les paramètres de l'URL dans un composant fonctionnel. Ici on veut récupérer notamment les "pictures" du projet
@@ -10,8 +14,25 @@ import "./FicheProjet.scss";
 const FicheProjet = ({ projets }) => {
   // Récupérer les informations du projet, grace è l'ID de URL et le data.json
   const { id } = useParams();
-
   const projet = projets.find((projet) => projet.id === id);
+  const { auth } = useUser(); // On utilise le customHook useUser pour obtenir l'état d'authentification
+  const [projetsState, setProjetsState] = useState(projets);
+
+  const handleDelete = async (id, imageUrl) => {
+    try {
+      await deleteProjet(id);
+      setProjetsState(projetsState.filter((projet) => projet.id !== id));
+    } catch (error) {
+      console.error("Error deleting projet:", error);
+    }
+  };
+
+  const confirmDelete = () => {
+    const confirmation = window.confirm("Êtes-vous sûr(e) de vouloir supprimer ce projet ?");
+    if (confirmation) {
+      handleDelete(id, projet.imageUrl);
+    }
+  };
 
   if (!projet) {
     // Rediriger vers la page NoMatch si le projet n'est pas trouvé. En fait ce n'est pas faire un "lien" mais une redirection ! avec "Navigate"
@@ -22,14 +43,13 @@ const FicheProjet = ({ projets }) => {
   }
 
   //Si le preojet est trouvé alors on affiche tout
-  const { imageUrl, title, description, skills, tags } = projet;
+  const { imageUrl, title, description, skills, tags, githubUrl } = projet;
   // Diviser la chaîne de tags en un tableau de tags individuels
   // const tagsArray = tags.split(",").map((tag) => tag.trim());
 
 
   return (
     <div>
-      {/* <Header /> il est embarqué au niveau du fichier "app.js" du frontend pour économie de lignes */}
       <main>
       <div  className="ImageProjet"> 
           <img src={imageUrl} alt={title} />
@@ -44,8 +64,21 @@ const FicheProjet = ({ projets }) => {
               <div className="GlobalProjet">
                 <h1 className="TitreProjet">{title}</h1>
                 <Tag tags={tags} />
-                
+                {githubUrl && (
+                  <a href={githubUrl} target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                )}
               </div>
+              {auth && ( 
+                <div className="BoutonsModifierSupprimer">
+                  <Link to={`${APP_ROUTES.ADD_PROJET}`} className="edit_button">
+                  {/* ={`${APP_ROUTES.UPDATE_PROJET}/${id}`} */}
+                    Modifier
+                  </Link>
+                  <button className="delete_button" onClick={confirmDelete}>
+                    Supprimer
+                  </button>
+                </div>
+              )}
             </div>
           </div>
           <div className="MenuAccordeon">
