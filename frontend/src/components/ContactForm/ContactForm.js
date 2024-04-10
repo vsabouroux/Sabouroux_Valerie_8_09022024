@@ -1,3 +1,5 @@
+import Axios from "axios";
+import { API_ROUTES } from "../../utils/constants";
 import { useForm, Controller } from "react-hook-form";
 import "./ContactForm.scss";
 
@@ -14,12 +16,21 @@ const MyForm = () => {
       },
     }
   );
-
-  const onSubmit = (data) => {
-    // Gérer la soumission des données ici avec requête HTTP et axios ds tt cça ?
-    console.log(data);
-    // envoyer ces données au backend maintenant dès que je l'aurai installé
+  const onSubmit = async (data) => {
+    try {
+      // Envoi des données au backend
+      const response = await Axios.post(`${API_ROUTES.CONTACT}`, data);
+      console.log(response.data); // Si besoin de traiter la réponse
+    } catch (error) {
+      console.error("Une erreur s'est produite lors de l'envoi des données:", error);
+    }
   };
+
+  // const onSubmit = (data) => {
+  //   // Gérer la soumission des données ici avec requête HTTP et axios ds tt cça ?
+  //   console.log(data);
+  //   // envoyer ces données au backend maintenant dès que je l'aurai installé
+ 
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

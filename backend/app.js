@@ -5,9 +5,11 @@ const bodyParser = require("body-parser");
 //Sans "body-parser", Express ne serait pas capable de lire ces données par défaut
 const projectsRoutes = require("./routes/projects");
 const userRoutes = require("./routes/user");
+const contactRoutes = require("./routes/contact");
 const path = require("path");
 
 const mongoose = require("mongoose");
+const Contact = require("./models/Contact");
 
 const app = express();
 
@@ -40,6 +42,7 @@ app.use(bodyParser.json());
 
 app.use("/api/projects", projectsRoutes);
 app.use("/api/auth", userRoutes);
+app.use("/api/contact", contactRoutes);
 app.use("/images", express.static(path.join(__dirname, "images")));
 
 module.exports = app;
