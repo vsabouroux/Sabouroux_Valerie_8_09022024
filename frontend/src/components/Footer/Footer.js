@@ -1,10 +1,15 @@
-// import githubLogo from "../../assets/github.svg";
-// import linkedinLogo from "../../assets/linkedin-in.svg";
+import React, { useState } from "react";
+import Modal from "../Modal/Modal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import "./Footer.scss";
 
 function Footer() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleMentionsLegalesClick = () => {
+    setShowModal(true);
+  };
   return (
     <footer className="vs-footer">
       {/* <div className="bandeau">
@@ -37,9 +42,10 @@ function Footer() {
           </a>
         </div>
         <div className="mentionsLegales">
-          <p>Mentions légales</p>
+          <p onClick={handleMentionsLegalesClick}>Mentions légales</p>
         </div>
       </div>
+      {showModal && <Modal onClose={() => setShowModal(false)} />}
     </footer>
   );
 }

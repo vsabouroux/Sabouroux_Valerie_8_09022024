@@ -3,7 +3,12 @@ const path = require("path");
 const Project = require("../models/Project");
 
 exports.createProject = (req, res, next) => {
-  const projectObjet = JSON.parse(req.body.projet);//project changé en "projet" parceque c'est comme ça que cela s'appelle dans le frontend !!!
+  let projectObjet = JSON.parse(req.body.projet);//project changé en "projet" parceque c'est comme ça que cela s'appelle dans le frontend !!!
+
+ projectObjet.tags = projectObjet.tags.split(","); // split pour diviser la chaîne de caractères en tableau
+ projectObjet.skills = projectObjet.skills.split(",");
+ console.log(projectObjet);
+
   delete projectObjet._id;
   delete projectObjet._userId;
   const project = new Project({
@@ -57,7 +62,7 @@ exports.getOneProject = (req, res, next) => {
 exports.modifyProject = (req, res, next) => {
   const projectObjet = req.file
     ? {
-        ...JSON.parse(req.body.project),
+        ...JSON.parse(req.body.projet),//project changé en "projet" parceque c'est comme ça que cela s'appelle dans le frontend !!!
         imageUrl: `${req.protocol}://${req.get("host")}/images/${
           req.file.filename
         }`,
