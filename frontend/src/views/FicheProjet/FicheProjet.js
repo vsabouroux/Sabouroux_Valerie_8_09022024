@@ -1,11 +1,12 @@
 import { Navigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { APP_ROUTES } from "../../utils/constants";
+// import { APP_ROUTES } from "../../utils/constants";
 import CollapseItem from "../../components/Collaps/Collaps";
 import Tag from "../../components/Tag/Tag";
 import { useUser } from "../../lib/customHooks";
 import { deleteProjet } from "../../lib/common";
+
 import "./FicheProjet.scss";
 
 // useParams = hook utilisé pour extraire les paramètres de l'URL dans un composant fonctionnel. Ici on veut récupérer notamment les "pictures" du projet
@@ -17,11 +18,12 @@ const FicheProjet = ({ projets }) => {
   const projet = projets.find((projet) => projet.id === id);
   const { auth } = useUser(); // On utilise le customHook useUser pour obtenir l'état d'authentification
   const [projetsState, setProjetsState] = useState(projets);
-
-  const handleDelete = async (id, imageUrl) => {
+  const [deleted, setDeleted] = useState(false);
+  const handleDelete = async (id) => {
     try {
       await deleteProjet(id);
       setProjetsState(projetsState.filter((projet) => projet.id !== id));
+      setDeleted(true); 
     } catch (error) {
       console.error("Error deleting projet:", error);
     }
@@ -32,8 +34,11 @@ const FicheProjet = ({ projets }) => {
     if (confirmation) {
       handleDelete(id, projet.imageUrl);
     }
+ 
   };
-
+  if (deleted) {
+    return <Navigate to="/" />;
+  }
   if (!projet) {
     // Rediriger vers la page NoMatch si le projet n'est pas trouvé. En fait ce n'est pas faire un "lien" mais une redirection ! avec "Navigate"
     return (
@@ -70,7 +75,7 @@ const FicheProjet = ({ projets }) => {
               </div>
               {auth && ( 
                 <div className="BoutonsModifierSupprimer">
-                  <Link to={`${APP_ROUTES.ADD_PROJET}`} className="edit_button">
+                  <Link to={`/projet/modifier/${projet.id}`} className="edit_button">
                   {/* ={`${APP_ROUTES.UPDATE_PROJET}/${id}`} */}
                     Modifier
                   </Link>

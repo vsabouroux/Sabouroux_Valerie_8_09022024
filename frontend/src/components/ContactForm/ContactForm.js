@@ -6,11 +6,11 @@ import "./ContactForm.scss";
 const MyForm = () => {
   //En définissant defaultValues dans useForm, on s'assure que chaque champ de formulaire 
   //contrôlé a une valeur initiale définie, et on évite ainsi l'erreur de composant non contrôlé à contrôlé.
-  const { handleSubmit, control } = useForm(
+  const { handleSubmit, control, reset } = useForm(
     {
       defaultValues: {
-        firstName: "",
-        lastName: "",
+        firstname: "",
+        lastname: "",
         email: "",
         request: "",
       },
@@ -18,9 +18,13 @@ const MyForm = () => {
   );
   const onSubmit = async (data) => {
     try {
+      console.log("Données à envoyer:", data);
       // Envoi des données au backend
+      console.log("URL de soumission du formulaire de contact :", API_ROUTES.CONTACT);
       const response = await Axios.post(`${API_ROUTES.CONTACT}`, data);
-      console.log(response.data); // Si besoin de traiter la réponse
+      console.log(response.data);
+      // Réinitialiser les champs du formulaire après l'envoi réussi
+      reset();
     } catch (error) {
       console.error("Une erreur s'est produite lors de l'envoi des données:", error);
     }
@@ -36,7 +40,7 @@ const MyForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <label>Prénom :</label>
       <Controller
-        name="firstName"
+        name="firstname"
         control={control}
         rules={{ required: "Le prénom est obligatoire" }}
         render={({ field, fieldState }) => (
@@ -49,7 +53,7 @@ const MyForm = () => {
 
       <label>Nom :</label>
       <Controller
-        name="lastName"
+        name="lastname"
         control={control}
         rules={{ required: "Le nom est obligatoire" }}
         render={({ field, fieldState }) => (

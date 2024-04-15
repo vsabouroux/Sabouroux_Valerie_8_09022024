@@ -2,10 +2,10 @@ const Contact = require("../models/Contact");
 
 exports.submitContactForm = async (req, res) => {
   try {
-    const { firstName, lastName, email, request } = req.body;
-    console.log(body);
+    const { firstname, lastname, email, request } = req.body;
+    console.log(req.body);
     // Créer une nouvelle entrée dans la base de données
-    const newContact = new Contact({ firstName, lastName, email, request });
+    const newContact = new Contact({ firstname, lastname, email, request });
     await newContact.save();
     res.status(201).json({ message: "Données enregistrées avec succès" });
   } catch (error) {

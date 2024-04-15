@@ -7,10 +7,20 @@ import { useUser } from '../../lib/customHooks';
 import { APP_ROUTES } from '../../utils/constants';
 import projetAdd from '../../assets/projet_add.jpg';
 
+
 function AddProjet() {
   const navigate = useNavigate();
   const { connectedUser, auth, userLoading } = useUser();
   const [created, setCreated] = useState(false);
+
+   // Hook useEffect pour mettre à jour la liste des projets une fois que le projet est créé avec succès
+   useEffect(() => {
+    if (created) {
+      console.log("projetajoutéavec succès");
+    }
+  }, [created]);
+  
+   // Hook useEffect pour la redirection vers la page de connexion si l'utilisateur n'est pas connecté
   useEffect(() => {
     if (!userLoading) {
       if (!connectedUser || !auth) {

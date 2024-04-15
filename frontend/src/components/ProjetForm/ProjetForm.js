@@ -35,6 +35,7 @@ function ProjetForm({ projet, validate }) {
       if (!data.file[0]) {
         // eslint-disable-next-line no-alert
         alert('Vous devez ajouter une image');
+        return; // Arrêter le traitement si aucune image n'est fournie
       }
      
       const newProjet = await addProjet(data);
@@ -45,7 +46,7 @@ function ProjetForm({ projet, validate }) {
         alert(newProjet.message);
       }
     } else {
-      const updatedProjet = await updateProjet(data, data.id);
+      const updatedProjet = await updateProjet(data);
       if (!updatedProjet.error) {
         navigate('/');
       } else {
@@ -67,11 +68,11 @@ function ProjetForm({ projet, validate }) {
         <input type="text" id="description" {...register('description')} />
       </label>
       <label htmlFor="skills">
-        <p>Compétences *</p>
+        <p>Compétences *       compétence1, compétence2, ...</p>
         <input type="text" id="skills" {...register('skills')} />
       </label>
       <label htmlFor="tags">
-        <p>Langages / Outils *</p>
+        <p>Langages / Outils * langage1, outil1, ...</p>
         <input type="text" id="tags" {...register('tags')} />
       </label>
       <label htmlFor="tags">
@@ -107,77 +108,16 @@ ProjetForm.propTypes = {
     userId: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
-    skills: PropTypes.number,
+    skills: PropTypes.array,
     imageUrl: PropTypes.string,
-    tags: PropTypes.string,
+    tags: PropTypes.array,
   }),
   validate: PropTypes.func,
 };
 
 ProjetForm.defaultProps = {
-  book: null,
+  projet: null,
   validate: null,
 };
 export default ProjetForm;
 
-
-
-// import React, { useState } from 'react';
-
-// const ProjetForm = ({ onSubmit }) => {
-//   const [formData, setFormData] = useState({
-//     title: '',
-//     description: '',
-//     skills: '',
-//     tags: '',
-//     generalImage: '',
-//     carouselImages: [],
-//   });
-
-//   const handleInputChange = (event) => {
-//     const { name, value } = event.target;
-//     setFormData({ ...formData, [name]: value });
-//   };
-
-//   const handleFileChange = (event) => {
-//     const { name, files } = event.target;
-//     setFormData({ ...formData, [name]: files });
-//   };
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     onSubmit(formData);
-//   };
-
-//   return (
-//     <form  onSubmit={handleSubmit}>
-//       <div>
-//         <label htmlFor="title">Titre :</label>
-//         <input type="text" id="title" name="title" value={formData.title} onChange={handleInputChange} required />
-//       </div>
-//       <div>
-//         <label htmlFor="description">Description :</label>
-//         <textarea id="description" name="description" value={formData.description} onChange={handleInputChange} required />
-//       </div>
-//       <div>
-//         <label htmlFor="skills">Compétences :</label>
-//         <input type="text" id="skills" name="skills" value={formData.skills} onChange={handleInputChange} required />
-//       </div>
-//       <div>
-//         <label htmlFor="tags">Langages / Outils :</label>
-//         <input type="text" id="tags" name="tags" value={formData.tags} onChange={handleInputChange} required />
-//       </div>
-//       <div>
-//         <label htmlFor="generalImage">Image générale :</label>
-//         <input type="file" id="generalImage" name="generalImage" value={formData.generalImage} onChange={handleFileChange} required />
-//       </div>
-//       <div>
-//         <label htmlFor="carouselImages">Images (au maximum 4) :</label>
-//         <input type="file" id="images" name="carouselImages" multiple onChange={handleFileChange} required />
-//       </div>
-//       <button type="submit">Ajouter Projet</button>
-//     </form>
-//   );
-// };
-
-// export default ProjetForm;

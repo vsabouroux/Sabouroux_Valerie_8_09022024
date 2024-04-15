@@ -107,8 +107,8 @@ export async function addProjet(data) {
     return { error: true, message: err.message };
   }
 }
+export async function updateProjet(data,id) {
 
-export async function updateProjet(data, id) {
   const userId = localStorage.getItem('userId');
 
   let newData;
@@ -118,14 +118,17 @@ export async function updateProjet(data, id) {
     description: data.description,
     skills: data.skills,
     tags: data.tags,
+    githubUrl: data.githubUrl,
   };
-  console.log(data.file[0]);
+ 
   if (data.file[0]) {
+    console.log(data.file[0]);
     newData = new FormData();
     newData.append('projet', JSON.stringify(projet));
     newData.append('image', data.file[0]);
   } else {
     newData = { ...projet };
+    console.log(projet);
   }
 
   try {

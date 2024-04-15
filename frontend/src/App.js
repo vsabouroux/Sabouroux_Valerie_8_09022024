@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer";
 // import UpdateProjet from "./views/UpdateProjet/UpdateProjet";
 import { useUser } from "./lib/customHooks";
 import { getProjets } from "./lib/common";
+import UpdateProjet from "./views/UpdateProjet/UpdateProjet";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path={APP_ROUTES.HOME} element={<Home projets={projets} isAuthenticated={isAuthenticated}/>} />
           <Route path="/FicheProjet/:id" element={<FicheProjet projets={projets} />} />
           <Route path={APP_ROUTES.ADD_PROJET} element={<AddProjet />} />
+          <Route path={APP_ROUTES.UPDATE_PROJET} element={<UpdateProjet />} />
           <Route path={APP_ROUTES.APROPOS} element={<APropos />} />
           <Route path={APP_ROUTES.CONTACT} element={<Contact />} />
           <Route path="*" element={<NoMatch />} />
