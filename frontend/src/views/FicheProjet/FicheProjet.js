@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import CollapseItem from "../../components/Collaps/Collaps";
 import Tag from "../../components/Tag/Tag";
 import { useUser } from "../../lib/customHooks";
-import { deleteProjet } from "../../lib/common";
+import {  deleteProjet } from "../../lib/common";
 
 import "./FicheProjet.scss";
 
@@ -19,6 +19,8 @@ const FicheProjet = ({ projets }) => {
   const { auth } = useUser(); // On utilise le customHook useUser pour obtenir l'état d'authentification
   const [projetsState, setProjetsState] = useState(projets);
   const [deleted, setDeleted] = useState(false);
+  
+
   const handleDelete = async (id) => {
     try {
       await deleteProjet(id);
@@ -70,13 +72,14 @@ const FicheProjet = ({ projets }) => {
                 <h1 className="TitreProjet">{title}</h1>
                 <Tag tags={tags} />
                 {githubUrl && (
-                  <a href={githubUrl} target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                  <a href={githubUrl} className="lien_gitHub"  target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
                 )}
               </div>
               {auth && ( 
                 <div className="BoutonsModifierSupprimer">
-                  <Link to={`/projet/modifier/${projet.id}`} className="edit_button">
+                  <Link to= {`/projet/modifier/${projet.id}`}  className="edit_button">
                   {/* ={`${APP_ROUTES.UPDATE_PROJET}/${id}`} */}
+                  {/* {`/projet/modifier/${projet.id}`}  */}
                     Modifier
                   </Link>
                   <button className="delete_button" onClick={confirmDelete}>

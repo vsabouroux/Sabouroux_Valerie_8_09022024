@@ -16,6 +16,6 @@ export const APP_ROUTES = {
   CONTACT: "/Contact",
   ADD_PROJET: "/Ajouter",
   PROJET: "/FicheProjet/:id",//projets remplacé par "FicheProjet" 
-  UPDATE_PROJET: "projet/modifier/:id",
+  UPDATE_PROJET: "/projet/modifier/:id",
 };
 

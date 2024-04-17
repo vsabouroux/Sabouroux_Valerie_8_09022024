@@ -50,6 +50,7 @@ function ProjetForm({ projet, validate }) {
       if (!updatedProjet.error) {
         navigate('/');
       } else {
+        console.log(data)
         // eslint-disable-next-line no-alert
         alert(updatedProjet.message);
       }
@@ -68,7 +69,7 @@ function ProjetForm({ projet, validate }) {
         <input type="text" id="description" {...register('description')} />
       </label>
       <label htmlFor="skills">
-        <p>Compétences *       compétence1, compétence2, ...</p>
+        <p>Compétences *  compétence1, compétence2, ...</p>
         <input type="text" id="skills" {...register('skills')} />
       </label>
       <label htmlFor="tags">

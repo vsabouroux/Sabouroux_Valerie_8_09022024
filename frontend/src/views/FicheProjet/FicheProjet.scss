@@ -1,7 +1,8 @@
 $primaryColor: #001b9e;
 .ImageProjet{
   display: flex;
-  height: auto;
+  width: 100%;
+  height: 540px;
   justify-content: center;
 }
 section {
@@ -17,6 +18,9 @@ section {
     color: $primaryColor;
     margin-bottom: 5px;
   }
+  .lien_gitHub{
+    font-size: 18px;
+  }
   .Entete  {
     display: flex;
     flex-direction: row;
@@ -31,8 +35,9 @@ section {
     display: flex;
     justify-content: flex-end;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    align-items:flex-end;
     gap: 10px;
+    padding: 0 0 15px 0;
 }
   }
 
@@ -40,7 +45,7 @@ section {
       display: flex;
       justify-content:center;
       align-items: center;
-      font-size: 14px;
+      font-size: 18px;
       color: white;
       height: auto;
       border-radius: 10px;
@@ -54,7 +59,7 @@ section {
       display: flex;
       justify-content:center;
       align-items: center;
-      font-size: 14px;
+      font-size: 18px;
       color: white;
       height: auto;
       border-radius: 10px;
@@ -82,17 +87,17 @@ section {
 @media screen and (max-width: 376px) {
   section {
     padding: 0 20px;
-    .Carrousel {
-      height: 255px;
-    }
+    // .Carrousel {
+    //   height: 255px;
+    // }
     .Entete-HostGlobal .TitreProjet {
-      font-size: 18px;
+      font-size: 14px;
       width: 335px;
       // gap: 10px;
       padding-bottom: 20px;
       margin: 0;
     }
-    .Entete-HostGlobal .Problematique {
+    .Entete-HostGlobal {
       font-size: 14px;
       padding-top: 5px;
       padding-bottom: 10px;
@@ -117,26 +122,21 @@ section {
       align-items: center;
       gap: 20px;
     }
+    .lien_gitHub{
+      font-size: 12px;
+    }
   }
-  .TitrePojet {
-    font-size: 24px;
-  }
+  // .TitrePojet {
+  //   font-size: 24px;
+  // }
   .ImageProjet {
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: auto;
+    padding:0;
   }
-  // .slideshow {
-  //   margin: auto;
-  // }
-
-  // .prev img,
-  // .next img {
-  //   width: 11.67px;
-  //   height: 19.8px;
-  // }
-
-  // .counter {
-  //   display: none;
-  // }
 
   section .MenuAccordeon {
     display: flex;
@@ -144,4 +144,13 @@ section {
     justify-content: space-around;
     gap: 20px;
   }
+  .BoutonsModifierSupprimer .edit_button {
+    font-size: 12px;
+   
+  }
+  .BoutonsModifierSupprimer .delete_button{
+    font-size: 12px;
+  }
 }
+
+
