@@ -1,13 +1,13 @@
 section.Projet {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  // justify-items: center;
   gap: 36px;
   background-color: #f6f6f6;
   border-radius: 25px;
   padding: 36px;
   margin: 100px;
-  // object-fit: cover;
+  // height: 100%;
 }
 .button_container {
   display: flex;
