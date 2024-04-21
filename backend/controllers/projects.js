@@ -1,6 +1,6 @@
+const Project = require("../models/Project");
 const fs = require("fs");
 const path = require("path");
-const Project = require("../models/Project");
 
 exports.createProject = (req, res, next) => {
   let projectObjet = JSON.parse(req.body.projet);//project changé en "projet" parceque c'est comme ça que cela s'appelle dans le frontend !!!
@@ -60,12 +60,14 @@ exports.getOneProject = (req, res, next) => {
 };
 
 exports.modifyProject = (req, res, next) => {
-  let projectObjet = JSON.parse(req.body.projet); // Récupérez directement les données du projet depuis req.body
+  
+  const projectObjet = JSON.parse(req.body.projet); // Récupérez directement les données du projet depuis req.body
 
   // Transformez les champs 'tags' et 'skills' en tableaux
   projectObjet.tags = projectObjet.tags.split(",");
   projectObjet.skills = projectObjet.skills.split(",");
-
+  delete projectObjet._userId;
+  
   Project.findById(req.params.id)
     .then((project) => {
       if (!project) {
@@ -124,9 +126,10 @@ exports.deleteProject = (req, res, next) => {
       if (!projet) {
         return res.status(404).json({ message: "Projet non trouvé !" });
       }
-      if (projet.userId !== req.auth.userId) {
-        return res.status(401).json({ message: "Accès non autorisé !" });
-      } else {
+      // if (projet.userId !== req.auth.userId) {
+      //   return res.status(401).json({ message: "Accès non autorisé !" });
+      // } 
+      else {
         const filename = projet.imageUrl.split("images/")[1];
         fs.unlink(`images/${filename}`, () => {
           Project.deleteOne({ _id: req.params.id })

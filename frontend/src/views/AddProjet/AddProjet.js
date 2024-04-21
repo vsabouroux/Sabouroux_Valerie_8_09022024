@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './AddProjet.scss';
 import ProjetForm from '../../components//ProjetForm/ProjetForm';
 import BackArrow from '../../components/BackArrow/BackArrow';
-import { useUser } from '../../lib/customHooks';
-import { APP_ROUTES } from '../../utils/constants';
+// import { useUser } from '../../lib/customHooks';
+// import { APP_ROUTES } from '../../utils/constants';
 import projetAdd from '../../assets/projet_add.jpg';
 
 
 function AddProjet() {
-  const navigate = useNavigate();
-  const { connectedUser, auth, userLoading } = useUser();
+  // const navigate = useNavigate();
+  // const { connectedUser, auth, userLoading } = useUser();
   const [created, setCreated] = useState(false);
 
    // Hook useEffect pour mettre à jour la liste des projets une fois que le projet est créé avec succès
@@ -21,13 +21,14 @@ function AddProjet() {
   }, [created]);
   
    // Hook useEffect pour la redirection vers la page de connexion si l'utilisateur n'est pas connecté
-  useEffect(() => {
-    if (!userLoading) {
-      if (!connectedUser || !auth) {
-        navigate(APP_ROUTES.SIGN_IN);
-      }
-    }
-  }, [auth, connectedUser, navigate, userLoading]);
+  // useEffect(() => {
+  //   if (!userLoading) {
+  //     if (!connectedUser || !auth) {
+  //       navigate(APP_ROUTES.SIGN_IN);
+  //     }
+  //   }
+  // }, [auth, connectedUser, navigate, userLoading]);
+     // Utiliser useEffect pour observer les changements dans l'état 'deleted'
 
   return (
     <div className="content-container">

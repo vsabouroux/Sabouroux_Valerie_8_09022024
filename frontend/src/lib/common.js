@@ -79,7 +79,8 @@ export async function deleteProjet(id) {
     return false;
   }
 }
-
+//utilisation du hook useEffect pour indiquer à React que le composant doit exécuter quelque chose après chaque affichage
+//ici il s'agit de ne pas avoir besoin de recharger la page lorsque l'ui ajoute, modifie ou supprime un projet
 export async function addProjet(data) {
   const userId = localStorage.getItem('userId');
   const projet = {
@@ -112,36 +113,37 @@ export async function addProjet(data) {
 export async function updateProjet(data, id) {
   const userId = localStorage.getItem('userId');
 
-  let newBodyFormData;
+  let newData;
   const projet = {
     userId,
+    title: data.title,
     description: data.description,
     skills: data.skills,
     tags: data.tags,
     githubUrl: data.githubUrl,
   };
   console.log("Données envoyées pour la mise à jour du projet :", projet);
-  console.log(data.file[0]);
+  console.log(data.file[0],id);
   if (data.file[0]) {
-    newBodyFormData = new FormData();
-    newBodyFormData.append('projet', JSON.stringify(projet));
-    newBodyFormData.append('image', data.file[0]);
+    newData = new FormData();
+    newData.append('projet', JSON.stringify(projet));
+    newData.append('image', data.file[0]);
   } else {
-    newBodyFormData = { ...projet };
+    newData = { ...projet };
   }
 //const newProjet = await axios
 // const response = await axios({
   // return response.data;
   try {
-    return await axios({
+    const newProjet = await axios({
       method: 'put',
       url: `${API_ROUTES.PROJETS}/${id}`,
-      data: newBodyFormData,
+      data: newData,
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     });
-  
+  return newProjet;
   } catch (err) {
     console.error(err);
     return { error: true, message: err.message };

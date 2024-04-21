@@ -18,7 +18,7 @@ function ProjetForm({ projet, validate }) {
       description: projet?.description,
       skills: projet?.skills,
       tags: projet?.tags,
-      id: projet?.id // On ajoute id comme valeur par défaut
+      // id: projet?.id // On ajoute id comme valeur par défaut
     }), [projet]),
   });
   useEffect(() => {
@@ -46,7 +46,7 @@ function ProjetForm({ projet, validate }) {
         alert(newProjet.message);
       }
     } else {
-      const updatedProjet = await updateProjet(data);
+      const updatedProjet = await updateProjet(data, data.id);
       if (!updatedProjet.error) {
         navigate('/');
       } else {

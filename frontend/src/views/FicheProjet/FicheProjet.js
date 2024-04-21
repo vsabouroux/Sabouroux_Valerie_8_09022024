@@ -19,7 +19,6 @@ const FicheProjet = ({ projets }) => {
   const { auth } = useUser(); // On utilise le customHook useUser pour obtenir l'état d'authentification
   const [projetsState, setProjetsState] = useState(projets);
   const [deleted, setDeleted] = useState(false);
-  
 
   const handleDelete = async (id) => {
     try {
@@ -36,18 +35,17 @@ const FicheProjet = ({ projets }) => {
     if (confirmation) {
       handleDelete(id, projet.imageUrl);
     }
- 
   };
   if (deleted) {
     return <Navigate to="/" />;
   }
-  if (!projet) {
-    // Rediriger vers la page NoMatch si le projet n'est pas trouvé. En fait ce n'est pas faire un "lien" mais une redirection ! avec "Navigate"
-    return (
-      // "Link" embarque une navigation alors que "Navigate" redirige
-      <Navigate to="/NoMatch" />
-    );
-  }
+  // if (!projet) {
+  //   // Rediriger vers la page NoMatch si le projet n'est pas trouvé. En fait ce n'est pas faire un "lien" mais une redirection ! avec "Navigate"
+  //   return (
+  //     // "Link" embarque une navigation alors que "Navigate" redirige
+  //     <Navigate to="/NoMatch" />
+  //   );
+  // }
 
   //Si le preojet est trouvé alors on affiche tout
   const { imageUrl, title, description, skills, tags, githubUrl } = projet;

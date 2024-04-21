@@ -1,9 +1,10 @@
+$primaryColor: #001b9e;
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 209px;
-  background-color: black;
+  background-color:$primaryColor;
   margin-top: 100px;
   width: 100%;
 
