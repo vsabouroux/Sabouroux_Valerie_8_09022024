@@ -34,7 +34,7 @@ function UpdateProjet() {
       }
     }
     getItem();
-  }, []); 
+  }, [params.id]); 
   //Au départ [] puis params.id
 
   // const handleSubmit = async (updatedData) => {

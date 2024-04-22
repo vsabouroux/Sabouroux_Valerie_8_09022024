@@ -1,6 +1,6 @@
 const Contact = require("../models/Contact");
 const nodemailer = require("nodemailer");
-// require("dotenv").config();
+require("dotenv").config();
 // console.log(process.env) // remove this after you've confirmed it is working
 
 // Configuration du transporteur pour nodemailer
@@ -8,9 +8,11 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD
+    pass: process.env.EMAIL_PASSWORD,
   }
 });
+console.log('EMAIL_USER:', process.env.EMAIL_USER);
+console.log('EMAIL_PASSWORD:', process.env.EMAIL_PASSWORD);
 
 exports.submitContactForm = async (req, res) => {
   try {

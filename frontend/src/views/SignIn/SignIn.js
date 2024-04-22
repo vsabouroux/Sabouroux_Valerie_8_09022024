@@ -102,7 +102,7 @@ function SignIn({ setUser }) {
             onChange={(e) => { setPassword(e.target.value); }}
           />
         </label>
-        <div className={styles.Submit}>
+        <div className="submit">
           <button
             type="submit"
             className="
@@ -111,7 +111,7 @@ function SignIn({ setUser }) {
             bg-gray-800  text-white hover:bg-gray-800"
             onClick={signIn}
           >
-            {isLoading ? <div className="buttons" /> : null}
+            {isLoading ? <div className="button" /> : null}
             <span>
               Se connecter
             </span>

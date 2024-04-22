@@ -73,7 +73,8 @@ exports.modifyProject = (req, res, next) => {
       if (!project) {
         return res.status(404).json({ message: "Projet non trouvé !" });
       }
-      else {
+      // else {
+        // Vérifie si un nouveau fichier a été téléchargé pour remplacer l'image existante
         if (req.file) {
           // Supprime l'image existante
           const imagePath = path.join(
@@ -85,19 +86,16 @@ exports.modifyProject = (req, res, next) => {
             if (err) {
               console.error(
                 "Erreur lors de la suppression de l'image existante :",
-                err
-              );
+                err);
             }
           });
         }
-      };
 
   // Utilise findByIdAndUpdate pour mettre à jour le projet
-  Project.findByIdAndUpdate(
-    {_id:req.params.id},
-    { ...projectObjet, _id: req.params.id },
-    { new: true } // Cela renvoie le projet mis à jour après la modification
-  )
+  Project.findByIdAndUpdate(req.params.id, projectObjet, {new:true})
+    // { ...projectObjet, _id: req.params.id },
+    // { new: true } // Cela renvoie le projet mis à jour après la modification
+  
     .then((updatedProjet) => {
       if (!updatedProjet) {
         return res.status(404).json({ message: "Projet non trouvé !" });
@@ -105,8 +103,10 @@ exports.modifyProject = (req, res, next) => {
       res.status(200).json({ message: "Projet modifié !", projet: updatedProjet });
     })
     .catch((error) => res.status(500).json({ error }));
-    });
+    })
+    .catch((error) => res.status(500).json({ error }));
   };
+  
 //   Project.findByIdAndUpdate(
 //     { _id: req.params.id },
 //     { ...projectObjet, _id: req.params.id }
