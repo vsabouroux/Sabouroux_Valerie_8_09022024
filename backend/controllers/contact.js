@@ -1,9 +1,9 @@
 const Contact = require("../models/Contact");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
+// require("dotenv").config();
 // console.log(process.env) // remove this after you've confirmed it is working
 
-// Configuration du transporter pour nodemailer
+// Configuration du transporteur pour nodemailer
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -23,7 +23,7 @@ exports.submitContactForm = async (req, res) => {
         // Envoyer un e-mail au propriétaire de l'application
         const mailOptions = {
           from: process.env.EMAIL_USER,
-          to: 'adresse_email_du_proprietaire@gmail.com',
+          to: process.env.EMAIL_USER,
           subject: 'Nouveau formulaire de contact',
           text: `Vous avez reçu une nouvelle demande de contact de ${firstname} ${lastname} (${email}). Message: ${request}`
         };
