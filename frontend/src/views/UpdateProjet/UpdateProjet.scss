@@ -9,8 +9,26 @@
   align-items: center;
   padding-block: 80px;
 }
+.content-container .button{ 
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: 20px;
+}
 
 .Container p {
   font-family: "Libre Baskerville", serif;
   font-size: 16px;
+}
+.Created{
+  display: flex;
+  justify-content: center;
+}
+
+
+@media all and (max-width: 500px) {
+  .content-container .button{ 
+    margin-top: 50px;
+    font-size: 14px;
+  }
 }
