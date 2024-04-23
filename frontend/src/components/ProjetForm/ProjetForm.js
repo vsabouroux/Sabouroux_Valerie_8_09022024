@@ -2,14 +2,14 @@
 import React, { useEffect, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import * as PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useFilePreview } from '../../lib/customHooks';
 import addFileIMG from '../../assets/add_file.png';
 import styles from './ProjetForm.scss';
 import { updateProjet, addProjet } from '../../lib/common';
 
 function ProjetForm({ projet, validate }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const {
     register, watch, handleSubmit, reset,
   } = useForm({
@@ -35,7 +35,7 @@ function ProjetForm({ projet, validate }) {
       if (!data.file[0]) {
         // eslint-disable-next-line no-alert
         alert('Vous devez ajouter une image');
-        return; // Arrêter le traitement si aucune image n'est fournie
+        // return; // Arrêter le traitement si aucune image n'est fournie
       }
      
       const newProjet = await addProjet(data);
@@ -48,7 +48,8 @@ function ProjetForm({ projet, validate }) {
     } else {
       const updatedProjet = await updateProjet(data, data.id);
       if (!updatedProjet.error) {
-        navigate('/');
+        // navigate('/');
+        validate(true);
       } else {
         console.log(data)
         // eslint-disable-next-line no-alert
@@ -86,7 +87,7 @@ function ProjetForm({ projet, validate }) {
           {filePreview || projet?.imageUrl ? (
             <>
               <img src={filePreview ?? projet?.imageUrl} alt="preview" />
-              <p>Modifier</p>
+              <p>{filePreview ? "Nouvelle image" : "Modifier"}</p>
             </>
           ) : (
             <>

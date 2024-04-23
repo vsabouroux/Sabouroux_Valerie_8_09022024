@@ -33,7 +33,7 @@ function Modal({ onClose }) {
     Votre navigateur peut également être paramétré pour vous signaler les cookies qui sont déposés dans votre ordinateur et vous demander de les accepter ou non. Vous pouvez accepter ou refuser les cookies au cas par cas ou bien les refuser systématiquement une fois pour toutes.
     Nous vous rappelons que le paramétrage est susceptible de modifier vos conditions d'accès à nos services nécessitant l'utilisation de cookies.  <br />
 
-    <strong> Données personnelles :</strong> l'utilisateur du présent site est informé que, lors de sa navigation sur le site www.laformationtoutaulongdelavie.fr, des données à caractère personnel le concernant sont collectées et traitées.  <br />
+    <strong> Données personnelles :</strong> l'utilisateur du présent site est informé que, lors de sa navigation sur le site XXXX des données à caractère personnel le concernant sont collectées et traitées.  <br />
 
     L'utilisateur du site est informé que ses données :  <br />
     - sont collectées de manière loyale et licite,  <br />

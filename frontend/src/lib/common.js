@@ -135,7 +135,7 @@ export async function updateProjet(data, id) {
 // const response = await axios({
   // return response.data;
   try {
-    const newProjet = await axios({
+    const response = await axios({
       method: 'put',
       url: `${API_ROUTES.PROJETS}/${id}`,
       data: newData,
@@ -143,7 +143,8 @@ export async function updateProjet(data, id) {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     });
-  return newProjet;
+
+    return response.data; 
   } catch (err) {
     console.error(err);
     return { error: true, message: err.message };

@@ -1,12 +1,11 @@
-import React, {useState } from "react";
+import React, {useState, useEffect} from "react";
 import { Navigate, useParams } from "react-router-dom";
-
 import { Link } from "react-router-dom";
 // import { APP_ROUTES } from "../../utils/constants";
 import CollapseItem from "../../components/Collaps/Collaps";
 import Tag from "../../components/Tag/Tag";
 import { useUser } from "../../lib/customHooks";
-import {  deleteProjet } from "../../lib/common";
+import {  deleteProjet, getProjet } from "../../lib/common";
 
 import "./FicheProjet.scss";
 
@@ -16,10 +15,29 @@ import "./FicheProjet.scss";
 const FicheProjet = ({ projets }) => {
   // Récupérer les informations du projet, grace è l'ID de URL et le data.json
   const { id } = useParams();
-  const projet = projets.find((projet) => projet.id === id);
+  // const projet = projets.find((projet) => projet.id === id);
   const { auth } = useUser(); // On utilise le customHook useUser pour obtenir l'état d'authentification
   const [projetsState, setProjetsState] = useState(projets);
   const [deleted, setDeleted] = useState(false);
+  const [projet, setProjet] = useState(null);
+    // Vérifier si projet est défini avant de déstructurer ses propriétés
+    // if (!projet) {
+    //   // Gérer le cas où aucun projet n'est trouvé avec l'ID spécifié
+    //   return <p>Le projet demandé n'existe pas.</p>;
+    // }
+
+   useEffect(() => {
+    const fetchProjetDetails = async () => {
+      try {
+        const projetDetails = await getProjet(id); // Utilise getProjet pour récupérer le projet par ID
+        setProjet(projetDetails);
+      } catch (error) {
+        console.error("Error fetching projet details:", error);
+      }
+    };
+
+    fetchProjetDetails();
+  }, [id]);
 
   const handleDelete = async (id) => {
     try {
@@ -40,6 +58,11 @@ const FicheProjet = ({ projets }) => {
   if (deleted) {
     return <Navigate to="/" />;
   }
+  if (!projet) {
+    return <p>Chargement...</p>;
+  }
+
+  const { imageUrl, title, description, skills, tags, githubUrl } = projet;
   // if (!projet) {
   //   // Rediriger vers la page NoMatch si le projet n'est pas trouvé. En fait ce n'est pas faire un "lien" mais une redirection ! avec "Navigate"
   //   return (
@@ -48,10 +71,9 @@ const FicheProjet = ({ projets }) => {
   //   );
   // }
 
-  //Si le preojet est trouvé alors on affiche tout
-  const { imageUrl, title, description, skills, tags, githubUrl } = projet;
-  // Diviser la chaîne de tags en un tableau de tags individuels
-  // const tagsArray = tags.split(",").map((tag) => tag.trim());
+ 
+  // Diviser la chaîne de tags en un tableau de tags individuels fait dans le backend au niveau controllers =>projects
+  // const tagsArray = tags.split(",").map((tag) => tag.trim()); 
 
 
   return (
