@@ -26,6 +26,7 @@ function ProjetForm({ projet, validate }) {
     // eslint-disable-next-line
   }, [projet]);
 
+   
   const file = watch(['file']);
   const [filePreview] = useFilePreview(file);
 
@@ -57,13 +58,15 @@ function ProjetForm({ projet, validate }) {
       }
     }
   };
+ 
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
       <input type="hidden" id="id" {...register('id')} />
       <label htmlFor="title">
         <p>Titre du projet *</p>
-        <input type="text" id="title" {...register('title')} placeholder="Titre du projet" />
+        <input type="text" id="title" {...register('title')}  onClick={(e) => e.target.select()} // Sélectionne tout le texte lorsque le champ est cliqué
+        placeholder="Titre du projet" />
       </label>
       <label htmlFor="description">
         <p>Description *</p>
