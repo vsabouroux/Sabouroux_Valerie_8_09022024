@@ -63,18 +63,6 @@ const FicheProjet = ({ projets }) => {
   }
 
   const { imageUrl, title, description, skills, tags, githubUrl } = projet;
-  // if (!projet) {
-  //   // Rediriger vers la page NoMatch si le projet n'est pas trouvé. En fait ce n'est pas faire un "lien" mais une redirection ! avec "Navigate"
-  //   return (
-  //     // "Link" embarque une navigation alors que "Navigate" redirige
-  //     <Navigate to="/NoMatch" />
-  //   );
-  // }
-
- 
-  // Diviser la chaîne de tags en un tableau de tags individuels fait dans le backend au niveau controllers =>projects
-  // const tagsArray = tags.split(",").map((tag) => tag.trim()); 
-
 
   return (
     <div>

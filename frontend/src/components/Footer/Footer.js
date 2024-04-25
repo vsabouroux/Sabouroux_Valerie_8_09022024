@@ -12,21 +12,18 @@ function Footer() {
   };
   return (
     <footer className="vs-footer">
-      {/* <div className="bandeau">
-        <img src={vslogoSmall} alt="logo vs" className="vs-small-logo" />
-      </div> */}
       <div className="footerElements">
         <div className="realisation">
           <p>2024 - Réalisé par Valérie Sabouroux</p>
         </div>
-        {/* problème liens github et linkedin Les logos n'apparaissent pas sur PA ! */}
         <div className="liens">
           <a 
             href="https://github.com/vsabouroux/"
             target="_blank"
             rel="noopener noreferrer"
+            title="Mon profil GitHub (s'ouvre dans une nouvelle fenêtre)"
           >
-             <FontAwesomeIcon icon={faGithub} className="github-icon" />
+             <FontAwesomeIcon icon={faGithub} className="github-icon"/>
            {/* <img src={githubLogo} alt="logo GitHub" /> */}
            {/* <svg xmlns="http://www.w3.org/2000/svg" height="10" width="9.6875" viewBox="0 0 496 512" className="github-logo" alt="logo GitHub">
               <path fill="currentColor" d={githubLogo} />
@@ -36,6 +33,7 @@ function Footer() {
             href="https://www.linkedin.com/in/vsabouroux/"
             target="_blank"
             rel="noopener noreferrer"
+            title="Mon profil LinkedIn (s'ouvre dans une nouvelle fenêtre)"
           >
              <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
           {/* <img src={linkedinLogo} alt="logo réseau social LinkedIn" /> */}

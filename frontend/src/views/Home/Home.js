@@ -21,6 +21,7 @@ function Home({isAuthenticated }) {
         <Banner
           img={enteteImage}
           texte="Pour vous, des projets qui vous ressemblent" 
+          alt="image décorative d'un ordinateur portable" 
         />
         <div className="button_container"> 
         {isAuthenticated && ( // Utilisation de l'état d'authentification ici

@@ -20,13 +20,10 @@
   font-family: "Libre Baskerville", serif;
   font-size: 16px;
 }
-.Created{
-  display: flex;
-  justify-content: center;
-}
 
 
-@media all and (max-width: 500px) {
+
+@media all and (max-width: 376px) {
   .content-container .button{ 
     margin-top: 50px;
     font-size: 14px;

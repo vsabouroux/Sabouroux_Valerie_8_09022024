@@ -11,8 +11,8 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASSWORD,
   }
 });
-console.log('EMAIL_USER:', process.env.EMAIL_USER);
-console.log('EMAIL_PASSWORD:', process.env.EMAIL_PASSWORD);
+// console.log('EMAIL_USER:', process.env.EMAIL_USER);
+// console.log('EMAIL_PASSWORD:', process.env.EMAIL_PASSWORD);
 
 exports.submitContactForm = async (req, res) => {
   try {
@@ -35,6 +35,23 @@ exports.submitContactForm = async (req, res) => {
             console.error("Erreur lors de l'envoi de l'e-mail:", error);
           } else {
             console.log("E-mail envoyé avec succès:", info.response);
+          }
+        });
+
+        
+        // Envoi de l'e-mail automatique de confirmation au formulaire de contact
+        const confirmationMailOptions = {
+          from: process.env.EMAIL_USER,
+          to: email,
+          subject: 'Confirmation de réception de votre message',
+          text: `Bonjour ${firstname},\n\nVotre message a bien été reçu. Nous vous remercions pour votre intérêt et nous vous répondrons sous peu.\n\nCordialement,\n[V Sabouroux]`
+        };
+        
+        transporter.sendMail(confirmationMailOptions, function(error, info){
+          if (error) {
+            console.error("Erreur lors de l'envoi de l'e-mail de confirmation:", error);
+          } else {
+            console.log("E-mail de confirmation envoyé avec succès à:", email);
           }
         });
 

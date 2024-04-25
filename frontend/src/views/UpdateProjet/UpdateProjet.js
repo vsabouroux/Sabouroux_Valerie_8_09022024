@@ -68,7 +68,9 @@ function UpdateProjet() {
         ) : (
           <div className={styles.Created}>
             <h1>Merci !</h1>
+            <div className="test">
             <p>votre projet a bien été mis à jour</p>
+            </div>
             <img src={projetAdd} alt="Projet mis à jour" />
             <Link to="/" className="button">
               Retour à l&apos;accueil
