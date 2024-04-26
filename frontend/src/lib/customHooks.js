@@ -32,7 +32,7 @@ export function useFilePreview(file) {
         setImgSrc(newUrl);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fileInput[0]?.name]);
 
   return [imgSrc, setImgSrc];

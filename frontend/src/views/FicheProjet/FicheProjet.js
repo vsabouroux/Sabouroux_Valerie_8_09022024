@@ -89,6 +89,7 @@ const FicheProjet = ({ projets }) => {
                   <Link to= {`/projet/modifier/${projet.id}`}  className="edit_button">
                   {/* ={`${APP_ROUTES.UPDATE_PROJET}/${id}`} */}
                   {/* {`/projet/modifier/${projet.id}`}  */}
+                  {/* {`/projet/modifier/${projet.id}`} */}
                     Modifier
                   </Link>
                   <button className="delete_button" onClick={confirmDelete}>

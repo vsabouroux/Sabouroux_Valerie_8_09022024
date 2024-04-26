@@ -49,7 +49,7 @@ function SignIn({ setUser }) {
       setIsLoading(false);
     }
   };
-
+// Un seul UI autorisé pour cette application pour l'instant. Par la suite les clients pourraient déposer des documents, photos
   // const signUp = async () => {
   //   try {
   //     setIsLoading(true);
@@ -75,7 +75,7 @@ function SignIn({ setUser }) {
   // };
   const errorClass = notification.error ? styles.Error : null;
   return (
-    <div className={`${styles.SignIn} container`}>
+    <div className= "container">
       <div className={`${styles.Notification} ${errorClass}`}>
         {notification.message.length > 0 && <p>{notification.message}</p>}
       </div>
@@ -94,7 +94,7 @@ function SignIn({ setUser }) {
         <label htmlFor="password">
           <p>Mot de passe</p>
           <input
-            className="border-2 outline-none p-2 rounded-md"
+            // className="border-2 outline-none p-2 rounded-md"
             type="password"
             name="password"
             id="password"
@@ -105,14 +105,14 @@ function SignIn({ setUser }) {
         <div className="submit">
           <button
             type="submit"
-            className="
-            flex justify-center
-            p-2 rounded-md w-1/2 self-center
-            bg-gray-800  text-white hover:bg-gray-800"
+            // className="
+            // flex justify-center
+            // p-2 rounded-md w-1/2 self-center
+            // bg-gray-800  text-white hover:bg-gray-800"
             onClick={signIn}
           >
             {isLoading ? <div className="button" /> : null}
-            <span>
+            <span className="seconnecter">
               Se connecter
             </span>
           </button>

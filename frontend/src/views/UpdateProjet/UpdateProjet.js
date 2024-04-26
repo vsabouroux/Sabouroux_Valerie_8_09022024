@@ -34,7 +34,8 @@ function UpdateProjet() {
       }
     }
     getItem();
-  }, [params.id]); 
+     // eslint-disable-next-line
+  }, []); 
   //Au départ [] puis params.id
 
   // const handleSubmit = async (updatedData) => {
@@ -62,7 +63,7 @@ function UpdateProjet() {
         {!created ? (
           <>
             <h1>Modifier votre projet</h1>
-            <p>Vous pouvez modifier tous les champs</p>
+            <h2>Vous pouvez modifier tous les champs</h2>
             <ProjetForm projet={projet} validate={setCreated} />
           </>
         ) : (

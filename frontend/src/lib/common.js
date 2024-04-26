@@ -122,8 +122,8 @@ export async function updateProjet(data, id) {
     tags: data.tags,
     githubUrl: data.githubUrl,
   };
-  console.log("Données envoyées pour la mise à jour du projet :", projet);
-  console.log(data.file[0],id);
+  console.log("Données envoyées pour la mise à jour du projet :", projet, id);
+  console.log(data.file[0]);
   if (data.file[0]) {
     newData = new FormData();
     newData.append('projet', JSON.stringify(projet));
@@ -135,7 +135,7 @@ export async function updateProjet(data, id) {
 // const response = await axios({
   // return response.data;
   try {
-    const response = await axios({
+    const newProjet = await axios({
       method: 'put',
       url: `${API_ROUTES.PROJETS}/${id}`,
       data: newData,
@@ -144,7 +144,8 @@ export async function updateProjet(data, id) {
       },
     });
 
-    return response.data; 
+    // return newProjet.data; 
+    return newProjet; 
   } catch (err) {
     console.error(err);
     return { error: true, message: err.message };

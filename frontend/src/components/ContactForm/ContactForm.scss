@@ -3,7 +3,7 @@ $primaryColor: #001b9e;
 form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  width: 800px;
   margin: auto;
   padding: 20px;
   background-color: $primaryColor;
@@ -12,6 +12,7 @@ form {
   label {
     margin-bottom: 8px;
     color: #fff;
+    font-size: 20px;
     font-weight: 700;
   }
 
@@ -23,6 +24,7 @@ form {
     textarea {
       width: 100%;
       padding: 10px;
+      font-size: 18px;
       border: 1px solid #fff;
       border-radius: 5px;
       background-color: transparent;
@@ -55,9 +57,18 @@ form {
     }
   }
 }
+
 @media screen and (max-width: 376px) {
   form {
+    width: auto;
     margin: 20px;
+  }
+
+  form label {
+    font-size: 14px;
+  }
+
+  form div input, form div textarea  {
     font-size: 12px;
   }
 }

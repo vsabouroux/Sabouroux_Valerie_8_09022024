@@ -2,14 +2,14 @@
 import React, { useEffect, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import * as PropTypes from 'prop-types';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useFilePreview } from '../../lib/customHooks';
 import addFileIMG from '../../assets/add_file.png';
 import styles from './ProjetForm.scss';
 import { updateProjet, addProjet } from '../../lib/common';
 
 function ProjetForm({ projet, validate }) {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const {
     register, watch, handleSubmit, reset,
   } = useForm({
@@ -18,27 +18,23 @@ function ProjetForm({ projet, validate }) {
       description: projet?.description,
       skills: projet?.skills,
       tags: projet?.tags,
-      // id: projet?.id // On ajoute id comme valeur par défaut
     }), [projet]),
   });
   useEffect(() => {
     reset(projet);
-    // eslint-disable-next-line
-  }, [projet]);
-
+  }, [projet, reset]);
    
   const file = watch(['file']);
   const [filePreview] = useFilePreview(file);
 
   const onSubmit = async (data) => {
-    // When we create a new book
+    // When we create a new projet
     if (!projet) {
       if (!data.file[0]) {
         // eslint-disable-next-line no-alert
         alert('Vous devez ajouter une image');
         // return; // Arrêter le traitement si aucune image n'est fournie
       }
-     
       const newProjet = await addProjet(data);
       if (!newProjet.error) {
         validate(true);
@@ -47,9 +43,10 @@ function ProjetForm({ projet, validate }) {
         alert(newProjet.message);
       }
     } else {
+      console.log(data)
       const updatedProjet = await updateProjet(data, data.id);
       if (!updatedProjet.error) {
-        // navigate('/');
+        navigate('/');
         validate(true);
       } else {
         console.log(data)
@@ -59,26 +56,25 @@ function ProjetForm({ projet, validate }) {
     }
   };
  
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
       <input type="hidden" id="id" {...register('id')} />
       <label htmlFor="title">
         <p>Titre du projet *</p>
-        <input type="text" id="title" {...register('title')}  onClick={(e) => e.target.select()} // Sélectionne tout le texte lorsque le champ est cliqué
+        <input type="text" id="title" {...register('title')}  
         placeholder="Titre du projet" />
       </label>
       <label htmlFor="description">
         <p>Description *</p>
-        <input type="text" id="description" {...register('description')} />
+        <input type="text" id="description" {...register('description')} placeholder="Description du projet"/>
       </label>
       <label htmlFor="skills">
         <p>Compétences *  compétence1, compétence2, ...</p>
-        <input type="text" id="skills" {...register('skills')} />
+        <input type="text" id="skills" {...register('skills')} placeholder="Les compétences mises en oeuvre pour ce projet"/>
       </label>
       <label htmlFor="tags">
         <p>Langages / Outils * langage1, outil1, ...</p>
-        <input type="text" id="tags" {...register('tags')} />
+        <input type="text" id="tags" {...register('tags')} placeholder="Les langages et outils principaux mobilisés sur ce projet"/>
       </label>
       <label htmlFor="tags">
         <p>Lien GitHub</p>
@@ -90,7 +86,8 @@ function ProjetForm({ projet, validate }) {
           {filePreview || projet?.imageUrl ? (
             <>
               <img src={filePreview ?? projet?.imageUrl} alt="preview" />
-              <p>{filePreview ? "Nouvelle image" : "Modifier"}</p>
+              <p>Modifier</p>
+              {/* <p>{filePreview ? "Nouvelle image" : "Modifier"}</p> */}
             </>
           ) : (
             <>
@@ -126,3 +123,4 @@ ProjetForm.defaultProps = {
 };
 export default ProjetForm;
 
+ // onClick={(e) => e.target.select()} // Sélectionne tout le texte lorsque le champ est cliqué
