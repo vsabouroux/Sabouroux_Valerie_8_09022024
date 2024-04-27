@@ -24,7 +24,11 @@ function UpdateProjet() {
         navigate(APP_ROUTES.SIGN_IN);
       }
     }
-  }, [auth, connectedUser, navigate, userLoading]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userLoading]);
+
+  // }, [auth, connectedUser, navigate, userLoading]); 
+ 
 
   useEffect(() => {
     async function getItem() {

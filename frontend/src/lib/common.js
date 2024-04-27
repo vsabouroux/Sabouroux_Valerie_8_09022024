@@ -121,30 +121,30 @@ export async function updateProjet(data, id) {
     skills: data.skills,
     tags: data.tags,
     githubUrl: data.githubUrl,
+    imageUrl:data?.imageUrl,
   };
-  console.log("Données envoyées pour la mise à jour du projet :", projet, id);
+ 
   console.log(data.file[0]);
+  console.log("Données envoyées pour la mise à jour du projet :",projet,id);
   if (data.file[0]) {
     newData = new FormData();
     newData.append('projet', JSON.stringify(projet));
     newData.append('image', data.file[0]);
   } else {
-    newData = { ...projet };
+    newData = { ...projet};
   }
 //const newProjet = await axios
 // const response = await axios({
   // return response.data;
   try {
     const newProjet = await axios({
-      method: 'put',
+      method: 'PUT',
       url: `${API_ROUTES.PROJETS}/${id}`,
       data: newData,
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     });
-
-    // return newProjet.data; 
     return newProjet; 
   } catch (err) {
     console.error(err);
