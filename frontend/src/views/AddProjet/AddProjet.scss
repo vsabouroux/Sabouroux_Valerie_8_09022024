@@ -2,6 +2,7 @@
   font-family: "Libre Baskerville", serif;
   background-color: #ffffff;
   margin: auto;
+  // width: 100%;
   border-radius: 7px;
   box-shadow: 0 4px 34px rgba(0, 0, 0, 0.07);
   box-sizing: border-box;
@@ -10,50 +11,56 @@
   align-items: center;
   padding-block: 80px;
 }
-a.backArrow{
+
+a.backArrow {
   margin: 20px;
   font-size: 20px;
- }
+}
+
 .content-container h1 {
   font-size: 22px;
   text-align: center;
 }
+
 .content-container h2 {
   font-size: 18px;
   font-weight: 400;
   text-align: center;
 }
+
 .Created {
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
 }
-.Created img {
-  margin-block: 30px;
-}
-.content-container{
+
+.content-container {
   display: flex;
   justify-content: center;
 }
+
 @media screen and (max-width: 376px) {
   .content-container {
     display: flex;
     flex-direction: column;
-    h1{
+    justify-content: center;
+
+    h1 {
       font-size: 16px;
     }
-    h2{
+
+    h2 {
       text-align: center;
       font-size: 12px;
-     }
-        }
+    }
+  }
 
-//  p {
-//   font-size: 14px;
-//   margin: 20px;
-//   text-align: center;
-// }
- a.backArrow{
-font-size: 12px;
- }
+  img,
+  p {
+    padding: 0 20px;
+  }
+
+  a.backArrow {
+    font-size: 12px;
+  }
 }

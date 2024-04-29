@@ -20,7 +20,7 @@ function Home({isAuthenticated }) {
       <main>
         <Banner
           img={enteteImage}
-          texte="Pour vous, des projets qui vous ressemblent" 
+          texte="Pour vous, je conçois et développe des projets web qui vous ressemblent"
           alt="image décorative d'un ordinateur portable" 
         />
         <div className="button_container"> 

@@ -20,11 +20,7 @@ const FicheProjet = ({ projets }) => {
   const [projetsState, setProjetsState] = useState(projets);
   const [deleted, setDeleted] = useState(false);
   const [projet, setProjet] = useState(null);
-    // Vérifier si projet est défini avant de déstructurer ses propriétés
-    // if (!projet) {
-    //   // Gérer le cas où aucun projet n'est trouvé avec l'ID spécifié
-    //   return <p>Le projet demandé n'existe pas.</p>;
-    // }
+
 
    useEffect(() => {
     const fetchProjetDetails = async () => {

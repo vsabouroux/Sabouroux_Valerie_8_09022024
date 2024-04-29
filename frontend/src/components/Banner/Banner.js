@@ -8,6 +8,7 @@ function Banner({ img, texte, alt }) {
 
       <div className="overlay">
         <h1>{texte}</h1>
+        <p>Valérie SABOUROUX</p>
       </div>
     </div>
   );

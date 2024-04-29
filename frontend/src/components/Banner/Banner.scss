@@ -1,4 +1,5 @@
 .Banner {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,34 +12,47 @@
     justify-content: center;
     color: white; // Couleur du texte
     font-weight: medium;
-    font-size: 28px;
-  }
-  .banner-image {
-    width: 100%; // largeur de 100% pour remplir le conteneur parent "Banner"
-    height: 223px;
-    object-fit: cover;
-    border-radius: 25px;
+    font-size: 20px;
+    padding: 0 20px; //pour éviter que le texte ne soit collé aux bords
 
-    // "filter" permet d'ajouter un filtre pour assombrir l'image
-    filter: brightness(70%);
+    h1 {
+      overflow-wrap: break-word;
+    }
+
+    p {
+      font-style: italic;
+      text-align: right;
+      font-weight: 700;
+    }
   }
 }
+
+.banner-image {
+  width: 100%; // largeur de 100% pour remplir le conteneur parent "Banner"
+  height: 223px;
+  object-fit: cover;
+  border-radius: 25px;
+  // "filter" permet d'ajouter un filtre pour assombrir l'image
+  filter: brightness(70%);
+}
+
 @media screen and (max-width: 376px) {
   .Banner {
     margin: 20px;
-  
+
     .banner-image {
       width: 335px;
       height: 111px;
       border-radius: 10px;
     }
-    .overlay,
-    h1 {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: -20px;
-      font-size: 20px;
-      width: 217px;
-    }
+    .overlay {
+      padding: 0 10px;
+      h1 {
+        font-size: 16px;
+      }
+      p{
+        font-size: 12px;
+      }
   }
+}
 }

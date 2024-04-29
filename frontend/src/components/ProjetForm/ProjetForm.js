@@ -7,8 +7,8 @@ import { useFilePreview } from "../../lib/customHooks";
 import addFileIMG from "../../assets/add_file.png";
 import styles from "./ProjetForm.scss";
 import { updateProjet, addProjet } from "../../lib/common";
-
 function ProjetForm({ projet, validate }) {
+ 
   const navigate = useNavigate();
   const { register, watch, handleSubmit, reset } = useForm({
     defaultValues: useMemo(
@@ -23,6 +23,7 @@ function ProjetForm({ projet, validate }) {
       [projet]
     ),
   });
+  
   useEffect(() => {
     reset(projet);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,7 +38,7 @@ function ProjetForm({ projet, validate }) {
       delete data.file;
       data.imageUrl = projet.imageUrl; // Permet de conserver l'URL de l'image existante lors de la mise à jour du projet
     }
-    // When we create a new projet
+    // Quand on crée un nouveau projet
     if (!projet) {
       if (!data.file[0]) {
         // eslint-disable-next-line no-alert
@@ -75,17 +76,19 @@ function ProjetForm({ projet, validate }) {
       <input type="hidden" id="id" {...register("id")} />
       <label htmlFor="title">
         <p>Titre du projet *</p>
-        <textarea
+        <input
           type="text"
           id="title"
           {...register("title")}
           placeholder="Titre du projet"
+     
         />
       </label>
       <label htmlFor="description">
         <p>Description *</p>
         <textarea
           type="text"
+      
           id="description"
           {...register("description")}
           placeholder="Description du projet"
@@ -109,7 +112,7 @@ function ProjetForm({ projet, validate }) {
           placeholder="Les langages et outils principaux mobilisés sur ce projet"
         />
       </label>
-      <label htmlFor="tags">
+      <label htmlFor="githubUrl">
         <p>Lien GitHub</p>
         <input type="text" id="githubUrl" {...register("githubUrl")} />
       </label>
@@ -130,18 +133,6 @@ function ProjetForm({ projet, validate }) {
               <p>Ajouter une image</p>
             </>
           )}
-          {/* {filePreview || projet?.imageUrl ? (
-            <>
-              <img src={filePreview ?? projet?.imageUrl} alt="preview" />
-              <p>Modifier</p>
-              <p>{filePreview ? "Nouvelle image" : "Modifier"}</p>
-            </>
-          ) : (
-            <>
-              <img src={addFileIMG} alt="Add file" />
-              <p>Ajouter une image</p>
-            </>
-          )} */}
         </div>
         <input {...register("file")} type="file" id="file" />
       </label>
@@ -169,4 +160,4 @@ ProjetForm.defaultProps = {
 };
 export default ProjetForm;
 
-// onClick={(e) => e.target.select()} // Sélectionne tout le texte lorsque le champ est cliqué
+
