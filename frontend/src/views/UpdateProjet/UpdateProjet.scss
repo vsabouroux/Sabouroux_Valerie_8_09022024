@@ -1,0 +1,32 @@
+.Container {
+  background-color: #ffffff;
+  margin: auto;
+  border-radius: 7px;
+  box-shadow: 0 4px 34px rgba(0, 0, 0, 0.07);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 80px;
+}
+.button{ 
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.Container p {
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+
+@media all and (max-width: 376px) {
+  .content-container .button{ 
+    margin-top: 50px;
+    font-size: 14px;
+  }
+}

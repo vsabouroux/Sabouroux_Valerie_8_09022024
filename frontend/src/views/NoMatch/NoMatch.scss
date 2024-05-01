@@ -1,0 +1,46 @@
+$primaryColor: #001b9e;
+.element-no-found {
+  color: $primaryColor;
+  text-align: center;
+}
+.NoMatch {
+  font-size: 288px;
+  margin-block-start: 139px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.page-inconnue {
+  font-size: 36px;
+  font-weight: normal;
+  margin-block-end: 139px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.back-home {
+  font-size: 18px;
+  color: $primaryColor;
+}
+
+@media screen and (max-width: 376px) {
+  .element-no-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .NoMatch {
+      margin-block-start: 113px;
+      font-size: 96px;
+      margin-bottom: 113px;
+    }
+    .page-inconnue {
+      width: 260px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .back-home {
+      font-size: 14px;
+      margin-bottom: 113px;
+    }
+  }
+}

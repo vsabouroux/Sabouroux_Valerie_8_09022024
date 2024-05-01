@@ -1,0 +1,111 @@
+$primaryColor: #001b9e;
+.vs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 45px 100px 45px 100px;
+
+  .qr-code-container{
+    position: relative; 
+    width: 110px;
+    height: 110px; 
+  }
+
+  .qr-code-logo {
+    position: absolute; // Positionnez le logo de manière absolue par rapport au conteneur
+    // top: 50%;
+    // left: 50%;
+    transform: translate(-2%, -2%);
+    width: 115px; // Taille du logo 
+    height: auto;
+    z-index: 1;
+    opacity: 0.8;
+  }
+  nav {
+    ul {
+      display: flex;
+      gap: 57px;
+      justify-content: flex-end;
+      list-style-type: none;
+      font-size: 24px;
+      font-weight: bold;
+      padding-right: 13px;
+    }
+    li {
+      align-items: center;
+    }
+    .nav-link.active {
+      text-decoration: underline;
+      line-height: 34.22px;
+      color: $primaryColor;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: $primaryColor;
+    }
+    .seconnecter.active{
+      text-decoration: underline;
+      line-height: 34.22px;
+      color: $primaryColor;
+    }
+    // .nav-link-signin.active {
+    //   text-decoration: underline;
+    //   line-height: 34.22px;
+    //   color: $primaryColor;
+    // }
+    // .nav-link-signin {
+    //   text-decoration: none;
+    //   color: $primaryColor;
+    // }
+    // .faUser {
+    //   visibility: hidden;
+    // }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .vs-header {
+    // padding: 20px 20px 27px 20px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 27px 20px;
+    flex-wrap: wrap;
+    justify-self: center;
+    gap: 30px;
+
+    .vs-logo2 {
+      width: 70px;
+    }
+    nav {
+      ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        font-size: 12px;
+        // justify-content: flex-start;
+        align-items: center;
+        // margin-left:0;
+        gap: 26px;
+      }
+      li {
+        align-items: center; // Centre verticalement chaque lien
+      }
+      // .nav-link-signin {
+      //   display: flex;
+      //   align-items: center;
+      // }
+      .nav-link-signin.active {
+        text-decoration: underline;
+        line-height: 34.22px;
+        color: $primaryColor;
+      }
+      .nav-link-signin {
+        // display: none;
+        visibility: hidden;
+      }
+      .faUser {
+        visibility: visible;
+      }
+    }
+  }
+}

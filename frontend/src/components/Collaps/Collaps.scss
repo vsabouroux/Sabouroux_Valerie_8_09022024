@@ -1,0 +1,103 @@
+$primaryColor: #001b9e;
+.CollapseItem {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 24px;
+    color: white;
+  }
+}
+
+.CollapseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: $primaryColor;
+  height: 54px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.CollapseContent {
+  padding: 10px 0px 20px 20px;
+  background-color: #f6f6f6;
+  color: $primaryColor;
+  font-size: 16px;
+}
+
+ul {
+  border-radius: 5px;
+  list-style-type: disc;
+  padding-left: 0;
+  margin: 0;
+}
+
+.Arrow img {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1px;
+  stroke: black;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+//Ajout animation sur collaps
+.animate_collaps {
+  animation: animationCollaps 1s;
+}
+.animate_arrow {
+  animation: animationCollapsArrow 1s;
+}
+@keyframes animationCollaps {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes animationCollapsArrow {
+  0% {
+    rotate: -180deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+@media screen and (max-width: 376px) {
+  .CollapseItem {
+    .CollapseContent {
+      display: flex;
+      flex-direction: column;
+    }
+    .CollapseHeader {
+      width: 335px;
+      height: 30px;
+      padding: 0;
+      border-radius: 5px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    h2 {
+      display: flex;
+      font-size: 13px;
+      justify-content: space-between;
+      padding-left: 10px;
+    }
+    .CollapseContent {
+      font-size: 12px;
+    }
+    .Arrow {
+      display: flex;
+      justify-content: space-around;
+      padding-right: 5px;
+    }
+    .Arrow img {
+      width: 18px;
+      height: 18px;
+      padding-right: 5px;
+    }
+  }
+}

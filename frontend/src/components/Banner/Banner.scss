@@ -1,0 +1,59 @@
+.Banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border-radius: 25px;
+  margin: 45px 100px 50px 100px;
+
+  .overlay {
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    color: white; // Couleur du texte
+    font-weight: medium;
+    font-size: 20px;
+    padding: 0 20px; //pour éviter que le texte ne soit collé aux bords
+
+    h1 {
+      overflow-wrap: break-word;
+    }
+
+    p {
+      font-style: italic;
+      text-align: right;
+      font-weight: 700;
+    }
+  }
+}
+
+.banner-image {
+  width: 100%; // largeur de 100% pour remplir le conteneur parent "Banner"
+  height: 223px;
+  object-fit: cover;
+  border-radius: 25px;
+  // "filter" permet d'ajouter un filtre pour assombrir l'image
+  filter: brightness(70%);
+}
+
+@media screen and (max-width: 376px) {
+  .Banner {
+    margin: 20px;
+
+    .banner-image {
+      // width: 335px;
+      height: 111px;
+      border-radius: 10px;
+      padding:0;
+    }
+    .overlay {
+      padding: 0 10px;
+      h1 {
+        font-size: 16px;
+      }
+      p{
+        font-size: 12px;
+      }
+  }
+}
+}

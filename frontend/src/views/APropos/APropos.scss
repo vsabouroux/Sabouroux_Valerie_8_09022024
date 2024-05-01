@@ -1,0 +1,32 @@
+.APropos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1023px;
+  margin: 38px auto;
+  
+  .valeurs{
+    font-size: 24px;
+  }
+}
+.CV{
+  font-size: 14px;
+  font-weight: 700;
+}
+@media screen and (max-width: 376px) {
+  .APropos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 20px 19px 20px;
+  }
+  .APropos .valeurs{
+    font-size: 14px;
+  }
+  .CV{
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+

@@ -1,0 +1,160 @@
+$primaryColor: #001b9e;
+// p{
+//   color:rgb(227, 14, 28);
+// }
+.ImageProjet{
+  display: flex;
+  width: 100%;
+  height: 540px;
+  justify-content: center;
+}
+section {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 100px;
+
+  // .Carrousel {
+  //   width: 100%;
+  // }
+  .TitreProject {
+    font-size: 36px;
+    color: $primaryColor;
+    margin-bottom: 5px;
+  }
+  .lien_gitHub{
+    font-size: 18px;
+  }
+  .Entete  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .GlobalProjet {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .Entete-HostGlobal .BoutonsModifierSupprimer {
+    display: flex;
+    justify-content: flex-end;
+    grid-template-columns: 1fr 1fr;
+    align-items:flex-end;
+    gap: 10px;
+    padding: 0 0 15px 0;
+}
+  }
+
+  .BoutonsModifierSupprimer .edit_button {
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      font-size: 18px;
+      color: white;
+      height: auto;
+      border-radius: 10px;
+      border-style: none;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 5px;
+      background-color: #001b9e;
+    }
+  .BoutonsModifierSupprimer .delete_button{
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      font-size: 18px;
+      color: white;
+      height: auto;
+      border-radius: 10px;
+      border-style: none;
+      text-decoration: none;
+      padding: 5px;
+      background-color: #ed1111f9;
+    }
+
+  .MenuAccordeon {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 24px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    gap: 24px;
+  }
+  .CollapseHeader {
+    height: 50px;
+    gap: 76px;
+  }
+
+
+// Responsive mobile : breakpoint à 375px
+@media screen and (max-width: 376px) {
+  section {
+    padding: 0 20px;
+    // .Carrousel {
+    //   height: 255px;
+    // }
+    .Entete-HostGlobal .TitreProjet {
+      font-size: 14px;
+      width: 335px;
+      // gap: 10px;
+      padding-bottom: 20px;
+      margin: 0;
+    }
+    .Entete-HostGlobal {
+      font-size: 14px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
+
+    .Entete-HostGlobal {
+      display: grid;
+      grid-template-columns: 1fr;
+      // gap: 0;
+    }
+    .Entete {
+      flex-direction: column;
+    }
+    // .HostSemiGlobal {
+    //   gap: 10px;
+    //   align-items: center;
+    // }
+    .HostGlobal {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .lien_gitHub{
+      font-size: 12px;
+    }
+  }
+  // .TitrePojet {
+  //   font-size: 24px;
+  // }
+  .ImageProjet {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: auto;
+    padding:0;
+  }
+
+  section .MenuAccordeon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 16px;
+    gap: 20px;
+  }
+  .BoutonsModifierSupprimer .edit_button {
+    font-size: 12px;
+   
+  }
+  .BoutonsModifierSupprimer .delete_button{
+    font-size: 12px;
+  }
+}
+
+

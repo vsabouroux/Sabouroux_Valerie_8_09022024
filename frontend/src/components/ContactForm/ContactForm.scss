@@ -1,0 +1,74 @@
+$primaryColor: #001b9e;
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: $primaryColor;
+  border-radius: 10px;
+
+  label {
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  div {
+    margin-bottom: 20px;
+    margin-right: 25px;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      background-color: transparent;
+      color: #fff;
+
+      &:focus {
+        outline: none;
+        border-color: lighten($primaryColor, 20%);
+      }
+    }
+
+    div {
+      color: #fff; // Couleur des messages d'erreur
+    }
+  }
+
+  button {
+    background-color: #fff;
+    color: $primaryColor;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primaryColor, 10%);
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  form {
+    width: auto;
+    margin: 20px;
+  }
+
+  form label {
+    font-size: 14px;
+  }
+
+  form div input, form div textarea  {
+    font-size: 12px;
+  }
+}
