@@ -4,18 +4,9 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "20.x"
+    "node": "20.11.0"
   },
-  "environments": {
-    "test": {
-      "formation": {
-          "test": {
-            "quantity": 1,
-            "size": "standard-1x"
-          }
-      }
-   }
-},
+  
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
