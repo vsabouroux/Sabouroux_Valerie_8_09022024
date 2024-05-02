@@ -40,10 +40,10 @@ function App() {
             element={<SignIn setUser={setUser} />}
           />
           <Route path={APP_ROUTES.HOME} element={<Home projets={projets} isAuthenticated={isAuthenticated}/>} />
+          <Route path={APP_ROUTES.APROPOS} element={<APropos />} />
           <Route path="/FicheProjet/:id" element={<FicheProjet projets={projets} />} />
           <Route path={APP_ROUTES.ADD_PROJET} element={<AddProjet />} />
           <Route path={APP_ROUTES.UPDATE_PROJET} element={<UpdateProjet />} />
-          <Route path={APP_ROUTES.APROPOS} element={<APropos />} />
           <Route path={APP_ROUTES.CONTACT} element={<Contact />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
