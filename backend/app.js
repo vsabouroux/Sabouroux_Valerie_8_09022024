@@ -12,10 +12,10 @@ const mongoose = require("mongoose");
 // const Contact = require("./models/Contact");
 
 const app = express();
-
+ // "mongodb+srv://sabourouxvalerie:Nn3NliuxG1NhGeTW@cluster0.ivhsztv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
 mongoose
   .connect(
-    "mongodb+srv://sabourouxvalerie:Nn3NliuxG1NhGeTW@cluster0.ivhsztv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    process.env.MONGODB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
