@@ -4,29 +4,34 @@ import { useForm, Controller } from "react-hook-form";
 import "./ContactForm.scss";
 
 const MyForm = () => {
-  //En définissant defaultValues dans useForm, on s'assure que chaque champ de formulaire 
-  //contrôlé a une valeur initiale définie, et on évite ainsi l'erreur de composant non contrôlé à contrôlé.
-  const { handleSubmit, control, reset } = useForm(
-    {
-      defaultValues: {
-        firstname: "",
-        lastname: "",
-        email: "",
-        request: "",
-      },
-    }
-  );
+  //3 variables pour fonction "useForm" handleSubmit gère la soumission du form, "control" contôle les champs du form 
+  //pour accéder auxvaleurs des champs et "reset" pour réinitialiser les champs à leur valeur par défaut
+  const { handleSubmit, control, reset } = useForm({
+    defaultValues: {
+      firstname: "",
+      lastname: "",
+      email: "",
+      request: "",
+    },
+    shouldUnregister: true, // pour activer la sélection du contenu saisi
+  });
   const onSubmit = async (data) => {
     try {
       console.log("Données à envoyer:", data);
       // Envoi des données au backend
-      console.log("URL de soumission du formulaire de contact :", API_ROUTES.CONTACT);
+      console.log(
+        "URL de soumission du formulaire de contact :",
+        API_ROUTES.CONTACT
+      );
       const response = await Axios.post(`${API_ROUTES.CONTACT}`, data);
       console.log(response.data);
       // Réinitialiser les champs du formulaire après l'envoi réussi
       reset();
     } catch (error) {
-      console.error("Une erreur s'est produite lors de l'envoi des données:", error);
+      console.error(
+        "Une erreur s'est produite lors de l'envoi des données:",
+        error
+      );
     }
   };
 
@@ -34,7 +39,6 @@ const MyForm = () => {
   //   // Gérer la soumission des données ici avec requête HTTP et axios ds tt cça ?
   //   console.log(data);
   //   // envoyer ces données au backend maintenant dès que je l'aurai installé
- 
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

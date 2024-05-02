@@ -43,6 +43,7 @@ app.use(bodyParser.json());
 app.use("/api/projects", projectsRoutes);
 app.use("/api/auth", userRoutes);
 app.use("/api/contact", contactRoutes);
-app.use("/images", express.static(path.join(__dirname, "images")));
+app.use("/images", express.static(path.join(__dirname, "images"), {maxAge:"1y"
+}));
 
 module.exports = app;

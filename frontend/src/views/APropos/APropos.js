@@ -8,7 +8,6 @@ import "./APropos.scss";
 function APropos() {
   return (
     <div>
-      {/* <Header /> */}
       <main>
         <Banner
           img={lampeImage}
