@@ -9,7 +9,7 @@ const contactRoutes = require("./routes/contact");
 const path = require("path");
 
 const mongoose = require("mongoose");
-const Contact = require("./models/Contact");
+// const Contact = require("./models/Contact");
 
 const app = express();
 
