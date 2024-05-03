@@ -1,4 +1,4 @@
-// const API_URL = `http://localhost:4000`;
+
 const API_URL = `https://vs-portfolio-api-0c0adab5969b.herokuapp.com`;
 
 export const API_ROUTES = {
