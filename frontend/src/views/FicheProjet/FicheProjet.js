@@ -59,7 +59,7 @@ const FicheProjet = ({ projets }) => {
   }
 
   const { title, description, skills, tags, githubUrl } = projet;
-  const imageUrl =`https://vs-portfolio-api-0c0adab5969b.herokuapp.com//images/${projet.imageUrl}`;
+  const imageUrl =`https://vs-portfolio-api-0c0adab5969b.herokuapp.com/images/${projet.imageUrl}`;
 
   return (
     <div>
