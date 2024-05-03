@@ -16,7 +16,7 @@ exports.createProject = (req, res, next) => {
     userId: req.auth.userId,
     imageUrl: `https://${req.get("host")}/images/${
       req.file.filename
-    }`,//changement des ${req.protocol} en https
+    }`,//changement des ${req.protocol} en https car visiblement avec req.protocol il prenait http et non https (en même temps à aucun moment ds le back ce n'était dit)
   });
   project
     .save()
