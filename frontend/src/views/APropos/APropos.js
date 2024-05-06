@@ -33,7 +33,7 @@ function APropos() {
             content="Et cela passe par : la qualité de l'écoute, la capacité à mobiliser en un minimum de temps les bonnes ressources au service du projet du client, la capacité à se remettre réellement en cause, à anticiper les transformations,
             la capacité à intégrer dans ses missions les innovations."
           />
-           <p className="CV">Mon CV est accessible via le QRcode</p>
+           <p className="CV">Mon CV est accessible via le scan ou le clic du QRcode </p>
         </div>
       </main>
       {/* <Footer /> */}

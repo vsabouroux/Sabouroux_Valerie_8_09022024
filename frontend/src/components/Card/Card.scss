@@ -37,6 +37,16 @@
     z-index: 3;
   }
 
+  @media screen and (max-width:1024px) {
+    h3 {
+      top: 75%;
+      font-size: 14px;
+    }
+    .CardImage{
+      object-fit: scale-down;
+      // height: 340px;
+    }
+  }
   @media screen and (max-width: 376px) {
     h3 {
       top: 75%;

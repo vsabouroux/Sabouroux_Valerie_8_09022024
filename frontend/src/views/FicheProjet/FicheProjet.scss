@@ -84,7 +84,78 @@ section {
     height: 50px;
     gap: 76px;
   }
+// Responsive mobile : breakpoint à 1024px
+@media screen and (max-width: 1024px) {
+  section {
+    padding: 0 20px;
+  
+    .Entete-HostGlobal .TitreProjet {
+      font-size: 14px;
+      // width: 335px;
+      // gap: 10px;
+      // padding-bottom: 20px;
+      // margin: 0;
+      padding: 20px 0;
+    }
+    .Entete-HostGlobal {
+      font-size: 14px;
+      padding:0 30px;
+      // padding-top: 5px;
+      // padding-bottom: 10px;
+    }
 
+    .Entete-HostGlobal {
+      display: grid;
+      grid-template-columns: 1fr;
+      // gap: 0;
+    }
+    // .Entete {
+    //   flex-direction: column;
+    // }
+    // .HostSemiGlobal {
+    //   gap: 10px;
+    //   align-items: center;
+    // }
+    .HostGlobal {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .lien_gitHub{
+      font-size: 12px;
+      padding: 20px 0;
+    }
+  }
+  // .TitrePojet {
+  //   font-size: 24px;
+  // }
+  .ImageProjet {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: auto;
+    padding:0;
+  }
+
+  section .MenuAccordeon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 16px;
+    gap: 20px;
+    // padding: 0 50px;
+  }
+  .BoutonsModifierSupprimer .edit_button {
+    font-size: 12px;
+   
+  }
+  .BoutonsModifierSupprimer .delete_button{
+    font-size: 12px;
+  }
+}
 
 // Responsive mobile : breakpoint à 375px
 @media screen and (max-width: 376px) {
@@ -109,6 +180,7 @@ section {
     .Entete-HostGlobal {
       display: grid;
       grid-template-columns: 1fr;
+      padding:0;
       // gap: 0;
     }
     .Entete {

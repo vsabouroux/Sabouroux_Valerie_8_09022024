@@ -4,8 +4,17 @@ height: 50px;
 font-size: 16px;
 }
 
+@media screen and (max-width: 1024px) {
+    input, textarea{
+    font-size: 14px;
+    }
+}
 
 @media screen and (max-width: 376px) {
+    form{
+        width: 70%;
+        margin:auto;
+    }
     input, textarea{
     font-size: 12px;
     }

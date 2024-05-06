@@ -35,7 +35,23 @@ footer {
     font-size: 16px;
   }
 }
-
+@media screen and (max-width: 1024px) {
+  footer {
+    margin-top: 50px;
+  }
+  footer .realisation p {
+    font-size: 14px;
+    margin: auto;
+  }
+  footer .mentionsLegales p {
+    font-size: 12px;
+  }
+  .github-icon,
+  .linkedin-icon {
+    font-size: 16px;
+    padding-top: 20px;
+  }
+}
 @media screen and (max-width: 376px) {
   // footer {
   //   margin-top: 0;

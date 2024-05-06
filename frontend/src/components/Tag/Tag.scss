@@ -19,6 +19,21 @@ $primaryColor: #001b9e;
   border-radius: 10px;
 }
 
+@media screen and (max-width: 1024px) {
+  
+  .Tag ul {
+    display: flex;
+    flex-wrap: wrap;
+    // padding-bottom: 24px;
+    // padding: 0 50px;
+  }
+  .Tag li {
+    margin: 0;
+  }
+  .TagItem {
+    font-size: 10px;
+  }
+}
 @media screen and (max-width: 376px) {
   .Tag ul {
     display: flex;
