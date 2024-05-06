@@ -38,8 +38,11 @@ function Home({isAuthenticated }) {
               imageUrl={imageUrl} 
               className="Cover"
               id={id}
+              //Création d'une chaîne de caractères qui contient "Page d'accueil du site" suivi du titre du projet. 
+              //Le caractère $ suivi de ${} est utilisé pour insérer dynamiquement la valeur de la variable title dans la chaîne de caractères.
               alt={`Page d'accueil du site "${title}"`}
               // alt={title}
+
             />
           ))}
         </section>
