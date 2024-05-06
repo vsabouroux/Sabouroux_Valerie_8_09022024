@@ -35,6 +35,27 @@
   // "filter" permet d'ajouter un filtre pour assombrir l'image
   filter: brightness(70%);
 }
+@media screen and (max-width: 1024px) {
+  .Banner {
+    margin: 50px;
+
+    .banner-image {
+      // width: 335px;
+      height: 111px;
+      // border-radius: 10px;
+      // padding:0;
+    }
+    .overlay {
+      // padding: 0 10px;
+      h1 {
+        font-size: 18px;
+      }
+      p{
+        font-size: 14px;
+      }
+  }
+}
+}
 
 @media screen and (max-width: 376px) {
   .Banner {

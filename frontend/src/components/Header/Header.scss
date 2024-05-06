@@ -63,6 +63,53 @@ $primaryColor: #001b9e;
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .vs-header {
+    // padding: 20px 20px 27px 20px;
+    display: flex;
+    // justify-content: center;
+    padding: 20px 50px 20px 50px;
+    flex-wrap: wrap;
+    // justify-self: center;
+    // gap: 30px;
+
+    .vs-logo2 {
+      width: 70px;
+    }
+    nav {
+      ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        font-size: 18px;
+        // justify-content: flex-start;
+        align-items: center;
+        // margin-left:0;
+        // gap: 26px;
+        padding:0;
+      }
+      li {
+        align-items: center; // Centre verticalement chaque lien
+      }
+      // .nav-link-signin {
+      //   display: flex;
+      //   align-items: center;
+      // }
+      .nav-link-signin.active {
+        text-decoration: underline;
+        line-height: 34.22px;
+        color: $primaryColor;
+      }
+      .nav-link-signin {
+        // display: none;
+        visibility: hidden;
+      }
+      .faUser {
+        visibility: visible;
+      }
+    }
+  }
+}
 @media screen and (max-width: 376px) {
   .vs-header {
     // padding: 20px 20px 27px 20px;

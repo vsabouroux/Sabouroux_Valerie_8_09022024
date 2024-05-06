@@ -58,6 +58,14 @@ form {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  form {
+    width: 70%;
+  }
+  form label {
+    font-size: 16px;
+  }
+}
 @media screen and (max-width: 376px) {
   form {
     width: auto;

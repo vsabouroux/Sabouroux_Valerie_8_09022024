@@ -66,7 +66,21 @@ ul {
     rotate: 0deg;
   }
 }
+@media screen and (max-width: 1024px) {
+  .CollapseItem {
+    padding:0 30px;
+  }
+  .CollapseItem h2 {
+    font-size: 16px;
+  }
+  .CollapseContent {
+    font-size: 12px;
+  }
+}
 @media screen and (max-width: 376px) {
+  .CollapseItem {
+    padding:0;
+  }
   .CollapseItem {
     .CollapseContent {
       display: flex;
@@ -86,9 +100,9 @@ ul {
       justify-content: space-between;
       padding-left: 10px;
     }
-    .CollapseContent {
-      font-size: 12px;
-    }
+    // .CollapseContent {
+    //   font-size: 12px;
+    // }
     .Arrow {
       display: flex;
       justify-content: space-around;

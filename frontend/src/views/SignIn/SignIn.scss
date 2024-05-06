@@ -39,11 +39,15 @@
   }
 }
 
+@media all and (max-width: 1024px) {
+  .container {
+    margin:0;
+  }}
 @media all and (max-width: 376px) {
 
   .container {
     gap: 0;
-    margin:0;
+    // margin:0;
 
     label {
       font-size: 12px; 
