@@ -38,7 +38,8 @@ function Home({isAuthenticated }) {
               imageUrl={imageUrl} 
               className="Cover"
               id={id}
-              alt={title}
+              alt={`Page d'accueil du site "${title}"`}
+              // alt={title}
             />
           ))}
         </section>

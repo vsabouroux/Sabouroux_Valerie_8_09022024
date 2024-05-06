@@ -36,7 +36,7 @@ function APropos() {
            <p className="CV">Mon CV est accessible via le scan ou le clic du QRcode </p>
         </div>
       </main>
-      {/* <Footer /> */}
+      {/* <Footer /> */} 
     </div>
   );
 }
