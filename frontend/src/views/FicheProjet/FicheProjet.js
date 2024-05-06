@@ -60,9 +60,6 @@ const FicheProjet = ({ projets }) => {
 
   const {title, description, skills, tags, githubUrl, imageUrl } = projet;
 
-  // Construction de l'URL complète de l'image. J'ai enlevé ".imageUrl" ds les {} ci-dessous
-  // const imageUrl =`https://vs-portfolio-api-0c0adab5969b.herokuapp.com/images/${projet.imageUrl}`;
-
   return (
     <div>
       <main>
