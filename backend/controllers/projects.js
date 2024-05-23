@@ -4,6 +4,7 @@ const path = require("path");
 
 exports.createProject = (req, res, next) => {
   let projectObjet = JSON.parse(req.body.projet); //project changé en "projet" parceque c'est comme ça que cela s'appelle dans le frontend !!!
+  //"parse" analyse une chaîne JSON en un objet JavaScript.
 
   projectObjet.tags = projectObjet.tags.split(","); // "split" pour diviser la chaîne de caractères en tableau
   projectObjet.skills = projectObjet.skills.split(",");
