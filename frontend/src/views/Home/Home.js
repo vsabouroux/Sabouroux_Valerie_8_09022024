@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { APP_ROUTES } from "../../utils/constants";
 import Banner from "../../components/Banner/Banner";
@@ -7,7 +7,7 @@ import Card from "../../components/Card/Card";
 import { getProjets } from "../../lib/common"; // Ajout de import de la fonction getProjets
 import "./Home.scss";
 
-function Home({isAuthenticated }) {
+function Home({ isAuthenticated }) {
   const [projets, setProjets] = useState([]);
 
   useEffect(() => {
@@ -20,29 +20,30 @@ function Home({isAuthenticated }) {
       <main>
         <Banner
           img={enteteImage}
-          texte="Pour vous, je conçois et développe des projets web qui vous ressemblent"
-          alt="image décorative d'un ordinateur portable" 
+          texte="Pour vous, je conçois et développe des projets web et mobile qui vous ressemblent"
+          alt="image décorative d'un ordinateur portable"
         />
-        <div className="button_container"> 
-        {isAuthenticated && ( // Utilisation de l'état d'authentification ici
-          <Link to={APP_ROUTES.ADD_PROJET}className="add_projet_button">Ajouter un projet</Link>
+        <div className="button_container">
+          {isAuthenticated && ( // Utilisation de l'état d'authentification ici
+            <Link to={APP_ROUTES.ADD_PROJET} className="add_projet_button">
+              Ajouter un projet
+            </Link>
           )}
         </div>
-    
+
         <section className="Projet">
           {/*Création boucle avec map pour afficher tous les projets créés ds la BDD*/}
           {projets.map(({ id, title, imageUrl }) => (
             <Card
               key={id}
               title={title}
-              imageUrl={imageUrl} 
+              imageUrl={imageUrl}
               className="Cover"
               id={id}
-              //Création d'une chaîne de caractères qui contient "Page d'accueil du site" suivi du titre du projet. 
+              //Création d'une chaîne de caractères qui contient "Page d'accueil du site" suivi du titre du projet.
               //Le caractère $ suivi de ${} est utilisé pour insérer dynamiquement la valeur de la variable title dans la chaîne de caractères.
               alt={`Page d'accueil du site "${title}"`}
               // alt={title}
-
             />
           ))}
         </section>
